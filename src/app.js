@@ -1,15 +1,9 @@
 import React from 'react';
-import styles from './main.css';
+import ReactDom from 'react-dom';
 import SearchBar from './components/search-bar';
 
-const Hello = React.createClass({
-    render() {
-        return (<div>
-                <SearchBar />
-                <br/>
-            Hello
-    </div>);
-    }
-})
+const App = () => {
+    return (<div>Hi! <SearchBar/></div>);
+};
 
-React.render(<Hello/>, document.body);
+ReactDom.render(<App/>, document.body);
