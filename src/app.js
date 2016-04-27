@@ -3,15 +3,17 @@ import ReactDom from 'react-dom';
 import SearchBar from './components/search-bar';
 
 class App extends RComponent {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
+
     render() {
         return (<div>Hi! <SearchBar/></div>);
     }
 }
 
-var div = document.createElement('div');
-div.className = 'content';
-document.body.appendChild(div);
-ReactDom.render(<App/>, div);
+if(window !== undefined) {
+    window.React = React;
+}
+
+ReactDom.render(<App/>, document.querySelector('.container'));

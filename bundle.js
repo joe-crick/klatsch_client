@@ -107,6 +107,10 @@
 	
 	var div = document.createElement('div');
 	div.className = 'content';
+	var script = document.createElement('script');
+	script.setAttribute("type", "text/javascript");
+	script.setAttribute("src", 'https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js');
+	div.appendChild(script);
 	document.body.appendChild(div);
 	_reactDom2['default'].render(_react2['default'].createElement(App, null), div);
 
@@ -20602,7 +20606,6 @@
 	        this.state = {
 	            term: ''
 	        };
-	        this.onInputChange = this.onInputChange.bind(this);
 	    }
 	
 	    /**
@@ -20613,24 +20616,20 @@
 	    _createClass(SearchBar, [{
 	        key: 'render',
 	        value: function render() {
+	            var _this = this;
+	
 	            return _react2['default'].createElement(
 	                'div',
 	                null,
-	                _react2['default'].createElement('input', { onChange: this.onInputChange }),
+	                _react2['default'].createElement('input', {
+	                    value: this.state.term,
+	                    onChange: function (event) {
+	                        return _this.setState({ term: event.target.value });
+	                    } }),
 	                _react2['default'].createElement('br', null),
 	                'Value of the input: ',
 	                this.state.term
 	            );
-	        }
-	
-	        /**
-	         * @description Event handler for the input's change event
-	         * @param event
-	         */
-	    }, {
-	        key: 'onInputChange',
-	        value: function onInputChange(event) {
-	            this.setState({ term: event.target.value });
 	        }
 	    }]);
 	
