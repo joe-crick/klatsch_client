@@ -1,4 +1,4 @@
-import React, {Component as RComponent } from 'react';
+import React, {Component as RComponent} from 'react';
 
 class SearchBar extends RComponent {
     /**
@@ -7,23 +7,26 @@ class SearchBar extends RComponent {
      */
     constructor(props) {
         super(props);
+        this.state = {
+            term: ''
+        };
     }
 
     /**
-     *
+     * @description render function
      * @returns {XML}
      */
-    render () {
-        return <input onChange={this.onInputChange} />;
+    render() {
+        return (
+            <div>
+                <input
+                    value={this.state.term}
+                    onChange={event => this.setState({term: event.target.value})}/><br/>
+                Value of the input: {this.state.term}
+            </div>
+        );
     }
 
-    /**
-     * 
-     * @param event
-     */
-    onInputChange(event) {
-        console.log(event.target.value);
-    }
 }
 
 export default SearchBar;
