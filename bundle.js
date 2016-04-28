@@ -81,6 +81,10 @@
 	
 	var _componentsSearchBar2 = _interopRequireDefault(_componentsSearchBar);
 	
+	var _componentsLoginBar = __webpack_require__(/*! ./components/login-bar */ 168);
+	
+	var _componentsLoginBar2 = _interopRequireDefault(_componentsLoginBar);
+	
 	var App = (function (_RComponent) {
 	    _inherits(App, _RComponent);
 	
@@ -97,7 +101,9 @@
 	                'div',
 	                null,
 	                'Hi! ',
-	                _react2['default'].createElement(_componentsSearchBar2['default'], null)
+	                _react2['default'].createElement(_componentsSearchBar2['default'], null),
+	                _react2['default'].createElement('br', null),
+	                _react2['default'].createElement(_componentsLoginBar2['default'], null)
 	            );
 	        }
 	    }]);
@@ -105,14 +111,11 @@
 	    return App;
 	})(_react.Component);
 	
-	var div = document.createElement('div');
-	div.className = 'content';
-	var script = document.createElement('script');
-	script.setAttribute("type", "text/javascript");
-	script.setAttribute("src", 'https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js');
-	div.appendChild(script);
-	document.body.appendChild(div);
-	_reactDom2['default'].render(_react2['default'].createElement(App, null), div);
+	if (window !== undefined) {
+	    window.React = _react2['default'];
+	}
+	
+	_reactDom2['default'].render(_react2['default'].createElement(App, null), document.querySelector('.container'));
 
 /***/ },
 /* 2 */
@@ -20637,6 +20640,139 @@
 	})(_react.Component);
 	
 	exports['default'] = SearchBar;
+	module.exports = exports['default'];
+
+/***/ },
+/* 168 */
+/*!*************************************!*\
+  !*** ./src/components/login-bar.js ***!
+  \*************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var _react = __webpack_require__(/*! react */ 2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var LoginBar = (function (_RComponent) {
+	    _inherits(LoginBar, _RComponent);
+	
+	    /**
+	     * @description Constructor function
+	     * @param props
+	     */
+	
+	    function LoginBar(props) {
+	        _classCallCheck(this, LoginBar);
+	
+	        _get(Object.getPrototypeOf(LoginBar.prototype), 'constructor', this).call(this, props);
+	        this.state = {
+	            zipCode: '',
+	            ageRange: 0
+	        };
+	        // this.onInputChange = this.onInputChange.bind(this);
+	    }
+	
+	    /**
+	     * @description render function
+	     * @returns {HTML}
+	     */
+	
+	    _createClass(LoginBar, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this = this;
+	
+	            // this.props
+	            return _react2['default'].createElement(
+	                'div',
+	                { id: 'splash-bar' },
+	                _react2['default'].createElement(
+	                    'label',
+	                    { htmlFor: 'zip-code', className: 'prefix' },
+	                    'ZipCode',
+	                    _react2['default'].createElement('input', { id: 'zip-code',
+	                        value: this.state.zipCode,
+	                        onChange: function (event) {
+	                            return _this.setState({ zipCode: event.target.value });
+	                        } })
+	                ),
+	                _react2['default'].createElement(
+	                    'div',
+	                    { id: 'age-selection-container', className: 'property-selector' },
+	                    _react2['default'].createElement(
+	                        'div',
+	                        { id: 'age_dropdown-container', className: 'input-container select dropdown fixed-width' },
+	                        _react2['default'].createElement(
+	                            'select',
+	                            {
+	                                id: 'age-range',
+	                                value: this.state.ageRange,
+	                                onChange: function (event) {
+	                                    return _this.setState({ ageRange: event.target.value });
+	                                },
+	                                className: 'dropdown fixed-width' },
+	                            _react2['default'].createElement(
+	                                'option',
+	                                { value: '0' },
+	                                ' Baby (0 - 1.5 yrs)'
+	                            ),
+	                            _react2['default'].createElement(
+	                                'option',
+	                                { value: '1' },
+	                                ' Toddler (1.5 - 3 yrs)'
+	                            ),
+	                            _react2['default'].createElement(
+	                                'option',
+	                                { value: '2' },
+	                                ' Early Childhood (3 - 5 yrs)'
+	                            ),
+	                            _react2['default'].createElement(
+	                                'option',
+	                                { value: '3' },
+	                                ' Early Elementary (5 - 7 yrs)'
+	                            ),
+	                            _react2['default'].createElement(
+	                                'option',
+	                                { value: '4' },
+	                                ' Late Elementary (7 - 10 yrs)'
+	                            ),
+	                            _react2['default'].createElement(
+	                                'option',
+	                                { value: '5' },
+	                                ' Pre-teen (10 - 12 yrs)'
+	                            )
+	                        ),
+	                        _react2['default'].createElement(
+	                            'button',
+	                            { type: 'button', className: 'btn-primary' },
+	                            ' Continue'
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return LoginBar;
+	})(_react.Component);
+	
+	exports['default'] = LoginBar;
 	module.exports = exports['default'];
 
 /***/ }

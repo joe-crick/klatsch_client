@@ -42,7 +42,7 @@ class LoginBar extends RComponent {
                             <option value="4"> Late Elementary (7 - 10 yrs)</option>
                             <option value="5"> Pre-teen (10 - 12 yrs)</option>
                         </select>
-                        <button type="button" className="next-page btn-flat green"> Continue</button>
+                        <button type="button" className="btn-primary"> Continue</button>
                     </div>
                 </div>
             </div>
