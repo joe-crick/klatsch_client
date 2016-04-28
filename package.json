@@ -49,6 +49,7 @@
     "start": "npm-run-all build develop"
   },
   "devDependencies": {
+    "css-loader": "^0.15.6",
     "npm-run-all": "^1.8.0",
     "webpack": "^1.13.0"
   }
