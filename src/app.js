@@ -1,6 +1,7 @@
 import React, {Component as RComponent} from 'react';
 import ReactDom from 'react-dom';
 import SearchBar from './components/search-bar';
+import LoginBar from './components/login-bar';
 
 class App extends RComponent {
     constructor(props) {
@@ -8,7 +9,10 @@ class App extends RComponent {
     }
 
     render() {
-        return (<div>Hi! <SearchBar/></div>);
+        return (<div>
+            Hi! <SearchBar/><br/>
+            <LoginBar/>
+        </div>);
     }
 }
 
