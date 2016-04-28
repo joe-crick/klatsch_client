@@ -10,7 +10,7 @@ class App extends RComponent {
 
     render() {
         return (<div>
-            Hi! <SearchBar/><br/>
+            <SearchBar/>
             <LoginBar/>
         </div>);
     }

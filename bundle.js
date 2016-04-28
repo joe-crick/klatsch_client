@@ -100,9 +100,7 @@
 	            return _react2['default'].createElement(
 	                'div',
 	                null,
-	                'Hi! ',
 	                _react2['default'].createElement(_componentsSearchBar2['default'], null),
-	                _react2['default'].createElement('br', null),
 	                _react2['default'].createElement(_componentsLoginBar2['default'], null)
 	            );
 	        }
@@ -20683,7 +20681,10 @@
 	        _get(Object.getPrototypeOf(LoginBar.prototype), 'constructor', this).call(this, props);
 	        this.state = {
 	            zipCode: '',
-	            ageRange: 0
+	            ageRange: 0,
+	            i18n: {
+	                zipPlaceHolder: 'Zip code'
+	            }
 	        };
 	        // this.onInputChange = this.onInputChange.bind(this);
 	    }
@@ -20703,65 +20704,84 @@
 	                'div',
 	                { id: 'splash-bar' },
 	                _react2['default'].createElement(
-	                    'label',
-	                    { htmlFor: 'zip-code', className: 'prefix' },
-	                    'ZipCode',
-	                    _react2['default'].createElement('input', { id: 'zip-code',
-	                        value: this.state.zipCode,
-	                        onChange: function (event) {
-	                            return _this.setState({ zipCode: event.target.value });
-	                        } })
-	                ),
-	                _react2['default'].createElement(
-	                    'div',
-	                    { id: 'age-selection-container', className: 'property-selector' },
+	                    'form',
+	                    null,
+	                    _react2['default'].createElement(
+	                        'fieldset',
+	                        { 'class': 'form-group' },
+	                        _react2['default'].createElement(
+	                            'label',
+	                            { htmlFor: 'zip-code', className: 'form-control' },
+	                            'ZipCode',
+	                            _react2['default'].createElement('input', {
+	                                id: 'zip-code',
+	                                placeholder: this.state.i18n.zipPlaceHolder,
+	                                value: this.state.zipCode,
+	                                onChange: function (event) {
+	                                    return _this.setState({ zipCode: event.target.value });
+	                                } })
+	                        )
+	                    ),
 	                    _react2['default'].createElement(
 	                        'div',
-	                        { id: 'age_dropdown-container', className: 'input-container select dropdown fixed-width' },
+	                        { id: 'age-selection-container', className: 'property-selector' },
 	                        _react2['default'].createElement(
-	                            'select',
-	                            {
-	                                id: 'age-range',
-	                                value: this.state.ageRange,
-	                                onChange: function (event) {
-	                                    return _this.setState({ ageRange: event.target.value });
-	                                },
-	                                className: 'dropdown fixed-width' },
+	                            'div',
+	                            { id: 'age_dropdown-container', className: 'input-container select dropdown fixed-width' },
 	                            _react2['default'].createElement(
-	                                'option',
-	                                { value: '0' },
-	                                ' Baby (0 - 1.5 yrs)'
+	                                'fieldset',
+	                                { 'class': 'form-group' },
+	                                _react2['default'].createElement(
+	                                    'label',
+	                                    { htmlFor: 'age-range' },
+	                                    'Age Range'
+	                                ),
+	                                _react2['default'].createElement(
+	                                    'select',
+	                                    {
+	                                        id: 'age-range',
+	                                        value: this.state.ageRange,
+	                                        onChange: function (event) {
+	                                            return _this.setState({ ageRange: event.target.value });
+	                                        },
+	                                        className: 'form-control' },
+	                                    _react2['default'].createElement(
+	                                        'option',
+	                                        { value: '0' },
+	                                        ' Baby (0 - 1.5 yrs)'
+	                                    ),
+	                                    _react2['default'].createElement(
+	                                        'option',
+	                                        { value: '1' },
+	                                        ' Toddler (1.5 - 3 yrs)'
+	                                    ),
+	                                    _react2['default'].createElement(
+	                                        'option',
+	                                        { value: '2' },
+	                                        ' Early Childhood (3 - 5 yrs)'
+	                                    ),
+	                                    _react2['default'].createElement(
+	                                        'option',
+	                                        { value: '3' },
+	                                        ' Early Elementary (5 - 7 yrs)'
+	                                    ),
+	                                    _react2['default'].createElement(
+	                                        'option',
+	                                        { value: '4' },
+	                                        ' Late Elementary (7 - 10 yrs)'
+	                                    ),
+	                                    _react2['default'].createElement(
+	                                        'option',
+	                                        { value: '5' },
+	                                        ' Pre-teen (10 - 12 yrs)'
+	                                    )
+	                                )
 	                            ),
 	                            _react2['default'].createElement(
-	                                'option',
-	                                { value: '1' },
-	                                ' Toddler (1.5 - 3 yrs)'
-	                            ),
-	                            _react2['default'].createElement(
-	                                'option',
-	                                { value: '2' },
-	                                ' Early Childhood (3 - 5 yrs)'
-	                            ),
-	                            _react2['default'].createElement(
-	                                'option',
-	                                { value: '3' },
-	                                ' Early Elementary (5 - 7 yrs)'
-	                            ),
-	                            _react2['default'].createElement(
-	                                'option',
-	                                { value: '4' },
-	                                ' Late Elementary (7 - 10 yrs)'
-	                            ),
-	                            _react2['default'].createElement(
-	                                'option',
-	                                { value: '5' },
-	                                ' Pre-teen (10 - 12 yrs)'
+	                                'button',
+	                                { type: 'button', className: 'btn btn-primary' },
+	                                ' Continue'
 	                            )
-	                        ),
-	                        _react2['default'].createElement(
-	                            'button',
-	                            { type: 'button', className: 'btn-primary' },
-	                            ' Continue'
 	                        )
 	                    )
 	                )
