@@ -81,9 +81,9 @@
 	
 	var _componentsSearchBar2 = _interopRequireDefault(_componentsSearchBar);
 	
-	var _componentsLoginBar = __webpack_require__(/*! ./components/login-bar */ 168);
+	var _componentsLoginBarLoginBar = __webpack_require__(/*! ./components/login-bar/login-bar */ 168);
 	
-	var _componentsLoginBar2 = _interopRequireDefault(_componentsLoginBar);
+	var _componentsLoginBarLoginBar2 = _interopRequireDefault(_componentsLoginBarLoginBar);
 	
 	var App = (function (_RComponent) {
 	    _inherits(App, _RComponent);
@@ -101,7 +101,7 @@
 	                'div',
 	                null,
 	                _react2['default'].createElement(_componentsSearchBar2['default'], null),
-	                _react2['default'].createElement(_componentsLoginBar2['default'], null)
+	                _react2['default'].createElement(_componentsLoginBarLoginBar2['default'], null)
 	            );
 	        }
 	    }]);
@@ -20642,9 +20642,9 @@
 
 /***/ },
 /* 168 */
-/*!*************************************!*\
-  !*** ./src/components/login-bar.js ***!
-  \*************************************/
+/*!***********************************************!*\
+  !*** ./src/components/login-bar/login-bar.js ***!
+  \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20666,6 +20666,10 @@
 	var _react = __webpack_require__(/*! react */ 2);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _loginBarSass = __webpack_require__(/*! ./login-bar.sass */ 169);
+	
+	var _loginBarSass2 = _interopRequireDefault(_loginBarSass);
 	
 	var LoginBar = (function (_RComponent) {
 	    _inherits(LoginBar, _RComponent);
@@ -20701,36 +20705,41 @@
 	
 	            // this.props
 	            return _react2['default'].createElement(
-	                'div',
-	                { id: 'splash-bar' },
+	                'klatch-login-bar',
+	                { className: 'container' },
 	                _react2['default'].createElement(
 	                    'form',
 	                    null,
 	                    _react2['default'].createElement(
-	                        'fieldset',
-	                        { 'class': 'form-group' },
-	                        _react2['default'].createElement(
-	                            'label',
-	                            { htmlFor: 'zip-code', className: 'form-control' },
-	                            'ZipCode',
-	                            _react2['default'].createElement('input', {
-	                                id: 'zip-code',
-	                                placeholder: this.state.i18n.zipPlaceHolder,
-	                                value: this.state.zipCode,
-	                                onChange: function (event) {
-	                                    return _this.setState({ zipCode: event.target.value });
-	                                } })
-	                        )
-	                    ),
-	                    _react2['default'].createElement(
 	                        'div',
-	                        { id: 'age-selection-container', className: 'property-selector' },
+	                        { className: 'row login-container' },
 	                        _react2['default'].createElement(
 	                            'div',
-	                            { id: 'age_dropdown-container', className: 'input-container select dropdown fixed-width' },
+	                            { className: 'col-md-4' },
 	                            _react2['default'].createElement(
 	                                'fieldset',
-	                                { 'class': 'form-group' },
+	                                { className: 'form-group' },
+	                                _react2['default'].createElement(
+	                                    'label',
+	                                    { htmlFor: 'zip-code' },
+	                                    'ZipCode',
+	                                    _react2['default'].createElement('input', {
+	                                        id: 'zip-code',
+	                                        className: 'form-control',
+	                                        placeholder: this.state.i18n.zipPlaceHolder,
+	                                        value: this.state.zipCode,
+	                                        onChange: function (event) {
+	                                            return _this.setState({ zipCode: event.target.value });
+	                                        } })
+	                                )
+	                            )
+	                        ),
+	                        _react2['default'].createElement(
+	                            'div',
+	                            { className: 'col-md-4' },
+	                            _react2['default'].createElement(
+	                                'fieldset',
+	                                { className: 'form-group' },
 	                                _react2['default'].createElement(
 	                                    'label',
 	                                    { htmlFor: 'age-range' },
@@ -20748,39 +20757,43 @@
 	                                    _react2['default'].createElement(
 	                                        'option',
 	                                        { value: '0' },
-	                                        ' Baby (0 - 1.5 yrs)'
+	                                        'Baby (0 - 1.5 yrs)'
 	                                    ),
 	                                    _react2['default'].createElement(
 	                                        'option',
 	                                        { value: '1' },
-	                                        ' Toddler (1.5 - 3 yrs)'
+	                                        'Toddler (1.5 - 3 yrs)'
 	                                    ),
 	                                    _react2['default'].createElement(
 	                                        'option',
 	                                        { value: '2' },
-	                                        ' Early Childhood (3 - 5 yrs)'
+	                                        'Early Childhood (3 - 5 yrs)'
 	                                    ),
 	                                    _react2['default'].createElement(
 	                                        'option',
 	                                        { value: '3' },
-	                                        ' Early Elementary (5 - 7 yrs)'
+	                                        'Early Elementary (5 - 7 yrs)'
 	                                    ),
 	                                    _react2['default'].createElement(
 	                                        'option',
 	                                        { value: '4' },
-	                                        ' Late Elementary (7 - 10 yrs)'
+	                                        'Late Elementary (7 - 10 yrs)'
 	                                    ),
 	                                    _react2['default'].createElement(
 	                                        'option',
 	                                        { value: '5' },
-	                                        ' Pre-teen (10 - 12 yrs)'
+	                                        'Pre-teen (10 - 12 yrs)'
 	                                    )
 	                                )
-	                            ),
+	                            )
+	                        ),
+	                        _react2['default'].createElement(
+	                            'div',
+	                            { className: 'col-md-4' },
 	                            _react2['default'].createElement(
 	                                'button',
 	                                { type: 'button', className: 'btn btn-primary' },
-	                                ' Continue'
+	                                'Continue'
 	                            )
 	                        )
 	                    )
@@ -20794,6 +20807,17 @@
 	
 	exports['default'] = LoginBar;
 	module.exports = exports['default'];
+
+/***/ },
+/* 169 */
+/*!*************************************************!*\
+  !*** ./src/components/login-bar/login-bar.sass ***!
+  \*************************************************/
+/***/ function(module, exports) {
+
+	"use strict";
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

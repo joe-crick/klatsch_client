@@ -1,7 +1,7 @@
 import React, {Component as RComponent} from 'react';
 import ReactDom from 'react-dom';
 import SearchBar from './components/search-bar';
-import LoginBar from './components/login-bar';
+import LoginBar from './components/login-bar/login-bar';
 
 class App extends RComponent {
     constructor(props) {
