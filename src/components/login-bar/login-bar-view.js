@@ -5,14 +5,13 @@ export default function loginBarView() {
                 <div className="row login-container">
                     <div className="col-md-4">
                         <fieldset className="form-group">
-                            <label htmlFor="zip-code">ZipCode
+                            <label htmlFor="zip-code">ZipCode</label>
                                 <input
                                     id="zip-code"
                                     className="form-control"
                                     placeholder={this.state.i18n.zipPlaceHolder}
                                     value={this.state.zipCode}
                                     onChange={event => this.setState({zipCode: event.target.value})}/>
-                            </label>
                         </fieldset>
                     </div>
                     <div className="col-md-4">
@@ -33,7 +32,7 @@ export default function loginBarView() {
                         </fieldset>
                     </div>
                     <div className="col-md-4">
-                        <button type="button" className="btn btn-primary">Continue</button>
+                        <button type="button" className="btn btn-primary continue-button">Continue</button>
                     </div>
                 </div>
             </form>

@@ -20749,16 +20749,16 @@
 	                        React.createElement(
 	                            "label",
 	                            { htmlFor: "zip-code" },
-	                            "ZipCode",
-	                            React.createElement("input", {
-	                                id: "zip-code",
-	                                className: "form-control",
-	                                placeholder: this.state.i18n.zipPlaceHolder,
-	                                value: this.state.zipCode,
-	                                onChange: function (event) {
-	                                    return _this.setState({ zipCode: event.target.value });
-	                                } })
-	                        )
+	                            "ZipCode"
+	                        ),
+	                        React.createElement("input", {
+	                            id: "zip-code",
+	                            className: "form-control",
+	                            placeholder: this.state.i18n.zipPlaceHolder,
+	                            value: this.state.zipCode,
+	                            onChange: function (event) {
+	                                return _this.setState({ zipCode: event.target.value });
+	                            } })
 	                    )
 	                ),
 	                React.createElement(
