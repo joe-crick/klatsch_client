@@ -5,7 +5,7 @@ const path = require('path');
 const sassLoaders = [
     'css-loader',
     'postcss-loader',
-    'sass-loader?indentedSyntax=sass&includePaths[]=' + path.resolve(__dirname, './src')
+    'sass-loader?sourceMap&indentedSyntax=sass&includePaths[]=' + path.resolve(__dirname, './src')
 ];
 
 module.exports = {

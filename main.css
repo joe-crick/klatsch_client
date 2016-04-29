@@ -1,2 +1,16 @@
+klatch-login-bar {
+  background-color: green; }
+  klatch-login-bar .login-container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+body {
+  background-color: snow; }
 
 /*# sourceMappingURL=main.css.map*/

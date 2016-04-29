@@ -1,5 +1,5 @@
 import React, {Component as RComponent} from 'react';
-import login_bar_css from './login-bar.sass';
+require( './login-bar.sass');
 
 class LoginBar extends RComponent {
     /**

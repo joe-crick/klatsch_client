@@ -85,6 +85,8 @@
 	
 	var _componentsLoginBarLoginBar2 = _interopRequireDefault(_componentsLoginBarLoginBar);
 	
+	__webpack_require__(/*! ./main.sass */ 173);
+	
 	var App = (function (_RComponent) {
 	    _inherits(App, _RComponent);
 	
@@ -20667,9 +20669,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _loginBarSass = __webpack_require__(/*! ./login-bar.sass */ 169);
-	
-	var _loginBarSass2 = _interopRequireDefault(_loginBarSass);
+	__webpack_require__(/*! ./login-bar.sass */ 169);
 	
 	var LoginBar = (function (_RComponent) {
 	    _inherits(LoginBar, _RComponent);
@@ -20813,6 +20813,20 @@
 /*!*************************************************!*\
   !*** ./src/components/login-bar/login-bar.sass ***!
   \*************************************************/
+/***/ function(module, exports) {
+
+	"use strict";
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */
+/*!***********************!*\
+  !*** ./src/main.sass ***!
+  \***********************/
 /***/ function(module, exports) {
 
 	"use strict";

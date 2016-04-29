@@ -44,7 +44,7 @@
   "private": true,
   "scripts": {
     "build": "webpack -d",
-    "develop": "webpack-dev-server",
+    "develop": "webpack-dev-server --progress --inline",
     "deploy": "surge -p public -d labelr.surge.sh",
     "start": "npm-run-all build develop"
   },
