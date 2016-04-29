@@ -85,7 +85,7 @@
 	
 	var _componentsLoginBarLoginBar2 = _interopRequireDefault(_componentsLoginBarLoginBar);
 	
-	__webpack_require__(/*! ./main.sass */ 173);
+	__webpack_require__(/*! ./main.sass */ 174);
 	
 	var App = (function (_RComponent) {
 	    _inherits(App, _RComponent);
@@ -20629,9 +20629,7 @@
 	                    onChange: function (event) {
 	                        return _this.setState({ term: event.target.value });
 	                    } }),
-	                _react2['default'].createElement('br', null),
-	                'Value of the input: ',
-	                this.state.term
+	                _react2['default'].createElement('br', null)
 	            );
 	        }
 	    }]);
@@ -20669,7 +20667,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	__webpack_require__(/*! ./login-bar.sass */ 169);
+	var _loginBarView = __webpack_require__(/*! ./login-bar-view */ 169);
+	
+	var _loginBarView2 = _interopRequireDefault(_loginBarView);
+	
+	__webpack_require__(/*! ./login-bar.sass */ 170);
 	
 	var LoginBar = (function (_RComponent) {
 	    _inherits(LoginBar, _RComponent);
@@ -20701,104 +20703,8 @@
 	    _createClass(LoginBar, [{
 	        key: 'render',
 	        value: function render() {
-	            var _this = this;
-	
 	            // this.props
-	            return _react2['default'].createElement(
-	                'klatch-login-bar',
-	                { className: 'container' },
-	                _react2['default'].createElement(
-	                    'form',
-	                    null,
-	                    _react2['default'].createElement(
-	                        'div',
-	                        { className: 'row login-container' },
-	                        _react2['default'].createElement(
-	                            'div',
-	                            { className: 'col-md-4' },
-	                            _react2['default'].createElement(
-	                                'fieldset',
-	                                { className: 'form-group' },
-	                                _react2['default'].createElement(
-	                                    'label',
-	                                    { htmlFor: 'zip-code' },
-	                                    'ZipCode',
-	                                    _react2['default'].createElement('input', {
-	                                        id: 'zip-code',
-	                                        className: 'form-control',
-	                                        placeholder: this.state.i18n.zipPlaceHolder,
-	                                        value: this.state.zipCode,
-	                                        onChange: function (event) {
-	                                            return _this.setState({ zipCode: event.target.value });
-	                                        } })
-	                                )
-	                            )
-	                        ),
-	                        _react2['default'].createElement(
-	                            'div',
-	                            { className: 'col-md-4' },
-	                            _react2['default'].createElement(
-	                                'fieldset',
-	                                { className: 'form-group' },
-	                                _react2['default'].createElement(
-	                                    'label',
-	                                    { htmlFor: 'age-range' },
-	                                    'Age Range'
-	                                ),
-	                                _react2['default'].createElement(
-	                                    'select',
-	                                    {
-	                                        id: 'age-range',
-	                                        value: this.state.ageRange,
-	                                        onChange: function (event) {
-	                                            return _this.setState({ ageRange: event.target.value });
-	                                        },
-	                                        className: 'form-control' },
-	                                    _react2['default'].createElement(
-	                                        'option',
-	                                        { value: '0' },
-	                                        'Baby (0 - 1.5 yrs)'
-	                                    ),
-	                                    _react2['default'].createElement(
-	                                        'option',
-	                                        { value: '1' },
-	                                        'Toddler (1.5 - 3 yrs)'
-	                                    ),
-	                                    _react2['default'].createElement(
-	                                        'option',
-	                                        { value: '2' },
-	                                        'Early Childhood (3 - 5 yrs)'
-	                                    ),
-	                                    _react2['default'].createElement(
-	                                        'option',
-	                                        { value: '3' },
-	                                        'Early Elementary (5 - 7 yrs)'
-	                                    ),
-	                                    _react2['default'].createElement(
-	                                        'option',
-	                                        { value: '4' },
-	                                        'Late Elementary (7 - 10 yrs)'
-	                                    ),
-	                                    _react2['default'].createElement(
-	                                        'option',
-	                                        { value: '5' },
-	                                        'Pre-teen (10 - 12 yrs)'
-	                                    )
-	                                )
-	                            )
-	                        ),
-	                        _react2['default'].createElement(
-	                            'div',
-	                            { className: 'col-md-4' },
-	                            _react2['default'].createElement(
-	                                'button',
-	                                { type: 'button', className: 'btn btn-primary' },
-	                                'Continue'
-	                            )
-	                        )
-	                    )
-	                )
-	            );
+	            return _loginBarView2['default'].call(this);
 	        }
 	    }]);
 	
@@ -20810,6 +20716,122 @@
 
 /***/ },
 /* 169 */
+/*!****************************************************!*\
+  !*** ./src/components/login-bar/login-bar-view.js ***!
+  \****************************************************/
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports["default"] = loginBarView;
+	
+	function loginBarView() {
+	    var _this = this;
+	
+	    return React.createElement(
+	        "klatch-login-bar",
+	        { className: "container" },
+	        React.createElement(
+	            "form",
+	            null,
+	            React.createElement(
+	                "div",
+	                { className: "row login-container" },
+	                React.createElement(
+	                    "div",
+	                    { className: "col-md-4" },
+	                    React.createElement(
+	                        "fieldset",
+	                        { className: "form-group" },
+	                        React.createElement(
+	                            "label",
+	                            { htmlFor: "zip-code" },
+	                            "ZipCode",
+	                            React.createElement("input", {
+	                                id: "zip-code",
+	                                className: "form-control",
+	                                placeholder: this.state.i18n.zipPlaceHolder,
+	                                value: this.state.zipCode,
+	                                onChange: function (event) {
+	                                    return _this.setState({ zipCode: event.target.value });
+	                                } })
+	                        )
+	                    )
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "col-md-4" },
+	                    React.createElement(
+	                        "fieldset",
+	                        { className: "form-group" },
+	                        React.createElement(
+	                            "label",
+	                            { htmlFor: "age-range" },
+	                            "Age Range"
+	                        ),
+	                        React.createElement(
+	                            "select",
+	                            {
+	                                id: "age-range",
+	                                value: this.state.ageRange,
+	                                onChange: function (event) {
+	                                    return _this.setState({ ageRange: event.target.value });
+	                                },
+	                                className: "form-control" },
+	                            React.createElement(
+	                                "option",
+	                                { value: "0" },
+	                                "Baby (0 - 1.5 yrs)"
+	                            ),
+	                            React.createElement(
+	                                "option",
+	                                { value: "1" },
+	                                "Toddler (1.5 - 3 yrs)"
+	                            ),
+	                            React.createElement(
+	                                "option",
+	                                { value: "2" },
+	                                "Early Childhood (3 - 5 yrs)"
+	                            ),
+	                            React.createElement(
+	                                "option",
+	                                { value: "3" },
+	                                "Early Elementary (5 - 7 yrs)"
+	                            ),
+	                            React.createElement(
+	                                "option",
+	                                { value: "4" },
+	                                "Late Elementary (7 - 10 yrs)"
+	                            ),
+	                            React.createElement(
+	                                "option",
+	                                { value: "5" },
+	                                "Pre-teen (10 - 12 yrs)"
+	                            )
+	                        )
+	                    )
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "col-md-4" },
+	                    React.createElement(
+	                        "button",
+	                        { type: "button", className: "btn btn-primary" },
+	                        "Continue"
+	                    )
+	                )
+	            )
+	        )
+	    );
+	}
+	
+	module.exports = exports["default"];
+
+/***/ },
+/* 170 */
 /*!*************************************************!*\
   !*** ./src/components/login-bar/login-bar.sass ***!
   \*************************************************/
@@ -20820,10 +20842,10 @@
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 170 */,
 /* 171 */,
 /* 172 */,
-/* 173 */
+/* 173 */,
+/* 174 */
 /*!***********************!*\
   !*** ./src/main.sass ***!
   \***********************/
