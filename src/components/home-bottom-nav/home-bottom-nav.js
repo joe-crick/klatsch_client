@@ -1,4 +1,5 @@
 import React from 'react';
+import './home-bottom-nav.sass';
 
 const home_bottom_nav = (props) => {
 
@@ -8,9 +9,9 @@ const home_bottom_nav = (props) => {
         keyValue++;
         return <li key={key}>{item}</li>;
     });
-
+    
     return (<home-bottom-nav>
-        <ul className="col-md-4 list-group">
+        <ul className="col-md-10 list-group">
             {navItems}
         </ul>
     </home-bottom-nav>);

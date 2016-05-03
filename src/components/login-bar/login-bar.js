@@ -1,6 +1,6 @@
 import React, {Component as RComponent} from 'react';
 import loginBarView from './login-bar-view';
-require( './login-bar.sass');
+import './login-bar.sass';
 
 class LoginBar extends RComponent {
     /**
