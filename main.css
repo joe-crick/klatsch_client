@@ -10,6 +10,9 @@ klatch-login-bar {
     -webkit-align-items: flex-end;
         -ms-flex-align: end;
             align-items: flex-end; }
+    klatch-login-bar .login-container .continue-button {
+      position: relative;
+      top: -18px; }
 body {
   background-color: snow; }
 

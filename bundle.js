@@ -20819,7 +20819,7 @@
 	                    { className: "col-md-4" },
 	                    React.createElement(
 	                        "button",
-	                        { type: "button", className: "btn btn-primary" },
+	                        { type: "button", className: "btn btn-primary continue-button" },
 	                        "Continue"
 	                    )
 	                )
