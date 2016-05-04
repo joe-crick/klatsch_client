@@ -9,13 +9,25 @@ class App extends RComponent {
     constructor(props) {
         super(props);
         this.state = {
-            navVals: [1, 2, 3, 4]
+            navVals: [
+                {
+                    "text": "Sign up in a flash!",
+                    "img": ""
+                },
+                {
+                    "text": "Find a group you can trust",
+                    "img": ""
+                },
+                {
+                    "text": "Go mobile!",
+                    "img": ""
+                }
+            ]
         }
     }
-
+    
     render() {
         return (<div>
-            <SearchBar/>
             <LoginBar/>
             <BottomNav navItems={this.state.navVals}/>
         </div>);

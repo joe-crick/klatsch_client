@@ -7,9 +7,12 @@ const home_bottom_nav = (props) => {
     const navItems = props.navItems.map((item) => {
         let key = 'bnav_' + keyValue.toString();
         keyValue++;
-        return <li key={key}>{item}</li>;
+        return <li key={key}>
+            <div><img src={item.img}/></div>
+            <div>{item.text}</div>
+        </li>;
     });
-    
+
     return (<home-bottom-nav>
         <ul className="col-md-10 list-group">
             {navItems}

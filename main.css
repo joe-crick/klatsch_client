@@ -13,6 +13,18 @@ klatch-login-bar {
     klatch-login-bar .login-container .continue-button {
       position: relative;
       top: -18px; }
+home-bottom-nav ul {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  home-bottom-nav ul li {
+    display: inline-block; }
 body {
   background-color: snow; }
 

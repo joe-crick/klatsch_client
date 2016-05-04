@@ -85,7 +85,11 @@
 	
 	var _componentsLoginBarLoginBar2 = _interopRequireDefault(_componentsLoginBarLoginBar);
 	
-	__webpack_require__(/*! ./main.sass */ 174);
+	var _componentsHomeBottomNavHomeBottomNav = __webpack_require__(/*! ./components/home-bottom-nav/home-bottom-nav */ 174);
+	
+	var _componentsHomeBottomNavHomeBottomNav2 = _interopRequireDefault(_componentsHomeBottomNavHomeBottomNav);
+	
+	__webpack_require__(/*! ./main.sass */ 177);
 	
 	var App = (function (_RComponent) {
 	    _inherits(App, _RComponent);
@@ -94,6 +98,18 @@
 	        _classCallCheck(this, App);
 	
 	        _get(Object.getPrototypeOf(App.prototype), 'constructor', this).call(this, props);
+	        this.state = {
+	            navVals: [{
+	                "text": "Sign up in a flash!",
+	                "img": ""
+	            }, {
+	                "text": "Find a group you can trust",
+	                "img": ""
+	            }, {
+	                "text": "Go mobile!",
+	                "img": ""
+	            }]
+	        };
 	    }
 	
 	    _createClass(App, [{
@@ -102,8 +118,8 @@
 	            return _react2['default'].createElement(
 	                'div',
 	                null,
-	                _react2['default'].createElement(_componentsSearchBar2['default'], null),
-	                _react2['default'].createElement(_componentsLoginBarLoginBar2['default'], null)
+	                _react2['default'].createElement(_componentsLoginBarLoginBar2['default'], null),
+	                _react2['default'].createElement(_componentsHomeBottomNavHomeBottomNav2['default'], { navItems: this.state.navVals })
 	            );
 	        }
 	    }]);
@@ -20846,6 +20862,67 @@
 /* 172 */,
 /* 173 */,
 /* 174 */
+/*!***********************************************************!*\
+  !*** ./src/components/home-bottom-nav/home-bottom-nav.js ***!
+  \***********************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _react = __webpack_require__(/*! react */ 2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	__webpack_require__(/*! ./home-bottom-nav.sass */ 175);
+	
+	var home_bottom_nav = function home_bottom_nav(props) {
+	
+	    var keyValue = 0;
+	    debugger;
+	    var navItems = props.navItems.map(function (item) {
+	        var key = 'bnav_' + keyValue.toString();
+	        keyValue++;
+	        return _react2['default'].createElement(
+	            'li',
+	            { key: key },
+	            item.text
+	        );
+	    });
+	
+	    return _react2['default'].createElement(
+	        'home-bottom-nav',
+	        null,
+	        _react2['default'].createElement(
+	            'ul',
+	            { className: 'col-md-10 list-group' },
+	            navItems
+	        )
+	    );
+	};
+	
+	exports['default'] = home_bottom_nav;
+	module.exports = exports['default'];
+
+/***/ },
+/* 175 */
+/*!*************************************************************!*\
+  !*** ./src/components/home-bottom-nav/home-bottom-nav.sass ***!
+  \*************************************************************/
+/***/ function(module, exports) {
+
+	"use strict";
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 176 */,
+/* 177 */
 /*!***********************!*\
   !*** ./src/main.sass ***!
   \***********************/
