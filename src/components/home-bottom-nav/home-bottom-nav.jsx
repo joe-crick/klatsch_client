@@ -13,11 +13,13 @@ const home_bottom_nav = (props) => {
         </li>;
     });
 
-    return (<home-bottom-nav>
-        <ul className="col-md-10 list-group">
-            {navItems}
-        </ul>
-    </home-bottom-nav>);
+    return (
+        <klatch-home-bottom-nav>
+            <ul className="col-md-10 list-group">
+                {navItems}
+            </ul>
+        </klatch-home-bottom-nav>
+    );
 };
 
 export default home_bottom_nav;
