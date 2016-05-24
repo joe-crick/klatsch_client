@@ -77,19 +77,15 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _componentsSearchBar = __webpack_require__(/*! ./components/search-bar */ 167);
-	
-	var _componentsSearchBar2 = _interopRequireDefault(_componentsSearchBar);
-	
-	var _componentsLoginBarLoginBar = __webpack_require__(/*! ./components/login-bar/login-bar */ 168);
+	var _componentsLoginBarLoginBar = __webpack_require__(/*! ./components/login-bar/login-bar */ 167);
 	
 	var _componentsLoginBarLoginBar2 = _interopRequireDefault(_componentsLoginBarLoginBar);
 	
-	var _componentsHomeBottomNavHomeBottomNav = __webpack_require__(/*! ./components/home-bottom-nav/home-bottom-nav */ 174);
+	var _componentsHomeBottomNavHomeBottomNav = __webpack_require__(/*! ./components/home-bottom-nav/home-bottom-nav */ 173);
 	
 	var _componentsHomeBottomNavHomeBottomNav2 = _interopRequireDefault(_componentsHomeBottomNavHomeBottomNav);
 	
-	__webpack_require__(/*! ./main.sass */ 177);
+	__webpack_require__(/*! ./main.sass */ 176);
 	
 	var App = (function (_RComponent) {
 	    _inherits(App, _RComponent);
@@ -20585,79 +20581,6 @@
 
 /***/ },
 /* 167 */
-/*!**************************************!*\
-  !*** ./src/components/search-bar.js ***!
-  \**************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
-	});
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var _react = __webpack_require__(/*! react */ 2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var SearchBar = (function (_RComponent) {
-	    _inherits(SearchBar, _RComponent);
-	
-	    /**
-	     *
-	     * @param props
-	     */
-	
-	    function SearchBar(props) {
-	        _classCallCheck(this, SearchBar);
-	
-	        _get(Object.getPrototypeOf(SearchBar.prototype), 'constructor', this).call(this, props);
-	        this.state = {
-	            term: ''
-	        };
-	    }
-	
-	    /**
-	     * @description render function
-	     * @returns {XML}
-	     */
-	
-	    _createClass(SearchBar, [{
-	        key: 'render',
-	        value: function render() {
-	            var _this = this;
-	
-	            return _react2['default'].createElement(
-	                'div',
-	                null,
-	                _react2['default'].createElement('input', {
-	                    value: this.state.term,
-	                    onChange: function (event) {
-	                        return _this.setState({ term: event.target.value });
-	                    } }),
-	                _react2['default'].createElement('br', null)
-	            );
-	        }
-	    }]);
-	
-	    return SearchBar;
-	})(_react.Component);
-	
-	exports['default'] = SearchBar;
-	module.exports = exports['default'];
-
-/***/ },
-/* 168 */
 /*!***********************************************!*\
   !*** ./src/components/login-bar/login-bar.js ***!
   \***********************************************/
@@ -20683,11 +20606,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _loginBarView = __webpack_require__(/*! ./login-bar-view */ 169);
+	var _loginBarView = __webpack_require__(/*! ./login-bar-view */ 168);
 	
 	var _loginBarView2 = _interopRequireDefault(_loginBarView);
 	
-	__webpack_require__(/*! ./login-bar.sass */ 170);
+	__webpack_require__(/*! ./login-bar.sass */ 169);
 	
 	var LoginBar = (function (_RComponent) {
 	    _inherits(LoginBar, _RComponent);
@@ -20731,7 +20654,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 169 */
+/* 168 */
 /*!****************************************************!*\
   !*** ./src/components/login-bar/login-bar-view.js ***!
   \****************************************************/
@@ -20847,7 +20770,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 170 */
+/* 169 */
 /*!*************************************************!*\
   !*** ./src/components/login-bar/login-bar.sass ***!
   \*************************************************/
@@ -20858,10 +20781,10 @@
 	// removed by extract-text-webpack-plugin
 
 /***/ },
+/* 170 */,
 /* 171 */,
 /* 172 */,
-/* 173 */,
-/* 174 */
+/* 173 */
 /*!***********************************************************!*\
   !*** ./src/components/home-bottom-nav/home-bottom-nav.js ***!
   \***********************************************************/
@@ -20879,19 +20802,27 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	__webpack_require__(/*! ./home-bottom-nav.sass */ 175);
+	__webpack_require__(/*! ./home-bottom-nav.sass */ 174);
 	
 	var home_bottom_nav = function home_bottom_nav(props) {
 	
 	    var keyValue = 0;
-	    debugger;
 	    var navItems = props.navItems.map(function (item) {
 	        var key = 'bnav_' + keyValue.toString();
 	        keyValue++;
 	        return _react2['default'].createElement(
 	            'li',
 	            { key: key },
-	            item.text
+	            _react2['default'].createElement(
+	                'div',
+	                null,
+	                _react2['default'].createElement('img', { src: item.img })
+	            ),
+	            _react2['default'].createElement(
+	                'div',
+	                null,
+	                item.text
+	            )
 	        );
 	    });
 	
@@ -20910,7 +20841,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 175 */
+/* 174 */
 /*!*************************************************************!*\
   !*** ./src/components/home-bottom-nav/home-bottom-nav.sass ***!
   \*************************************************************/
@@ -20921,8 +20852,8 @@
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 176 */,
-/* 177 */
+/* 175 */,
+/* 176 */
 /*!***********************!*\
   !*** ./src/main.sass ***!
   \***********************/

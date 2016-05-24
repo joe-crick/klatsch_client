@@ -1,6 +1,6 @@
 import React, {Component as RComponent} from 'react';
-import loginBarView from './login-bar-view';
-import './login-bar.sass';
+import loginBarView from './sign-up-bar-view';
+import './sign-up-bar.sass';
 
 class LoginBar extends RComponent {
     /**
@@ -14,6 +14,14 @@ class LoginBar extends RComponent {
             ageRange: 0,
             i18n: {
                 zipPlaceHolder: 'Zip code'
+            },
+            ageRangeLabels: {
+              baby: 'Baby (0 - 1.5 yrs)',
+              toddler: 'Toddler (1.5 - 3 yrs)',
+              threeToFive: 'Early Childhood (3 - 5 yrs',
+              fiveToSeven: 'Early Elementary (5 - 7 yrs)',
+              sevenToTen: 'Late Elementary (7 - 10 yrs)',
+              preTeen: 'Pre-teen (10 - 12 yrs)'
             }
         };
         // this.onInputChange = this.onInputChange.bind(this);
@@ -30,4 +38,3 @@ class LoginBar extends RComponent {
 }
 
 export default LoginBar;
-        

@@ -22,12 +22,12 @@ export default function loginBarView() {
                                 value={this.state.ageRange}
                                 onChange={event => this.setState({ageRange: event.target.value})}
                                 className="form-control">
-                                <option value="0">Baby (0 - 1.5 yrs)</option>
-                                <option value="1">Toddler (1.5 - 3 yrs)</option>
-                                <option value="2">Early Childhood (3 - 5 yrs)</option>
-                                <option value="3">Early Elementary (5 - 7 yrs)</option>
-                                <option value="4">Late Elementary (7 - 10 yrs)</option>
-                                <option value="5">Pre-teen (10 - 12 yrs)</option>
+                                <option value="0">{this.state.ageRangeLabels.baby}</option>
+                                <option value="1">{this.state.ageRangeLabels.toddler}</option>
+                                <option value="2">{this.state.ageRangeLabels.threeToFive}</option>
+                                <option value="3">{this.state.ageRangeLabels.fiveToSeven}</option>
+                                <option value="4">{this.state.ageRangeLabels.sevenToTen}</option>
+                                <option value="5">{this.state.ageRangeLabels.preTeen}</option>
                             </select>
                         </fieldset>
                     </div>
@@ -37,5 +37,5 @@ export default function loginBarView() {
                 </div>
             </form>
         </klatch-login-bar>
-    );    
+    );
 }

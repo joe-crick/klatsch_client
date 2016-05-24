@@ -1,7 +1,6 @@
 import React, {Component as RComponent} from 'react';
 import ReactDom from 'react-dom';
-import SearchBar from './components/search-bar';
-import LoginBar from './components/login-bar/login-bar';
+import LoginBar from './components/sign-up-bar/sign-up-bar';
 import BottomNav from './components/home-bottom-nav/home-bottom-nav';
 require('./main.sass');
 
@@ -25,7 +24,7 @@ class App extends RComponent {
             ]
         }
     }
-    
+
     render() {
         return (<div>
             <LoginBar/>
