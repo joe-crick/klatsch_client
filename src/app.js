@@ -1,5 +1,5 @@
 import React, {Component as RComponent} from 'react';
-import ReactDom from 'react-dom';
+import { render } from 'react-dom';
 import SignUpBar from './components/sign-up-bar/sign-up-bar';
 import BottomNav from './components/home-bottom-nav/home-bottom-nav';
 import LoginBar from './components/login-bar/login-bar';
@@ -39,5 +39,4 @@ if (window !== undefined) {
     window.React = React;
 }
 
-ReactDom.render(
-    <App/>, document.querySelector('.container'));
+render(<App/>, document.querySelector('.container'));
