@@ -1,16 +1,14 @@
 import React from 'react';
 import './login-bar.sass';
 
-const login_bar = (props) => {
+export default (props) => {
     return (
         <klatch-login-bar>
             <div>
-                <button className='btn btn-default' onClick={event => this.setState({currentPage: 'login'})}>
+                <button className='btn btn-default' onClick={props.sayHello}>
                     {props.loginButton}
                 </button>
             </div>
         </klatch-login-bar>
     );
 };
-
-export default login_bar;

@@ -1,10 +1,9 @@
-import React, {Component as RComponent} from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import HomePageFactory from './pages/home-page/home-page';
+import HomePage from './pages/home-page/home-page';
 import './main.sass';
 
-const HomePage = HomePageFactory({React});
-
+// Put React on the window for React tools
 if (window !== undefined) {
     window.React = React;
 }
