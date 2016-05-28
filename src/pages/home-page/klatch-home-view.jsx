@@ -4,7 +4,7 @@ import LoginBar from './login-bar/login-bar';
 import createLoginModal from './login-modal/login-modal';
 
 export default function klatchHomeView(HomeStore) {
-  let {navVals, login} = HomeStore;
+  let {navVals} = HomeStore;
   let LoginModal = createLoginModal(React);
 
   return (
@@ -12,7 +12,7 @@ export default function klatchHomeView(HomeStore) {
         <LoginBar store={HomeStore}/>
         <SignUpBar/>
         <BottomNav navItems={navVals}/>
-        <LoginModal modalTitle={login}/>
+        <LoginModal store={HomeStore}/>
     </div>
   );
 }
