@@ -1,7 +1,10 @@
 import {observable, computed} from 'mobx';
+import {email, password} from './global-store';
 
 export default {
-  loginButton: 'Login',
+  login: 'Login',
+  email: email,
+  password: password,
   navVals : [
       {
           "text": "Sign up in a flash!",
