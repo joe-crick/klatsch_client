@@ -4,12 +4,12 @@ import LoginBar from './login-bar/login-bar';
 import createLoginModal from './login-modal/login-modal';
 
 export default function klatchHomeView(HomeStore) {
-  let {navVals, sayHello, login} = HomeStore;
+  let {navVals, login} = HomeStore;
   let LoginModal = createLoginModal(React);
 
   return (
     <div>
-        <LoginBar sayHello={sayHello} loginButton={login}/>
+        <LoginBar store={HomeStore}/>
         <SignUpBar/>
         <BottomNav navItems={navVals}/>
         <LoginModal modalTitle={login}/>

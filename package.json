@@ -11,6 +11,7 @@
     "babel-loader": "^5.1.4",
     "css-loader": "^0.15.1",
     "file-loader": "^0.8.4",
+    "jquery": "^2.2.4",
     "json-loader": "^0.5.2",
     "local-links": "^1.4.0",
     "lodash.assign": "^3.2.0",
