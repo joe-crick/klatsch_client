@@ -1,6 +1,6 @@
-import SignUpBar from '../../components/sign-up-bar/sign-up-bar';
-import BottomNav from '../../components/home-bottom-nav/home-bottom-nav';
-import LoginBar from '../../components/login-bar/login-bar';
+import SignUpBar from './sign-up-bar/sign-up-bar';
+import BottomNav from './home-bottom-nav/home-bottom-nav';
+import LoginBar from './login-bar/login-bar';
 
 export default function klatchHomeView(HomeStore) {
   let {navVals, sayHello, loginButton} = HomeStore;
