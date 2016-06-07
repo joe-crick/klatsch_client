@@ -1,5 +1,5 @@
 import React, {Component as RComponent} from 'react';
-import loginBarView from './sign-up-bar-view';
+import basicSearchBarView from './sign-up-bar-view';
 import './sign-up-bar.sass';
 
 class LoginBar extends RComponent {
@@ -33,7 +33,7 @@ class LoginBar extends RComponent {
      */
     render() {
         // this.props
-        return loginBarView.call(this);
+        return basicSearchBarView.call(this);
     }
 }
 

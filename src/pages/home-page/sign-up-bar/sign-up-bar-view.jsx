@@ -1,6 +1,6 @@
 export default function loginBarView() {
     return (
-        <klatch-sign-up-bar className="container">
+        <klatch-basic-search-bar className="container">
             <form>
                 <div className="row login-container">
                     <div className="col-md-4">
@@ -36,6 +36,6 @@ export default function loginBarView() {
                     </div>
                 </div>
             </form>
-        </klatch-sign-up-bar>
+        </klatch-basic-search-bar>
     );
 }

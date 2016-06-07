@@ -1,6 +1,12 @@
-export default {
-  email: 'email',
-  password: 'password',
-  close: 'Close',
-  emailPromise: 'We\'ll never share your email with anyone else.'
+let GlobalStore = {
+  emailText: 'email',
+  passwordText: 'password',
+  closeText: 'Close',
+  email: '',
+  password: '',
+  loading: 'Loading...',
+  browse: 'Browse',
+  joinKlatch: 'Join a Klatch'
 };
+
+export default GlobalStore;

@@ -1,12 +1,14 @@
-import {observable, computed} from 'mobx';
-import {email, password, close, emailPromise} from './global-store';
+import {extendObservable, computed, action} from 'mobx';
+import {emailText, passwordText, closeText, email, password} from './global-store';
 
-export default {
+let HomeStore = {
     login : 'Login',
-    email : email,
-    password : password,
-    close: close,
-    emailPromise: emailPromise,
+    emailText,
+    passwordText,
+    closeText,
+    email,
+    password,
+    tagLine: 'Connecting Families for Friends, Playdates, and More',
     navVals : [
         {
             "text": "Sign up in a flash!",
@@ -22,4 +24,22 @@ export default {
     showLoginModal() {
       $('#login-modal').modal('toggle');
     }
-}
+};
+
+/*
+ * Here's where a lot of the magic occurrs.
+ */
+HomeStore.changeTitle = action(function changeTitle() {
+  this.title = 'Blah';
+  this.showLoginModal();
+}).bind(HomeStore);
+
+HomeStore.authResponse = action(function authResponse(response) {
+  this.loggedIn = response;
+}).bind(HomeStore);
+
+extendObservable(HomeStore, {
+  title: 'Hello'
+});
+
+export default HomeStore;

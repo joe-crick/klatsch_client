@@ -46,16 +46,26 @@
   "scripts": {
     "build": "webpack -d",
     "develop": "webpack-dev-server --inline",
-    "start": "npm-run-all build develop"
+    "start": "npm-run-all build develop",
+    "test": "babel-tape-runner tests/**/*.js | faucet"
   },
   "devDependencies": {
     "autoprefixer": "^5.2.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-tape-runner": "^2.0.1",
+    "cheerio": "^0.20.0",
     "css-loader": "^0.15.6",
+    "extend-tape": "^1.2.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^3.6.0",
     "npm-run-all": "^1.8.0",
     "postcss-loader": "^0.5.1",
+    "react-addons-test-utils": "^15.1.0",
+    "react-unit": "^1.3.3",
     "sass-loader": "^3.2.0",
+    "tape": "^4.5.1",
+    "tape-jsx-equals": "^1.0.0",
     "webpack": "^1.13.0"
   }
 }
