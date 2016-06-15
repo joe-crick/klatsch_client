@@ -6,12 +6,12 @@ export default React => observer((props) => {
     let loginTitle = props.store.title === 'Hello' ? 'Login' : 'Logged In';
 
     return (
-        <klatch-login-bar>
+        <klatsch-login-bar>
             <div>
                 <button className='btn btn-default' onClick={props.authStore.showLock}>
                     {loginTitle}
                 </button>
             </div>
-        </klatch-login-bar>
+        </klatsch-login-bar>
     );
 });

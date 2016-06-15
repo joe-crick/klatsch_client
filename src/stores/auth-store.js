@@ -12,7 +12,7 @@ let AuthStore = observable({
  * @return {[type]}          [description]
  */
 AuthStore.createLock = action(function createLock() {
-    AuthStore.lock = new Auth0Lock('L3TTj8GVzhVqjecNGATft2x9SYUQMcBh', 'klatch.auth0.com');
+    AuthStore.lock = new Auth0Lock('L3TTj8GVzhVqjecNGATft2x9SYUQMcBh', 'klatsch.auth0.com');
     AuthStore.setIdToken();
 });
 
@@ -23,6 +23,10 @@ AuthStore.createLock = action(function createLock() {
 AuthStore.showLock = function showLock() {
     AuthStore.lock.show();
 };
+
+AuthStore.showSignUp = function showSignUp() {
+  AuthStore.lock.showSignup();
+}
 
 /**
  * [action description]

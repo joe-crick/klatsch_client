@@ -9,7 +9,7 @@ export default React => observer((props) => {
 
     if (profile) {
         return (
-            <klatch-user-bar>
+            <klatsch-user-bar>
                 <h3 className="pull-xs-left nickname">
                     {profile.nickname}
                 </h3>
@@ -18,7 +18,7 @@ export default React => observer((props) => {
                     <UserMenu logout={props.authStore.logout} logoutText={props.authStore.logoutText} />
                 </div>
                 <div className="clear-fix"></div>
-            </klatch-user-bar>
+            </klatsch-user-bar>
         );
     } else {
         return (

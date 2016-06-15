@@ -1,28 +1,20 @@
 import {extendObservable, computed, action} from 'mobx';
-import {emailText, passwordText, closeText, email, password} from './global-store';
+import {emailText, passwordText, closeText, email, password, zipCodeText} from './global-store';
 
 let HomeStore = {
     login : 'Login',
     emailText,
     passwordText,
     closeText,
-    email,
-    password,
+    zipCodeText,
+    ageRangeLabel: 'Age Range',
+    selectTitle: 'Select Age Ranges',
     tagLine: 'Connecting Families for Friends, Playdates, and More',
-    navVals : [
-        {
-            "text": "Sign up in a flash!",
-            "img": ""
-        }, {
-            "text": "Find a group you can trust",
-            "img": ""
-        }, {
-            "text": "Go mobile!",
-            "img": ""
-        }
-    ],
     showLoginModal() {
       $('#login-modal').modal('toggle');
+    },
+    toggleDropDown(el) {
+      $(el).closest('.btn-group').toggleClass('open');
     }
 };
 
@@ -38,8 +30,23 @@ HomeStore.authResponse = action(function authResponse(response) {
   this.loggedIn = response;
 }).bind(HomeStore);
 
+HomeStore.dropDownAction = action(function dropDownAction(option){
+  let selectedIndex = HomeStore.ageRanges.indexOf(option);
+  let selectedRange = Object.assign({}, HomeStore.ageRanges[selectedIndex]);
+  selectedRange.selected = !selectedRange.selected;
+  HomeStore.ageRanges[selectedIndex] = selectedRange;
+})
+
 extendObservable(HomeStore, {
-  title: 'Hello'
+  title: 'Hello',
+  ageRanges: [
+    {className: '', value: '0', label: 'Baby 0 - 1.5 yrs'},
+    {className: '', value: '1', label: 'Toddler 1.5 - 3 yrs'},
+    {className: '', value: '2', label: 'Early Childhood 3 - 5 yrs'},
+    {className: '', value: '3', label: 'Early Elementary 5 - 7 yrs'},
+    {className: '', value: '4', label: 'Late Elementary 7 - 10 yrs'},
+    {className: '', value: '5', label: 'Pre-teen 10 -12 yrs'}
+  ]
 });
 
 export default HomeStore;

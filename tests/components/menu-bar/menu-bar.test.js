@@ -30,4 +30,5 @@ test('MenuBar component ', nest => {
         assert.ok(actual.length > 0, 'should not be an empty string');
         assert.end();
     });
+
 });

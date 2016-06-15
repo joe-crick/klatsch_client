@@ -2,7 +2,7 @@ import {observable, computed} from 'mobx';
 import ageRange from '../enums/age-range';
 
 class SearchStore {;
-    @observable zipCode = '';
+    @observable zipCodeText = '';
     @observable ageRange = ageRange.baby
 
     constructor(userConfig) {

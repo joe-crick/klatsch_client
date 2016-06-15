@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import UserStore from '../../stores/user-store';
-import {browse, joinKlatch} from '../../stores/global-store';
+import {browse, joinklatsch} from '../../stores/global-store';
 import userBarFactory from '../../components/user-bar/user-bar';
 import menuBarFactory from '../../components/menu-bar/menu-bar';
 import './dashboard.sass';
@@ -8,7 +8,7 @@ import './dashboard.sass';
 let UserBar = userBarFactory(React);
 let MenuBar = menuBarFactory(React);
 
-class KlatchDashboard extends Component {
+class klatschDashboard extends Component {
 
     /**
      * [componentDidMount description]
@@ -24,11 +24,11 @@ class KlatchDashboard extends Component {
      */
     render() {
         return (
-          <klatch-dashboard>
-            <MenuBar browse={browse} joinKlatch={joinKlatch}/>
+          <klatsch-dashboard>
+            <MenuBar browse={browse} joinklatsch={joinklatsch}/>
             <UserBar userStore={UserStore} authStore={this.props.authStore}/>
-          </klatch-dashboard>
+          </klatsch-dashboard>
         );
     }
 }
-export default KlatchDashboard;
+export default klatschDashboard;

@@ -6,7 +6,8 @@ let GlobalStore = {
   password: '',
   loading: 'Loading...',
   browse: 'Browse',
-  joinKlatch: 'Join a Klatch'
+  joinklatsch: 'Join a klatsch',
+  zipCodeText: 'Zip Code'
 };
 
 export default GlobalStore;

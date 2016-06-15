@@ -1,6 +1,6 @@
 export default React => (props) => {
     return (
-        <klatch-login-modal>
+        <klatsch-login-modal>
             <div className="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby={props.store.login} aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
@@ -31,6 +31,6 @@ export default React => (props) => {
                     </div>
                 </div>
             </div>
-        </klatch-login-modal>
+        </klatsch-login-modal>
     );
 }
