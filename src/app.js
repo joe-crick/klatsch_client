@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
+// import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 import App from './components/app.jsx';
 
 // user: cupid0cpuid
@@ -15,7 +15,5 @@ if (window !== undefined) {
  * Routing table
  */
 render(
-  <Router history={browserHistory}>
-    <Route path="/" component={App} />
-  </Router>, document.getElementById('app')
+  <App/>, document.getElementById('app')
 );
