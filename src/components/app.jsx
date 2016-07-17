@@ -4,7 +4,6 @@ import Dashboard from '../pages/dashboard/dashboard';
 import AuthStore from '../stores/auth-store';
 import {observer} from 'mobx-react';
 import $ from 'jquery';
-import './main.sass';
 
 const HomePage = homePageFactory(React);
 

@@ -1,5 +1,3 @@
-import './menu-bar.sass';
-
 export default React => (props) => (
   <klatsch-menu-bar>
     <h1 id="logo" className="nav-logo">

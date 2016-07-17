@@ -1,4 +1,3 @@
-import './multi-select.sass';
 import {observer} from 'mobx-react';
 
 export default React => observer((props) => {

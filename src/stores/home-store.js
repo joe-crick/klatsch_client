@@ -1,5 +1,8 @@
 import {extendObservable, computed, action} from 'mobx';
-import {emailText, passwordText, closeText, email, password, zipCodeText} from './global-store';
+import GlobalStore from './global-store';
+let {emailText, passwordText, closeText, email, password, zipCodeText} = GlobalStore;
+
+console.log('Zip Code: ' + zipCodeText);
 
 let HomeStore = {
     login : 'Login',

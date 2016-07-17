@@ -2,7 +2,6 @@ import HomeStore from '../../stores/home-store';
 import createSignUpBar from './sign-up-bar/sign-up-bar';
 import createLoginBar from './login-bar/login-bar';
 import createTagLine from './tag-line/tag-line';
-import './home-page.sass';
 
 export default React => (props) => {
 

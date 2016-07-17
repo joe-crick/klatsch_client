@@ -1,4 +1,3 @@
-import './login-bar.sass';
 import {observer} from 'mobx-react';
 
 export default React => observer((props) => {

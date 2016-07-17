@@ -1,5 +1,3 @@
-import './user-menu.sass';
-
 export default React => (props) => (
     <klatsch-user-menu>
         <ul className="user-menu">

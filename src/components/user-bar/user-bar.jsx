@@ -1,4 +1,3 @@
-import './user-bar.sass';
 import {observer} from 'mobx-react';
 import userMenuFactory from '../user-menu/user-menu'
 

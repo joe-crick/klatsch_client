@@ -1,4 +1,3 @@
-import './sign-up-bar.sass';
 import createMultiSelect from '../../../components/multi-select/multi-select';
 
 export default React => (props) => {

@@ -17,11 +17,12 @@ module.exports = {
         publicPath: '/build',
         filename: 'bundle.js'
     },
+    devtool: 'source-map',
     module: {
         loaders: [
             {
                 exclude: /node_modules/,
-                loader: 'babel?stage=0'
+                loader: 'babel'
             },
             {
                 test: /\.sass$/,

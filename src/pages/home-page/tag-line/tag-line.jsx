@@ -1,4 +1,3 @@
-import './tag-line.sass';
 
 export default React => (props) =>{
   return (

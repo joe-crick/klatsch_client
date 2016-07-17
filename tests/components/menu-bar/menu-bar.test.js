@@ -18,17 +18,4 @@ test('MenuBar component ', nest => {
         assert.end();
     });
 
-    nest.test('shows the joinKlatch link text', assert => {
-        const MenuBar = menuBar(React);
-        const el = <MenuBar joinKlatch="Join Klatch"/>;
-        const $ = createComponent(el);
-
-        const output = $.findByQuery('.join-klatch')[0];
-
-        const actual = output.text;
-
-        assert.ok(actual.length > 0, 'should not be an empty string');
-        assert.end();
-    });
-
 });

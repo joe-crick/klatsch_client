@@ -1,5 +1,4 @@
 import React from 'react';
-import './home-bottom-nav.sass';
 
 const home_bottom_nav = (props) => {
 

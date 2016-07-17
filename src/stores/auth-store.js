@@ -17,8 +17,7 @@ AuthStore.createLock = action(function createLock() {
 });
 
 /**
- * [showLock description]
- * @return {[type]} [description]
+ * Show the lock
  */
 AuthStore.showLock = function showLock() {
     AuthStore.lock.show();
@@ -26,7 +25,7 @@ AuthStore.showLock = function showLock() {
 
 AuthStore.showSignUp = function showSignUp() {
   AuthStore.lock.showSignup();
-}
+};
 
 /**
  * [action description]
@@ -47,7 +46,7 @@ AuthStore.setIdToken = function getIdToken() {
     let authHash = AuthStore.lock.parseHash(window.location.hash);
     if (!idToken && authHash) {
         if (authHash.id_token) {
-            idToken = authHash.id_token
+            idToken = authHash.id_token;
             localStorage.setItem('id_token', authHash.id_token);
         }
         if (authHash.error) {
