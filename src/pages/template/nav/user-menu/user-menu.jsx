@@ -1,12 +1,12 @@
 
-export default React => observer((props) => {
+export default React => (props) => {
     return (
       <klatsch-user-menu>
         <div className="nav-user">
             <a href="/profile" className="nav-user-image">
                 <span className="text">show user menu</span>
                 <span className="nav-user-image-thumb">
-                    <img src="https://k1.okccdn.com/media/img/user/placeholder_2013/pq_120.png" alt="cupid0cpuid"></span>
+                    <img src="" alt="cupid0cpuid" /></span>
                 </a>
                 <ul className="nav-user-menu">
                     <li className=" profile">
@@ -51,7 +51,6 @@ export default React => observer((props) => {
                     Add photo
                 </button>
             </div>
-        </div>
       </klatsch-user-menu>
     );
 };

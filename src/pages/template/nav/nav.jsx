@@ -21,4 +21,4 @@ export default React => observer((props) => {
             </div>
         </nav>
     );
-};
+});

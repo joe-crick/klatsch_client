@@ -1,3 +1,4 @@
+import {observer} from 'mobx-react';
 import nav from './nav/nav';
 
 export default React => observer((props) => {

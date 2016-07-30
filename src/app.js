@@ -1,8 +1,16 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Router, Route, IndexRoute, Link, browserHistory, hashHistory } from 'react-router';
+import {
+    Router,
+    Route,
+    IndexRoute,
+    Link,
+    browserHistory,
+    hashHistory
+} from 'react-router';
 import App from './components/app.jsx';
 import Profile from './pages/questions/questions.jsx';
+import siteTemplate from './pages/template/template';
 import './app.sass';
 
 // user: cupid0cpuid
@@ -13,12 +21,16 @@ if (window !== undefined) {
     window.React = React;
 }
 
+const SiteTemplate = siteTemplate(React);
+
 /**
  * Routing table
  */
-render( (
+render((
     <Router history={hashHistory}>
-        <Route path='/' component={App} />
-        <Route path='/profile' component={Profile} />
+        <Route path='/' component={App}/>
+        <Route component={SiteTemplate}>
+            <Route path='/profile' component={Profile}/>
+        </Route>
     </Router>
-  ),document.getElementById('app'));
+), document.getElementById('app'));

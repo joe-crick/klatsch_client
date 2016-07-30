@@ -1,3 +1,5 @@
+import {observer} from 'mobx-react';
+
 export default React => observer((props) => {
     return (
         <klatsch-activity-links>
@@ -35,4 +37,4 @@ export default React => observer((props) => {
             </ul>
         </klatsch-activity-links>
     );
-};
+});

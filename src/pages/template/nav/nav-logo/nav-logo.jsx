@@ -1,5 +1,5 @@
 
-export default React => observer((props) => {
+export default React => (props) => {
     return (
         <klatsch-nav-logo>
           <h1 id="logo" className="nav-logo">
