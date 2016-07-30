@@ -6,11 +6,12 @@ export default React => observer((props) => {
 
     return (
         <klatsch-login-bar>
-            <div>
+            <div className="pull-right">
                 <button className='btn btn-default' onClick={props.authStore.showLock}>
                     {loginTitle}
                 </button>
             </div>
+            <div className="clearfix"></div>
         </klatsch-login-bar>
     );
 });

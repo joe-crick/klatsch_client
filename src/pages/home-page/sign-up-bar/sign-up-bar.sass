@@ -1,9 +1,18 @@
 $break-large: 1200px
+$break-small: 425px
 
 klatsch-sign-up-bar
   label
     color: white
   #zip-code
-    max-width: 175px
+    max-width: 180px
   .continue-button
     margin-top: 1em
+  @media screen and (max-width: $break-small)
+    .continue-button, klatsch-multi-select > .btn-group, klatsch-multi-select > .btn-group > button, #zip-code
+      width: 100%
+      max-width: 100%
+    .login-container
+      display: flex
+      align-content: center
+      flex-direction: column
