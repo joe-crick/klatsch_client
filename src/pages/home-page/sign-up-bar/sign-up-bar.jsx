@@ -4,27 +4,27 @@ export default React => (props) => {
     let MultiSelect = createMultiSelect(React);
     let store = props.store;
     return (
-        <klatsch-basic-search-bar className="container">
+        <klatsch-sign-up-bar>
             <form>
-                <div className="row login-container">
-                    <div className="col-md-4">
-                        <fieldset className="form-group">
-                            <label htmlFor="zip-code">{store.zipCodeText}</label>
-                            <input id="zip-code" className="form-control"
-                              placeholder={store.zipCodeText} value={store.zipCodeTextValue}/>
-                        </fieldset>
-                    </div>
-                    <div className="col-md-4">
-                        <fieldset className="form-group">
-                            <label>{store.ageRangeLabel}</label>
-                            <MultiSelect store={store} selectTitle={store.selectTitle}/>
-                        </fieldset>
-                    </div>
-                    <div className="col-md-4">
-                        <button type="button" className="btn btn-primary continue-button" onClick={store.register}>Continue</button>
-                    </div>
+                <div className="row login-container container">
+                  <div className="col-md-3">
+                      <fieldset className="form-group">
+                          <label htmlFor="zip-code">{store.zipCodeText}</label>
+                          <input id="zip-code" className="form-control"
+                            placeholder={store.zipCodeText} value={store.zipCodeTextValue}/>
+                      </fieldset>
+                  </div>
+                  <div className="col-md-4">
+                      <fieldset className="form-group">
+                          <label>{store.ageRangeLabel}</label>
+                          <MultiSelect options={store.ageRanges} dropDownAction={store.dropDownAction} selectTitle={store.selectTitle}/>
+                      </fieldset>
+                  </div>
+                  <div className="col-md-4 continue-button">
+                      <button type="button" className="btn btn-primary continue-button" onClick={store.register}>Continue</button>
+                  </div>
                 </div>
             </form>
-        </klatsch-basic-search-bar>
+        </klatsch-sign-up-bar>
     );
 };

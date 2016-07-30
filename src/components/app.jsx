@@ -5,7 +5,10 @@ import AuthStore from '../stores/auth-store';
 import {observer} from 'mobx-react';
 import $ from 'jquery';
 
+import userFactory from '../pages/user/user-data';
+
 const HomePage = homePageFactory(React);
+const User = userFactory(React);
 
 export default @observer class App extends Component {
 
@@ -18,7 +21,7 @@ export default @observer class App extends Component {
     }
 
     /**
-     * setupAjax - description
+     * setupAjax - set the request header
      */
     setupAjax() {
         $.ajaxSetup({
@@ -31,7 +34,7 @@ export default @observer class App extends Component {
     }
 
     /**
-     * render - description
+     * render - the application
      */
     render() {
         if (AuthStore.idToken) {
@@ -41,6 +44,7 @@ export default @observer class App extends Component {
             return (
                 <HomePage authStore={AuthStore}/>);
         }
+        // return (<User/>)
     }
 
 };

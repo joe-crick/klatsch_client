@@ -15,9 +15,6 @@ let HomeStore = {
     tagLine: 'Connecting Families for Friends, Playdates, and More',
     showLoginModal() {
       $('#login-modal').modal('toggle');
-    },
-    toggleDropDown(el) {
-      $(el).closest('.btn-group').toggleClass('open');
     }
 };
 

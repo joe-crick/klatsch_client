@@ -10,7 +10,7 @@ export default React => (props) => {
     let SignUpBar = createSignUpBar(React);
 
     return (
-        <klatsch-home-page>
+        <klatsch-home-page className="container-fluid">
             <div className="home-logo"></div>
             <div>
                 {/* LoginBar is an observer. The Observables are defined in home-store.js */}
