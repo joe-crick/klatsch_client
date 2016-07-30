@@ -1,7 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
-// import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, Link, browserHistory, hashHistory } from 'react-router';
 import App from './components/app.jsx';
+import Profile from './pages/questions/questions.jsx';
 import './app.sass';
 
 // user: cupid0cpuid
@@ -15,6 +16,9 @@ if (window !== undefined) {
 /**
  * Routing table
  */
-render(
-  <App/>, document.getElementById('app')
-);
+render( (
+    <Router history={hashHistory}>
+        <Route path='/' component={App} />
+        <Route path='/profile' component={Profile} />
+    </Router>
+  ),document.getElementById('app'));
