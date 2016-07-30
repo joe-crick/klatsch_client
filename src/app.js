@@ -5,8 +5,7 @@ import {
     Route,
     IndexRoute,
     Link,
-    browserHistory,
-    hashHistory
+    browserHistory
 } from 'react-router';
 import App from './components/app.jsx';
 import Profile from './pages/questions/questions.jsx';
@@ -27,7 +26,7 @@ const SiteTemplate = siteTemplate(React);
  * Routing table
  */
 render((
-    <Router history={hashHistory}>
+    <Router history={browserHistory}>
         <Route path='/' component={App}/>
         <Route component={SiteTemplate}>
             <Route path='/profile' component={Profile}/>
