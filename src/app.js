@@ -1,14 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {
-    Router,
-    Route,
-    IndexRoute,
-    Link,
-    browserHistory
-} from 'react-router';
+import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 import App from './components/app.jsx';
-import Profile from './pages/questions/questions.jsx';
+import profile from './pages/questions/questions.jsx';
 import siteTemplate from './pages/template/template';
 import './app.sass';
 
@@ -21,6 +15,7 @@ if (window !== undefined) {
 }
 
 const SiteTemplate = siteTemplate(React);
+const Profile = profile(React);
 
 /**
  * Routing table

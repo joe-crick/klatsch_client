@@ -1,15 +1,14 @@
-import {observer} from 'mobx-react';
 import nav from './nav/nav';
 
-export default React => observer((props) => {
+export default React => ({children}, props) => {
     const Nav = nav(React);
 
     return (
       <klatsch>
         <Nav />
         <main>
-          {this.props.children}
+          {children}
         </main>
       </klatsch>
     )
-});
+};

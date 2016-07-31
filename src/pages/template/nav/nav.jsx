@@ -1,9 +1,9 @@
-import quickLinks from './quick-links/quick-links';
-import activityLinks from './activity-links/activity-links';
 import userMenu from './user-menu/user-menu';
 import navLogo from './nav-logo/nav-logo';
+import quickLinks from './quick-links/quick-links';
+import activityLinks from './activity-links/activity-links';
 
-export default React => observer((props) => {
+export default React => (props) => {
     const QuickLinks = quickLinks(React);
     const ActivityLinks = activityLinks(React);
     const UserMenu = userMenu(React);
@@ -21,4 +21,4 @@ export default React => observer((props) => {
             </div>
         </nav>
     );
-});
+};

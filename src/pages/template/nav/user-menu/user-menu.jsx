@@ -47,7 +47,7 @@ export default React => (props) => {
                 </ul>
             </div>
             <div className="nav-addphoto">
-                <button className="teal flatbutton nav-addphoto-button" onclick="OkPhotos.init()">
+                <button className="teal flatbutton nav-addphoto-button">
                     Add photo
                 </button>
             </div>
