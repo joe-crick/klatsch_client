@@ -3,34 +3,24 @@ import {observer} from 'mobx-react';
 export default React => observer((props) => {
     return (
         <klatsch-activity-links>
-            <ul className="nav-notifications nav-item">
+            <ul className="nav-notifications nav-item nav-menu">
                 <li id="nav_visitors" className="nav-notifications-item visitors  ">
                     <a href="/visitors">
                         <span className="glyph" aria-hidden="true">
-                            <i className="okicon i-visitors"></i>
+                            <i className="i-visitors"></i>
                         </span>
                         <span className="text">
-                            Visitors
-                        </span>
-                    </a>
-                </li>
-                <li id="nav_ratings" className="nav-notifications-item likes  ">
-                    <a href="/who-likes-you">
-                        <span className="glyph" aria-hidden="true">
-                            <i className="okicon i-likes"></i>
-                        </span>
-                        <span className="text">
-                            Likes
+                            {props.visitors}
                         </span>
                     </a>
                 </li>
                 <li id="nav_mailbox" className="nav-notifications-item messages nav-notifications--priority ">
                     <a href="/messages">
                         <span className="glyph" aria-hidden="true">
-                            <i className="okicon i-messages"></i>
+                            <i className="i-messages"></i>
                         </span>
                         <span className="text">
-                            Messages
+                            {props.messages}
                         </span>
                     </a>
                 </li>
