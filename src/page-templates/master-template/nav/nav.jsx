@@ -17,17 +17,7 @@ export default React => (props) => {
                 <div className="container-fluid">
                     <NavLogo/>
                     <div className="collapse navbar-collapse" id="klatsch-nav-bar">
-                        <ul className="nav navbar-nav">
-                            <li className="active">
-                                <a href="#">Find Friends
-                                    <span className="sr-only">(current)</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">Join a Group</a>
-                            </li>
-                        </ul>
-
+                        <QuickLinks />
                         <ul className="nav navbar-nav navbar-right">
                             <li>
                                 <a href="#">Link</a>
