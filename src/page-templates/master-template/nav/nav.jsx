@@ -15,15 +15,7 @@ export default React => (props) => {
         <klatsch-nav>
             <nav className="navbar navbar-default navbar-fixed-top">
                 <div className="container-fluid">
-                    <div className="navbar-header">
-                        <button type="button" className="navbar-toggle"
-                          data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                          aria-expanded="false">
-                            <span className="sr-only">Toggle navigation</span>
-                            <span className="glyphicon glyphicon-menu-hamburger"></span>
-                        </button>
-                        <a className="navbar-brand" href="#">Klatsch</a>
-                    </div>
+                    <NavLogo />
 
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
