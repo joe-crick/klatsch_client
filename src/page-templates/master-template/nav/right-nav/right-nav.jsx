@@ -1,30 +1,17 @@
 import {observer} from 'mobx-react';
+import userMenu from '../user-menu/user-menu';
 
 export default React => observer((props) => {
+    const UserMenu = userMenu(React);
+
     return (
-        <klatsch-activity-links>
-            <ul className="nav navbar-nav">
-                <li id="nav_visitors" className="nav-notifications-item visitors  ">
-                    <a href="/visitors">
-                        <span className="glyph" aria-hidden="true">
-                            <i className="i-visitors"></i>
-                        </span>
-                        <span className="text">
-                            {props.visitors}
-                        </span>
-                    </a>
+        <klatsch-right-nav>
+            <ul className="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">Link</a>
                 </li>
-                <li id="nav_mailbox" className="nav-notifications-item messages nav-notifications--priority ">
-                    <a href="/messages">
-                        <span className="glyph" aria-hidden="true">
-                            <i className="i-messages"></i>
-                        </span>
-                        <span className="text">
-                            {props.messages}
-                        </span>
-                    </a>
-                </li>
+                <UserMenu/>
             </ul>
-        </klatsch-activity-links>
+        </klatsch-right-nav>
     );
 });
