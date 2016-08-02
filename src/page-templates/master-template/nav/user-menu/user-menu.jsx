@@ -8,7 +8,7 @@ export default React => (props) => {
                 <span className="nav-user-image-thumb">
                     <img src="" alt="cupid0cpuid" /></span>
                 </a>
-                <ul className="nav-user-menu nav-menu">
+                <ul className="nav navbar-nav">
                     <li className=" profile">
                         <a href="/profile" className="nav-user-menu-item">
                             Profile

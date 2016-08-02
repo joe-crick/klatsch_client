@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 import App from './components/app.jsx';
 import profile from './pages/questions/questions.jsx';
-import siteTemplate from './pages/template/template';
+import siteTemplate from './page-templates/master-template/master-template';
 import './app.sass';
 
 // user: cupid0cpuid

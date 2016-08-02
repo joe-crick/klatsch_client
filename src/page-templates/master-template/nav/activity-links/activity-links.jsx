@@ -3,7 +3,7 @@ import {observer} from 'mobx-react';
 export default React => observer((props) => {
     return (
         <klatsch-activity-links>
-            <ul className="nav-notifications nav-item nav-menu">
+            <ul className="nav navbar-nav">
                 <li id="nav_visitors" className="nav-notifications-item visitors  ">
                     <a href="/visitors">
                         <span className="glyph" aria-hidden="true">
