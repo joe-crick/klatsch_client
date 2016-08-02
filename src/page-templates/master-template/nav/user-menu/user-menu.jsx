@@ -10,17 +10,17 @@ export default React => (props) => {
             </a>
             <ul className="dropdown-menu">
                 <li>
-                    <a href="#">Action</a>
+                    <a href="#">Profile</a>
                 </li>
                 <li>
-                    <a href="#">Another action</a>
+                    <a href="#">Settings</a>
                 </li>
                 <li>
-                    <a href="#">Something else here</a>
+                    <a href="#">Help</a>
                 </li>
                 <li role="separator" className="divider"></li>
                 <li>
-                    <a href="#">Separated link</a>
+                    <a href="#">Sign Out</a>
                 </li>
             </ul>
         </li>
