@@ -2,7 +2,10 @@ export default React => (props) => {
     return (
         <li className="dropdown">
             <a href="#" className="dropdown-toggle" data-toggle="dropdown"
-              role="button" aria-haspopup="true" aria-expanded="false">Profile
+              role="button" aria-haspopup="true" aria-expanded="false">
+                <div className="small-circle user-profile-avatar" title="Profile">
+                    <span className="glyphicon glyphicon-user" aria-hidden="true"></span>
+                </div>
                 <span className="caret"></span>
             </a>
             <ul className="dropdown-menu">
