@@ -10,13 +10,16 @@ export default React => (props) => {
     let SignUpBar = createSignUpBar(React);
 
     return (
-        <klatsch-home-page className="container-fluid">
-            <div className="home-logo"></div>
-            <div>
-                {/* LoginBar is an observer. The Observables are defined in home-store.js */}
-                <LoginBar store={HomeStore} authStore={props.authStore}/>
-                <SignUpBar store={HomeStore}/>
-                <TagLine tagLine={HomeStore.tagLine}/>
+        <klatsch-home-page>
+            <div className="home-bg">
+                <div className="container">
+                    <div className="home-logo"></div>
+                    <div>
+                        <LoginBar store={HomeStore} authStore={props.authStore}/>
+                        <SignUpBar store={HomeStore}/>
+                        <TagLine tagLine={HomeStore.tagLine}/>
+                    </div>
+                </div>
             </div>
         </klatsch-home-page>
     )
