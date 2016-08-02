@@ -7,7 +7,7 @@ export default React => observer((props) => {
             <div className="btn-group">
                 <button
                   type="button"
-                  className="btn btn-secondary dropdown-toggle"
+                  className="btn btn-default dropdown-toggle"
                   aria-haspopup="true"
                   aria-expanded="false"
                   onClick={event => toggleDropDown(event.target)}>
