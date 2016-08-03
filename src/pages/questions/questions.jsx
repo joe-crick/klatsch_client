@@ -5,8 +5,9 @@ import './question-page.sass';
 
 export default React => (props) => {
 
-  let Question = createQuestion(React);
-  const InPageAlert = inPageAlert(React);
+    let Question = createQuestion(React);
+    const InPageAlert = inPageAlert(React);
+    let containerClassName = 'questions-container ' + (props.questions ? 'questions' : 'no-questions');
 
     const Questions = props.questions ? props.questions.map((question, index) => {
            return <Question props={question} key={index} />;
@@ -14,7 +15,7 @@ export default React => (props) => {
 
     return (
         <klatsch-question-page>
-            <div>
+            <div className={containerClassName}>
               {Questions}
             </div>
         </klatsch-question-page>
