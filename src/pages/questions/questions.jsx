@@ -12,7 +12,6 @@ export default React => (props) => {
 
     return (
         <klatsch-question-page>
-            <div className="home-logo"></div>
             <div>
               {Questions}
             </div>
