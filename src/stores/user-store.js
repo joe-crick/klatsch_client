@@ -40,22 +40,6 @@ extendObservable(UserStore, {
 });
 
 /**
- * setProfile - Gets the base user profile from Auth0
- *
- * @param  {Object} lock    The Auth0 lock
- * @param  {Object} idToken The Auth0 idToken
- */
-UserStore.setProfile = action(function setProfile(lock, idToken) {
-    lock.getProfile(idToken, function setProfileError(err, profile) {
-        if (err) {
-            console.log("Error loading the Profile", err);
-            return;
-        }
-        UserStore.profile = profile;
-    });
-});
-
-/**
  * dropDownAction
  * @param  {[type]} function dropDownAction(option [description]
  */
@@ -64,6 +48,6 @@ UserStore.dropDownAction = action(function dropDownAction(option){
   let selectedRange = Object.assign({}, UserStore.genderOptions[selectedIndex]);
   selectedRange.selected = !selectedRange.selected;
   UserStore.genderOptions[selectedIndex] = selectedRange;
-})
+});
 
 export default UserStore;
