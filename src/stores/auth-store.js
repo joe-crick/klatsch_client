@@ -1,10 +1,11 @@
 import { observable, action } from 'mobx';
 
+const ID_TOKEN = 'KlatschIdToken';
+
 let AuthStore = observable({
-    idToken: '',
+    idToken: sessionStorage.getItem(ID_TOKEN),
     logoutText: 'Logout'
 });
-
 
 /**
  * [action description]
@@ -13,6 +14,7 @@ let AuthStore = observable({
  */
 AuthStore.logout = action(function logout() {
     AuthStore.idToken = '';
+	sessionStorage.removeItem(ID_TOKEN);
     location.href = 'http://' + location.host;
 });
 
@@ -20,7 +22,9 @@ AuthStore.logout = action(function logout() {
  * [setIdToken description]
  */
 AuthStore.setIdToken = action(function setIdToken() {
-    AuthStore.idToken = Math.random();
+    const token = Math.random();
+	sessionStorage.setItem(ID_TOKEN, token);
+    AuthStore.idToken = token;
 });
 
 export default AuthStore;

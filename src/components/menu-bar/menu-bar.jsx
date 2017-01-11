@@ -16,7 +16,7 @@ export default React => (props) => (
         <li className="">
             <a href="">
                 <span className="join-klatsch">
-                    {props.joinklatsch}
+                    {props.joinKlatsch}
                 </span>
             </a>
         </li>
