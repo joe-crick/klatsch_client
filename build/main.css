@@ -47,10 +47,11 @@ klatsch-multi-select {
       outline: none; }
 
 klatsch-user-bar {
-  float: right; }
+  float: right;
+  margin-right: 5px; }
   klatsch-user-bar .profile-picture {
-    height: 25px;
-    width: 25px;
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
     display: block; }
   klatsch-user-bar .nickname {
@@ -67,12 +68,17 @@ klatsch-user-menu {
   klatsch-user-menu .user-menu {
     visibility: hidden;
     list-style: none;
-    transition: all 1s; }
-    klatsch-user-menu .user-menu li {
-      float: left;
-      position: relative;
-      margin-top: 10px;
-      margin-left: -95px; }
+    transition: all 1s;
+    background-color: white;
+    position: relative;
+    width: 200px;
+    left: -170px;
+    top: 10px; }
+    klatsch-user-menu .user-menu a {
+      font-weight: 400;
+      color: #337ab7;
+      padding: 6px 12px;
+      display: inline-block; }
 
 body {
   background-color: snow; }

@@ -71,15 +71,19 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _questions = __webpack_require__(/*! ./pages/questions/questions.jsx */ 263);
+	var _questions = __webpack_require__(/*! ./pages/questions/questions.jsx */ 258);
 	
 	var _questions2 = _interopRequireDefault(_questions);
 	
-	var _masterTemplate = __webpack_require__(/*! ./page-templates/master-template/master-template */ 269);
+	var _dashboard = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../pages/dashboard/dashboard\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	
+	var _dashboard2 = _interopRequireDefault(_dashboard);
+	
+	var _masterTemplate = __webpack_require__(/*! ./page-templates/master-template/master-template */ 266);
 	
 	var _masterTemplate2 = _interopRequireDefault(_masterTemplate);
 	
-	__webpack_require__(/*! ./app.sass */ 276);
+	__webpack_require__(/*! ./app.sass */ 273);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -93,6 +97,7 @@
 	
 	var SiteTemplate = (0, _masterTemplate2.default)(_react2.default);
 	var Profile = (0, _questions2.default)(_react2.default);
+	var Dashboard = (0, _dashboard2.default)(_react2.default);
 	
 	/**
 	 * Routing table
@@ -104,6 +109,7 @@
 		_react2.default.createElement(
 			_reactRouter.Route,
 			{ component: SiteTemplate },
+			_react2.default.createElement(_reactRouter.Route, { path: '/dashboard', component: Dashboard }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/profile', component: Profile })
 		)
 	), document.getElementById('app'));
@@ -27932,15 +27938,15 @@
 	
 	var _homePage2 = _interopRequireDefault(_homePage);
 	
-	var _dashboard = __webpack_require__(/*! ../pages/dashboard/dashboard */ 253);
-	
-	var _dashboard2 = _interopRequireDefault(_dashboard);
-	
-	var _authStore = __webpack_require__(/*! ../stores/auth-store */ 262);
+	var _authStore = __webpack_require__(/*! ../stores/auth-store */ 253);
 	
 	var _authStore2 = _interopRequireDefault(_authStore);
 	
 	var _mobxReact = __webpack_require__(/*! mobx-react */ 249);
+	
+	var _reactRedirect = __webpack_require__(/*! react-redirect */ 254);
+	
+	var _reactRedirect2 = _interopRequireDefault(_reactRedirect);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -27951,7 +27957,6 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var HomePage = (0, _homePage2.default)(_react2.default);
-	var Dashboard = (0, _dashboard2.default)(_react2.default);
 	
 	exports.default = (0, _mobxReact.observer)(_class = function (_Component) {
 	    _inherits(App, _Component);
@@ -27971,7 +27976,11 @@
 	         */
 	        value: function render() {
 	            if (_authStore2.default.idToken) {
-	                return _react2.default.createElement(Dashboard, { authStore: _authStore2.default });
+	                return _react2.default.createElement(
+	                    _reactRedirect2.default,
+	                    { location: '/dashboard' },
+	                    _react2.default.createElement(this.props.activeRouteHandler, null)
+	                );
 	            } else {
 	                return _react2.default.createElement(HomePage, { authStore: _authStore2.default });
 	            }
@@ -32218,274 +32227,6 @@
 
 /***/ },
 /* 253 */
-/*!*******************************************!*\
-  !*** ./src/pages/dashboard/dashboard.jsx ***!
-  \*******************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(/*! react */ 2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _userStore = __webpack_require__(/*! ../../stores/user-store */ 254);
-	
-	var _userStore2 = _interopRequireDefault(_userStore);
-	
-	var _globalStore = __webpack_require__(/*! ../../stores/global-store */ 246);
-	
-	var _globalStore2 = _interopRequireDefault(_globalStore);
-	
-	var _userBar = __webpack_require__(/*! ../../components/user-bar/user-bar */ 255);
-	
-	var _userBar2 = _interopRequireDefault(_userBar);
-	
-	var _menuBar = __webpack_require__(/*! ../../components/menu-bar/menu-bar */ 257);
-	
-	var _menuBar2 = _interopRequireDefault(_menuBar);
-	
-	__webpack_require__(/*! ./dashboard.sass */ 258);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var UserBar = (0, _userBar2.default)(_react2.default);
-	var MenuBar = (0, _menuBar2.default)(_react2.default);
-	var browse = _globalStore2.default.browse,
-	    joinKlatsch = _globalStore2.default.joinKlatsch;
-	
-	exports.default = function (React) {
-		return function (props) {
-			return React.createElement(
-				'klatsch-dashboard',
-				null,
-				React.createElement(MenuBar, { browse: browse, joinKlatsch: joinKlatsch }),
-				React.createElement(UserBar, { userStore: _userStore2.default, authStore: props.authStore })
-			);
-		};
-	};
-
-/***/ },
-/* 254 */
-/*!**********************************!*\
-  !*** ./src/stores/user-store.js ***!
-  \**********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _mobx = __webpack_require__(/*! mobx */ 245);
-	
-	var _globalStore = __webpack_require__(/*! ./global-store */ 246);
-	
-	var _globalStore2 = _interopRequireDefault(_globalStore);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var UserStore = {
-		userNameLabel: 'User name',
-		genderLabel: 'Gender',
-		genderSelectLabel: 'I am a',
-		ageLabel: 'Age',
-		zipCodeText: _globalStore2.default.zipCodeText
-	};
-	
-	(0, _mobx.extendObservable)(UserStore, {
-		profile: {
-			nickname: 'test-user'
-		},
-		zipCode: '8811-test',
-		children: [],
-		Age: 0,
-		genderOptions: [{ className: '', value: '0', label: 'Woman' }, { className: '', value: '1', label: 'Man' }, { className: '', value: '2', label: 'Agender' }, { className: '', value: '3', label: 'Androgynous' }, { className: '', value: '4', label: 'Bigender' }, { className: '', value: '5', label: 'Cis Man' }, { className: '', value: '6', label: 'Cis Woman' }, { className: '', value: '7', label: 'Genderfluid' }, { className: '', value: '8', label: 'Genderqueer' }, { className: '', value: '9', label: 'Gender nonconforming' }, { className: '', value: '10', label: 'Hijra' }, { className: '', value: '11', label: 'Intersex' }, { className: '', value: '12', label: 'Non-binary' }, { className: '', value: '13', label: 'Pangender' }, { className: '', value: '14', label: 'Transfeminine' }, { className: '', value: '15', label: 'Transgender' }, { className: '', value: '16', label: 'Transmasculine' }, { className: '', value: '17', label: 'Transsexual' }, { className: '', value: '18', label: 'Two spirit' }, { className: '', value: '19', label: 'Other' }]
-	});
-	
-	/**
-	 * dropDownAction
-	 * @param  {[type]} function dropDownAction(option [description]
-	 */
-	UserStore.dropDownAction = (0, _mobx.action)(function dropDownAction(option) {
-		var selectedIndex = UserStore.genderOptions.indexOf(option);
-		var selectedRange = Object.assign({}, UserStore.genderOptions[selectedIndex]);
-		selectedRange.selected = !selectedRange.selected;
-		UserStore.genderOptions[selectedIndex] = selectedRange;
-	});
-	
-	exports.default = UserStore;
-
-/***/ },
-/* 255 */
-/*!**********************************************!*\
-  !*** ./src/components/user-bar/user-bar.jsx ***!
-  \**********************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _mobxReact = __webpack_require__(/*! mobx-react */ 249);
-	
-	var _userMenu = __webpack_require__(/*! ../user-menu/user-menu */ 256);
-	
-	var _userMenu2 = _interopRequireDefault(_userMenu);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = function (React) {
-	    return (0, _mobxReact.observer)(function (props) {
-	        var profile = props.userStore.profile;
-	        var loading = props.userStore.loading;
-	        var UserMenu = (0, _userMenu2.default)(React);
-	
-	        if (profile) {
-	            return React.createElement(
-	                'klatsch-user-bar',
-	                null,
-	                React.createElement(
-	                    'h3',
-	                    { className: 'pull-xs-left nickname' },
-	                    profile.nickname
-	                ),
-	                React.createElement(
-	                    'div',
-	                    { className: 'pull-xs-left' },
-	                    React.createElement('img', { className: 'profile-picture', src: profile.picture }),
-	                    React.createElement(UserMenu, { logout: props.authStore.logout, logoutText: props.authStore.logoutText })
-	                ),
-	                React.createElement('div', { className: 'clear-fix' })
-	            );
-	        } else {
-	            return React.createElement(
-	                'div',
-	                { className: 'loading' },
-	                loading
-	            );
-	        }
-	    });
-	};
-
-/***/ },
-/* 256 */
-/*!************************************************!*\
-  !*** ./src/components/user-menu/user-menu.jsx ***!
-  \************************************************/
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	exports.default = function (React) {
-	    return function (props) {
-	        return React.createElement(
-	            "klatsch-user-menu",
-	            null,
-	            React.createElement(
-	                "ul",
-	                { className: "user-menu" },
-	                React.createElement(
-	                    "li",
-	                    null,
-	                    React.createElement(
-	                        "button",
-	                        { className: "btn btn-default", onClick: props.logout },
-	                        props.logoutText
-	                    )
-	                )
-	            )
-	        );
-	    };
-	};
-
-/***/ },
-/* 257 */
-/*!**********************************************!*\
-  !*** ./src/components/menu-bar/menu-bar.jsx ***!
-  \**********************************************/
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	exports.default = function (React) {
-	    return function (props) {
-	        return React.createElement(
-	            "klatsch-menu-bar",
-	            null,
-	            React.createElement(
-	                "h1",
-	                { id: "logo", className: "nav-logo" },
-	                React.createElement(
-	                    "a",
-	                    { href: "/home" },
-	                    React.createElement("div", { className: "icon", "aria-hidden": "true", title: "klatsch" })
-	                )
-	            ),
-	            React.createElement(
-	                "ul",
-	                { className: "nav-links nav-item" },
-	                React.createElement(
-	                    "li",
-	                    { className: "" },
-	                    React.createElement(
-	                        "a",
-	                        { href: "/match" },
-	                        React.createElement(
-	                            "span",
-	                            { className: "browse" },
-	                            props.browse
-	                        )
-	                    )
-	                ),
-	                React.createElement(
-	                    "li",
-	                    { className: "" },
-	                    React.createElement(
-	                        "a",
-	                        { href: "" },
-	                        React.createElement(
-	                            "span",
-	                            { className: "join-klatsch" },
-	                            props.joinKlatsch
-	                        )
-	                    )
-	                )
-	            )
-	        );
-	    };
-	};
-
-/***/ },
-/* 258 */
-/*!********************************************!*\
-  !*** ./src/pages/dashboard/dashboard.sass ***!
-  \********************************************/
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-	"use strict";
-
-/***/ },
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */
 /*!**********************************!*\
   !*** ./src/stores/auth-store.js ***!
   \**********************************/
@@ -32529,7 +32270,244 @@
 	exports.default = AuthStore;
 
 /***/ },
-/* 263 */
+/* 254 */
+/*!***********************************!*\
+  !*** ./~/react-redirect/index.js ***!
+  \***********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(/*! react */ 2),
+	    createSideEffect = __webpack_require__(/*! react-side-effect */ 255);
+	
+	var _serverRedirect = null;
+	
+	function getRedirectFromPropsList(propsList) {
+	    var innermostProps = propsList[propsList.length - 1];
+	    if (innermostProps) {
+		return innermostProps.location;
+	    }
+	}
+	
+	var WindowRedirect = createSideEffect(function handleChange(propsList) {
+		var location = getRedirectFromPropsList(propsList);
+	
+		if (typeof document !== 'undefined') {
+		    if (location)
+	      window.location = location;
+		  } else {
+		    _serverRedirect = location || null;
+		}
+	    }, {
+		displayName: 'WindowRedirect',
+	
+		propTypes: {
+		    location: React.PropTypes.string.isRequired
+		},
+	
+		statics: {
+		    peek: function () {
+			return _serverRedirect;
+		    },
+	
+		    rewind: function () {
+			var location = _serverRedirect;
+			this.dispose();
+			return location;
+		    }
+		}
+	    });
+	
+	module.exports = WindowRedirect;
+
+/***/ },
+/* 255 */
+/*!**************************************!*\
+  !*** ./~/react-side-effect/index.js ***!
+  \**************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(/*! react */ 2),
+	    invariant = __webpack_require__(/*! fbjs/lib/invariant */ 256),
+	    shallowEqual = __webpack_require__(/*! fbjs/lib/shallowEqual */ 257);
+	
+	function createSideEffect(onChange, mixin) {
+	  invariant(
+	    typeof onChange === 'function',
+	    'onChange(propsList) is a required argument.'
+	  );
+	
+	  var mountedInstances = [];
+	
+	  function emitChange() {
+	    onChange(mountedInstances.map(function (instance) {
+	      return instance.props;
+	    }));
+	  }
+	
+	  return React.createClass({
+	    mixins: [mixin],
+	
+	    statics: {
+	      dispose: function () {
+	        mountedInstances = [];
+	        emitChange();
+	      }
+	    },
+	
+	    shouldComponentUpdate: function (nextProps) {
+	      return !shallowEqual(nextProps, this.props);
+	    },
+	
+	    componentWillMount: function () {
+	      mountedInstances.push(this);
+	      emitChange();
+	    },
+	
+	    componentDidUpdate: function () {
+	      emitChange();
+	    },
+	
+	    componentWillUnmount: function () {
+	      var index = mountedInstances.indexOf(this);
+	      mountedInstances.splice(index, 1);
+	      emitChange();
+	    },
+	
+	    render: function () {
+	      if (this.props.children) {
+	        return React.Children.only(this.props.children);
+	      } else {
+	        return null;
+	      }
+	    }
+	  });
+	}
+	
+	module.exports = createSideEffect;
+
+
+/***/ },
+/* 256 */
+/*!*****************************************************!*\
+  !*** ./~/react-side-effect/~/fbjs/lib/invariant.js ***!
+  \*****************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule invariant
+	 */
+	
+	"use strict";
+	
+	/**
+	 * Use invariant() to assert state which your program assumes to be true.
+	 *
+	 * Provide sprintf-style format (only %s is supported) and arguments
+	 * to provide information about what broke and what you were
+	 * expecting.
+	 *
+	 * The invariant message will be stripped in production, but the invariant
+	 * will remain to ensure logic does not differ in production.
+	 */
+	
+	var invariant = function (condition, format, a, b, c, d, e, f) {
+	  if (process.env.NODE_ENV !== 'production') {
+	    if (format === undefined) {
+	      throw new Error('invariant requires an error message argument');
+	    }
+	  }
+	
+	  if (!condition) {
+	    var error;
+	    if (format === undefined) {
+	      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+	    } else {
+	      var args = [a, b, c, d, e, f];
+	      var argIndex = 0;
+	      error = new Error('Invariant Violation: ' + format.replace(/%s/g, function () {
+	        return args[argIndex++];
+	      }));
+	    }
+	
+	    error.framesToPop = 1; // we don't care about invariant's own frame
+	    throw error;
+	  }
+	};
+	
+	module.exports = invariant;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../../process/browser.js */ 4)))
+
+/***/ },
+/* 257 */
+/*!********************************************************!*\
+  !*** ./~/react-side-effect/~/fbjs/lib/shallowEqual.js ***!
+  \********************************************************/
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule shallowEqual
+	 * @typechecks
+	 * 
+	 */
+	
+	'use strict';
+	
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+	
+	/**
+	 * Performs equality by iterating through keys on an object and returning false
+	 * when any key has values which are not strictly equal between the arguments.
+	 * Returns true when the values of all keys are strictly equal.
+	 */
+	function shallowEqual(objA, objB) {
+	  if (objA === objB) {
+	    return true;
+	  }
+	
+	  if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) {
+	    return false;
+	  }
+	
+	  var keysA = Object.keys(objA);
+	  var keysB = Object.keys(objB);
+	
+	  if (keysA.length !== keysB.length) {
+	    return false;
+	  }
+	
+	  // Test for A's keys different from B.
+	  var bHasOwnProperty = hasOwnProperty.bind(objB);
+	  for (var i = 0; i < keysA.length; i++) {
+	    if (!bHasOwnProperty(keysA[i]) || objA[keysA[i]] !== objB[keysA[i]]) {
+	      return false;
+	    }
+	  }
+	
+	  return true;
+	}
+	
+	module.exports = shallowEqual;
+
+/***/ },
+/* 258 */
 /*!*******************************************!*\
   !*** ./src/pages/questions/questions.jsx ***!
   \*******************************************/
@@ -32541,19 +32519,19 @@
 	    value: true
 	});
 	
-	var _questionStore = __webpack_require__(/*! ../../stores/question-store */ 264);
+	var _questionStore = __webpack_require__(/*! ../../stores/question-store */ 259);
 	
 	var _questionStore2 = _interopRequireDefault(_questionStore);
 	
-	var _question = __webpack_require__(/*! ../../components/question/question.jsx */ 265);
+	var _question = __webpack_require__(/*! ../../components/question/question.jsx */ 260);
 	
 	var _question2 = _interopRequireDefault(_question);
 	
-	var _inPageAlert = __webpack_require__(/*! ../../components/in-page-alert/in-page-alert */ 266);
+	var _inPageAlert = __webpack_require__(/*! ../../components/in-page-alert/in-page-alert */ 261);
 	
 	var _inPageAlert2 = _interopRequireDefault(_inPageAlert);
 	
-	__webpack_require__(/*! ./question-page.sass */ 267);
+	__webpack_require__(/*! ./question-page.sass */ 262);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -32581,7 +32559,7 @@
 	};
 
 /***/ },
-/* 264 */
+/* 259 */
 /*!**************************************!*\
   !*** ./src/stores/question-store.js ***!
   \**************************************/
@@ -32595,7 +32573,7 @@
 	exports.default = {};
 
 /***/ },
-/* 265 */
+/* 260 */
 /*!**********************************************!*\
   !*** ./src/components/question/question.jsx ***!
   \**********************************************/
@@ -32654,7 +32632,7 @@
 	};
 
 /***/ },
-/* 266 */
+/* 261 */
 /*!********************************************************!*\
   !*** ./src/components/in-page-alert/in-page-alert.jsx ***!
   \********************************************************/
@@ -32703,7 +32681,7 @@
 	};
 
 /***/ },
-/* 267 */
+/* 262 */
 /*!************************************************!*\
   !*** ./src/pages/questions/question-page.sass ***!
   \************************************************/
@@ -32713,8 +32691,10 @@
 	"use strict";
 
 /***/ },
-/* 268 */,
-/* 269 */
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */
 /*!****************************************************************!*\
   !*** ./src/page-templates/master-template/master-template.jsx ***!
   \****************************************************************/
@@ -32726,7 +32706,7 @@
 	  value: true
 	});
 	
-	var _nav = __webpack_require__(/*! ./nav/nav */ 270);
+	var _nav = __webpack_require__(/*! ./nav/nav */ 267);
 	
 	var _nav2 = _interopRequireDefault(_nav);
 	
@@ -32752,7 +32732,7 @@
 	};
 
 /***/ },
-/* 270 */
+/* 267 */
 /*!********************************************************!*\
   !*** ./src/page-templates/master-template/nav/nav.jsx ***!
   \********************************************************/
@@ -32764,19 +32744,19 @@
 	    value: true
 	});
 	
-	var _navLogo = __webpack_require__(/*! ./nav-logo/nav-logo */ 271);
+	var _navLogo = __webpack_require__(/*! ./nav-logo/nav-logo */ 268);
 	
 	var _navLogo2 = _interopRequireDefault(_navLogo);
 	
-	var _quickLinks = __webpack_require__(/*! ./quick-links/quick-links */ 272);
+	var _quickLinks = __webpack_require__(/*! ./quick-links/quick-links */ 269);
 	
 	var _quickLinks2 = _interopRequireDefault(_quickLinks);
 	
-	var _rightNav = __webpack_require__(/*! ./right-nav/right-nav */ 273);
+	var _rightNav = __webpack_require__(/*! ./right-nav/right-nav */ 270);
 	
 	var _rightNav2 = _interopRequireDefault(_rightNav);
 	
-	var _templateStore = __webpack_require__(/*! ../../../stores/template-store */ 275);
+	var _templateStore = __webpack_require__(/*! ../../../stores/template-store */ 272);
 	
 	var _templateStore2 = _interopRequireDefault(_templateStore);
 	
@@ -32815,7 +32795,7 @@
 	};
 
 /***/ },
-/* 271 */
+/* 268 */
 /*!**********************************************************************!*\
   !*** ./src/page-templates/master-template/nav/nav-logo/nav-logo.jsx ***!
   \**********************************************************************/
@@ -32858,7 +32838,7 @@
 	};
 
 /***/ },
-/* 272 */
+/* 269 */
 /*!****************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/quick-links/quick-links.jsx ***!
   \****************************************************************************/
@@ -32925,7 +32905,7 @@
 	};
 
 /***/ },
-/* 273 */
+/* 270 */
 /*!************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/right-nav/right-nav.jsx ***!
   \************************************************************************/
@@ -32939,7 +32919,7 @@
 	
 	var _mobxReact = __webpack_require__(/*! mobx-react */ 249);
 	
-	var _userMenu = __webpack_require__(/*! ../user-menu/user-menu */ 274);
+	var _userMenu = __webpack_require__(/*! ../user-menu/user-menu */ 271);
 	
 	var _userMenu2 = _interopRequireDefault(_userMenu);
 	
@@ -32989,7 +32969,7 @@
 	};
 
 /***/ },
-/* 274 */
+/* 271 */
 /*!************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/user-menu/user-menu.jsx ***!
   \************************************************************************/
@@ -33063,7 +33043,7 @@
 	};
 
 /***/ },
-/* 275 */
+/* 272 */
 /*!**************************************!*\
   !*** ./src/stores/template-store.js ***!
   \**************************************/
@@ -33083,7 +33063,7 @@
 	exports.default = TemplateStore;
 
 /***/ },
-/* 276 */
+/* 273 */
 /*!**********************!*\
   !*** ./src/app.sass ***!
   \**********************/

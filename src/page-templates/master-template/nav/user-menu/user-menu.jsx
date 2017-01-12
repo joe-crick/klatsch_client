@@ -1,3 +1,6 @@
+import {Link} from 'react-router';
+import authStore from '../../../../stores/auth-store';
+
 export default React => (props) => {
     return (
         <li className="dropdown">
@@ -10,7 +13,7 @@ export default React => (props) => {
             </a>
             <ul className="dropdown-menu">
                 <li>
-                    <a href="#">Profile</a>
+                    <Link to="/profile">Profile</Link>
                 </li>
                 <li>
                     <a href="#">Settings</a>
@@ -20,7 +23,7 @@ export default React => (props) => {
                 </li>
                 <li role="separator" className="divider"></li>
                 <li>
-                    <a href="#">Sign Out</a>
+                    <button className="btn btn-link" onClick={authStore.logout}>{authStore.logoutText}</button>
                 </li>
             </ul>
         </li>
