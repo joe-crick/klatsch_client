@@ -22,4 +22,4 @@ export default @observer class App extends Component {
         }
     }
 
-};
+}

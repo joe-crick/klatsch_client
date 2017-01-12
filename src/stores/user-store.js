@@ -6,12 +6,14 @@ let UserStore = {
 	genderLabel: 'Gender',
 	genderSelectLabel: 'I am a',
 	ageLabel: 'Age',
-	zipCodeText: Global.zipCodeText
+	zipCodeText: Global.zipCodeText,
+	profileText: 'Profile'
 };
 
 extendObservable(UserStore, {
 	profile: {
-		nickname: 'test-user'
+		nickname: 'test-user',
+		picture: 'http://hilobrow.com/wp-content/uploads/2009/05/channing-550.jpg'
 	},
 	zipCode: '8811-test',
 	children: [],
