@@ -75,15 +75,15 @@
 	
 	var _questions2 = _interopRequireDefault(_questions);
 	
-	var _dashboard = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../pages/dashboard/dashboard\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _dashboard = __webpack_require__(/*! ./pages/dashboard/dashboard */ 266);
 	
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 	
-	var _masterTemplate = __webpack_require__(/*! ./page-templates/master-template/master-template */ 266);
+	var _masterTemplate = __webpack_require__(/*! ./page-templates/master-template/master-template */ 269);
 	
 	var _masterTemplate2 = _interopRequireDefault(_masterTemplate);
 	
-	__webpack_require__(/*! ./app.sass */ 273);
+	__webpack_require__(/*! ./app.sass */ 276);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -27923,7 +27923,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+		value: true
 	});
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -27959,35 +27959,35 @@
 	var HomePage = (0, _homePage2.default)(_react2.default);
 	
 	exports.default = (0, _mobxReact.observer)(_class = function (_Component) {
-	    _inherits(App, _Component);
+		_inherits(App, _Component);
 	
-	    function App() {
-	        _classCallCheck(this, App);
+		function App() {
+			_classCallCheck(this, App);
 	
-	        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-	    }
+			return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+		}
 	
-	    _createClass(App, [{
-	        key: 'render',
+		_createClass(App, [{
+			key: 'render',
 	
 	
-	        /**
-	         * render - the application
-	         */
-	        value: function render() {
-	            if (_authStore2.default.idToken) {
-	                return _react2.default.createElement(
-	                    _reactRedirect2.default,
-	                    { location: '/dashboard' },
-	                    _react2.default.createElement(this.props.activeRouteHandler, null)
-	                );
-	            } else {
-	                return _react2.default.createElement(HomePage, { authStore: _authStore2.default });
-	            }
-	        }
-	    }]);
+			/**
+	   * render - the application
+	   */
+			value: function render() {
+				if (_authStore2.default.idToken) {
+					return _react2.default.createElement(
+						_reactRedirect2.default,
+						{ location: '/dashboard' },
+						_react2.default.createElement(this.props.activeRouteHandler, null)
+					);
+				} else {
+					return _react2.default.createElement(HomePage, { authStore: _authStore2.default });
+				}
+			}
+		}]);
 
-	    return App;
+		return App;
 	}(_react.Component)) || _class;
 
 /***/ },
@@ -32695,6 +32695,44 @@
 /* 264 */,
 /* 265 */,
 /* 266 */
+/*!*******************************************!*\
+  !*** ./src/pages/dashboard/dashboard.jsx ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	__webpack_require__(/*! ./dashboard.sass */ 267);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (React) {
+		return function () {
+			return React.createElement('klatsch-dashboard', null);
+		};
+	};
+
+/***/ },
+/* 267 */
+/*!********************************************!*\
+  !*** ./src/pages/dashboard/dashboard.sass ***!
+  \********************************************/
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	"use strict";
+
+/***/ },
+/* 268 */,
+/* 269 */
 /*!****************************************************************!*\
   !*** ./src/page-templates/master-template/master-template.jsx ***!
   \****************************************************************/
@@ -32706,7 +32744,7 @@
 	  value: true
 	});
 	
-	var _nav = __webpack_require__(/*! ./nav/nav */ 267);
+	var _nav = __webpack_require__(/*! ./nav/nav */ 270);
 	
 	var _nav2 = _interopRequireDefault(_nav);
 	
@@ -32732,7 +32770,7 @@
 	};
 
 /***/ },
-/* 267 */
+/* 270 */
 /*!********************************************************!*\
   !*** ./src/page-templates/master-template/nav/nav.jsx ***!
   \********************************************************/
@@ -32744,19 +32782,19 @@
 	    value: true
 	});
 	
-	var _navLogo = __webpack_require__(/*! ./nav-logo/nav-logo */ 268);
+	var _navLogo = __webpack_require__(/*! ./nav-logo/nav-logo */ 271);
 	
 	var _navLogo2 = _interopRequireDefault(_navLogo);
 	
-	var _quickLinks = __webpack_require__(/*! ./quick-links/quick-links */ 269);
+	var _quickLinks = __webpack_require__(/*! ./quick-links/quick-links */ 272);
 	
 	var _quickLinks2 = _interopRequireDefault(_quickLinks);
 	
-	var _rightNav = __webpack_require__(/*! ./right-nav/right-nav */ 270);
+	var _rightNav = __webpack_require__(/*! ./right-nav/right-nav */ 273);
 	
 	var _rightNav2 = _interopRequireDefault(_rightNav);
 	
-	var _templateStore = __webpack_require__(/*! ../../../stores/template-store */ 272);
+	var _templateStore = __webpack_require__(/*! ../../../stores/template-store */ 275);
 	
 	var _templateStore2 = _interopRequireDefault(_templateStore);
 	
@@ -32795,7 +32833,7 @@
 	};
 
 /***/ },
-/* 268 */
+/* 271 */
 /*!**********************************************************************!*\
   !*** ./src/page-templates/master-template/nav/nav-logo/nav-logo.jsx ***!
   \**********************************************************************/
@@ -32838,7 +32876,7 @@
 	};
 
 /***/ },
-/* 269 */
+/* 272 */
 /*!****************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/quick-links/quick-links.jsx ***!
   \****************************************************************************/
@@ -32905,7 +32943,7 @@
 	};
 
 /***/ },
-/* 270 */
+/* 273 */
 /*!************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/right-nav/right-nav.jsx ***!
   \************************************************************************/
@@ -32919,7 +32957,7 @@
 	
 	var _mobxReact = __webpack_require__(/*! mobx-react */ 249);
 	
-	var _userMenu = __webpack_require__(/*! ../user-menu/user-menu */ 271);
+	var _userMenu = __webpack_require__(/*! ../user-menu/user-menu */ 274);
 	
 	var _userMenu2 = _interopRequireDefault(_userMenu);
 	
@@ -32969,72 +33007,80 @@
 	};
 
 /***/ },
-/* 271 */
+/* 274 */
 /*!************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/user-menu/user-menu.jsx ***!
   \************************************************************************/
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 	
+	var _reactRouter = __webpack_require__(/*! react-router */ 179);
+	
+	var _authStore = __webpack_require__(/*! ../../../../stores/auth-store */ 253);
+	
+	var _authStore2 = _interopRequireDefault(_authStore);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	exports.default = function (React) {
 	    return function (props) {
 	        return React.createElement(
-	            "li",
-	            { className: "dropdown" },
+	            'li',
+	            { className: 'dropdown' },
 	            React.createElement(
-	                "a",
-	                { href: "#", className: "dropdown-toggle", "data-toggle": "dropdown",
-	                    role: "button", "aria-haspopup": "true", "aria-expanded": "false" },
+	                'a',
+	                { href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown',
+	                    role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
 	                React.createElement(
-	                    "div",
-	                    { className: "small-circle user-profile-avatar", title: "Profile" },
-	                    React.createElement("span", { className: "glyphicon glyphicon-user", "aria-hidden": "true" })
+	                    'div',
+	                    { className: 'small-circle user-profile-avatar', title: 'Profile' },
+	                    React.createElement('span', { className: 'glyphicon glyphicon-user', 'aria-hidden': 'true' })
 	                ),
-	                React.createElement("span", { className: "caret" })
+	                React.createElement('span', { className: 'caret' })
 	            ),
 	            React.createElement(
-	                "ul",
-	                { className: "dropdown-menu" },
+	                'ul',
+	                { className: 'dropdown-menu' },
 	                React.createElement(
-	                    "li",
+	                    'li',
 	                    null,
 	                    React.createElement(
-	                        "a",
-	                        { href: "#" },
-	                        "Profile"
+	                        _reactRouter.Link,
+	                        { to: '/profile' },
+	                        'Profile'
 	                    )
 	                ),
 	                React.createElement(
-	                    "li",
+	                    'li',
 	                    null,
 	                    React.createElement(
-	                        "a",
-	                        { href: "#" },
-	                        "Settings"
+	                        'a',
+	                        { href: '#' },
+	                        'Settings'
 	                    )
 	                ),
 	                React.createElement(
-	                    "li",
+	                    'li',
 	                    null,
 	                    React.createElement(
-	                        "a",
-	                        { href: "#" },
-	                        "Help"
+	                        'a',
+	                        { href: '#' },
+	                        'Help'
 	                    )
 	                ),
-	                React.createElement("li", { role: "separator", className: "divider" }),
+	                React.createElement('li', { role: 'separator', className: 'divider' }),
 	                React.createElement(
-	                    "li",
+	                    'li',
 	                    null,
 	                    React.createElement(
-	                        "a",
-	                        { href: "#" },
-	                        "Sign Out"
+	                        'button',
+	                        { className: 'btn btn-link', onClick: _authStore2.default.logout },
+	                        _authStore2.default.logoutText
 	                    )
 	                )
 	            )
@@ -33043,7 +33089,7 @@
 	};
 
 /***/ },
-/* 272 */
+/* 275 */
 /*!**************************************!*\
   !*** ./src/stores/template-store.js ***!
   \**************************************/
@@ -33063,7 +33109,7 @@
 	exports.default = TemplateStore;
 
 /***/ },
-/* 273 */
+/* 276 */
 /*!**********************!*\
   !*** ./src/app.sass ***!
   \**********************/
