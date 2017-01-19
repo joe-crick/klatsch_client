@@ -3,18 +3,39 @@ import quickPicksFactory from './quick-picks/quick-picks';
 
 const userList = [
 	{profile: 'Young', img: 'https://childandfamilyri.com/wp-content/uploads/2016/02/young-family.jpg'},
-	{profile: 'Wang', img: 'https://d3n8a8pro7vhmx.cloudfront.net/wfunj/pages/43/attachments/original/1400872367/strengthening-families.jpg?1400872367'},
+	{
+		profile: 'Wang',
+		img: 'https://d3n8a8pro7vhmx.cloudfront.net/wfunj/pages/43/attachments/original/1400872367/strengthening-families.jpg?1400872367'
+	},
 	{profile: 'Tompson', img: 'http://www.fshalifax.com/wp-content/uploads/2016/09/o-FAMILY-VACATION-facebook.jpg'}
 ];
 
-const showProfile = () => {}
+const showProfile = () => {
+};
 
-export default React => props => {
-	const QuickPicks = quickPicksFactory(React);
+export default React => {
 
-	return (
-		<klatsch-dashboard>
-			<QuickPicks profiles={userList} showProfile={showProfile}/>
-		</klatsch-dashboard>
-	);
+	const {array, func} = React.PropTypes;
+
+	return function Dashboard(props) {
+		const QuickPicks = quickPicksFactory(React);
+
+		Dashboard.PropTypes ={
+			userList: array,
+			showProfile: func
+		};
+
+		return {
+
+			props,
+
+			render() {
+				return (
+					<klatsch-dashboard>
+						<QuickPicks profiles={userList} showProfile={showProfile}/>
+					</klatsch-dashboard>
+				);
+			}
+		}
+	}
 };

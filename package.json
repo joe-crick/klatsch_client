@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "folktale": "^2.0.0-alpha2",
     "local-links": "^1.4.0",
     "lodash.assign": "^3.2.0",
     "lodash.has": "^3.2.1",
@@ -13,7 +14,6 @@
     "mobx": "^2.1.7",
     "mobx-react": "^3.1.0",
     "moment": "^2.14.1",
-    "monet": "^0.8.10",
     "node-libs-browser": "^0.5.2",
     "octicons": "^2.2.0",
     "qs": "^3.1.0",

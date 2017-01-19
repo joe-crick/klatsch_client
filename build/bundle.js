@@ -32714,19 +32714,39 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var userList = [{ profile: 'Young', img: 'https://childandfamilyri.com/wp-content/uploads/2016/02/young-family.jpg' }, { profile: 'Wang', img: 'https://d3n8a8pro7vhmx.cloudfront.net/wfunj/pages/43/attachments/original/1400872367/strengthening-families.jpg?1400872367' }, { profile: 'Tompson', img: 'https://yt3.ggpht.com/-hqxszAw6XZ8/AAAAAAAAAAI/AAAAAAAAAAA/QUqqepevERQ/s900-c-k-no-mo-rj-c0xffffff/photo.jpg' }];
+	var userList = [{ profile: 'Young', img: 'https://childandfamilyri.com/wp-content/uploads/2016/02/young-family.jpg' }, {
+		profile: 'Wang',
+		img: 'https://d3n8a8pro7vhmx.cloudfront.net/wfunj/pages/43/attachments/original/1400872367/strengthening-families.jpg?1400872367'
+	}, { profile: 'Tompson', img: 'http://www.fshalifax.com/wp-content/uploads/2016/09/o-FAMILY-VACATION-facebook.jpg' }];
 	
 	var showProfile = function showProfile() {};
 	
 	exports.default = function (React) {
-		return function (props) {
+		var _React$PropTypes = React.PropTypes,
+		    array = _React$PropTypes.array,
+		    func = _React$PropTypes.func;
+	
+	
+		return function Dashboard(props) {
 			var QuickPicks = (0, _quickPicks2.default)(React);
 	
-			return React.createElement(
-				'klatsch-dashboard',
-				null,
-				React.createElement(QuickPicks, { profiles: userList, showProfile: showProfile })
-			);
+			Dashboard.PropTypes = {
+				userList: array,
+				showProfile: func
+			};
+	
+			return {
+	
+				props: props,
+	
+				render: function render() {
+					return React.createElement(
+						'klatsch-dashboard',
+						null,
+						React.createElement(QuickPicks, { profiles: userList, showProfile: showProfile })
+					);
+				}
+			};
 		};
 	};
 
@@ -32754,19 +32774,17 @@
 		value: true
 	});
 	
-	var _mobxReact = __webpack_require__(/*! mobx-react */ 249);
-	
 	var _reactRouter = __webpack_require__(/*! react-router */ 179);
 	
 	__webpack_require__(/*! ./quick-picks.sass */ 270);
 	
 	exports.default = function (React) {
-		var string = React.propTypes.string;
+		var string = React.PropTypes.string;
 	
 	
-		return (0, _mobxReact.observer)(function QuickPicks(props) {
+		return function QuickPicks(props) {
 	
-			QuickPicks.propTypes = {
+			QuickPicks.PropTypes = {
 				profile: string,
 				img: string
 			};
@@ -32775,8 +32793,13 @@
 	
 				props: props,
 	
+				componentDidMount: function componentDidMount() {
+					console.log('Component Did Mount');
+				},
+				componentWillMount: function componentWillMount() {
+					console.log('Component Will Mount');
+				},
 				render: function render() {
-	
 					return React.createElement(
 						'klatsch-quick-picks',
 						null,
@@ -32808,7 +32831,7 @@
 					);
 				}
 			};
-		});
+		};
 	};
 
 /***/ },
