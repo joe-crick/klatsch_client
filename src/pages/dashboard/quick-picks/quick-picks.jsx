@@ -17,6 +17,14 @@ export default React => {
 
 			props,
 
+			componentDidMount () {
+				console.log('Component Did Mount');
+			},
+
+			componentWillMount () {
+				console.log('Component Will Mount');
+			},
+
 			render() {
 				return (
 					<klatsch-quick-picks>
