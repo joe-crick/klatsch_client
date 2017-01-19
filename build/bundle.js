@@ -79,11 +79,11 @@
 	
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 	
-	var _masterTemplate = __webpack_require__(/*! ./page-templates/master-template/master-template */ 269);
+	var _masterTemplate = __webpack_require__(/*! ./page-templates/master-template/master-template */ 272);
 	
 	var _masterTemplate2 = _interopRequireDefault(_masterTemplate);
 	
-	__webpack_require__(/*! ./app.sass */ 276);
+	__webpack_require__(/*! ./app.sass */ 279);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -32706,17 +32706,27 @@
 		value: true
 	});
 	
-	var _react = __webpack_require__(/*! react */ 2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
 	__webpack_require__(/*! ./dashboard.sass */ 267);
+	
+	var _quickPicks = __webpack_require__(/*! ./quick-picks/quick-picks */ 269);
+	
+	var _quickPicks2 = _interopRequireDefault(_quickPicks);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	var userList = [{ profile: 'Young', img: 'https://childandfamilyri.com/wp-content/uploads/2016/02/young-family.jpg' }, { profile: 'Wang', img: 'https://d3n8a8pro7vhmx.cloudfront.net/wfunj/pages/43/attachments/original/1400872367/strengthening-families.jpg?1400872367' }, { profile: 'Tompson', img: 'https://yt3.ggpht.com/-hqxszAw6XZ8/AAAAAAAAAAI/AAAAAAAAAAA/QUqqepevERQ/s900-c-k-no-mo-rj-c0xffffff/photo.jpg' }];
+	
+	var showProfile = function showProfile() {};
+	
 	exports.default = function (React) {
-		return function () {
-			return React.createElement('klatsch-dashboard', null);
+		return function (props) {
+			var QuickPicks = (0, _quickPicks2.default)(React);
+	
+			return React.createElement(
+				'klatsch-dashboard',
+				null,
+				React.createElement(QuickPicks, { profiles: userList, showProfile: showProfile })
+			);
 		};
 	};
 
@@ -32733,6 +32743,87 @@
 /***/ },
 /* 268 */,
 /* 269 */
+/*!*********************************************************!*\
+  !*** ./src/pages/dashboard/quick-picks/quick-picks.jsx ***!
+  \*********************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _mobxReact = __webpack_require__(/*! mobx-react */ 249);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 179);
+	
+	__webpack_require__(/*! ./quick-picks.sass */ 270);
+	
+	exports.default = function (React) {
+		var string = React.propTypes.string;
+	
+	
+		return (0, _mobxReact.observer)(function QuickPicks(props) {
+	
+			QuickPicks.propTypes = {
+				profile: string,
+				img: string
+			};
+	
+			return {
+	
+				props: props,
+	
+				render: function render() {
+	
+					return React.createElement(
+						'klatsch-quick-picks',
+						null,
+						props.profiles ? React.createElement(
+							'div',
+							null,
+							React.createElement(
+								'div',
+								{ className: 'quick-pick-bar' },
+								props.profiles.map(function (user, idx) {
+									return React.createElement(
+										_reactRouter.Link,
+										{ key: idx, to: '/profile/' + user.profile },
+										React.createElement('img', { className: 'quick-pick', src: user.img,
+											onClick: props.showProfile(user.profile) })
+									);
+								})
+							),
+							React.createElement(
+								'button',
+								{ className: 'btn btn-default' },
+								React.createElement('span', { className: 'glyphicon glyphicon-refresh' })
+							)
+						) : React.createElement(
+							'h3',
+							null,
+							'No Profiles Found'
+						)
+					);
+				}
+			};
+		});
+	};
+
+/***/ },
+/* 270 */
+/*!**********************************************************!*\
+  !*** ./src/pages/dashboard/quick-picks/quick-picks.sass ***!
+  \**********************************************************/
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	"use strict";
+
+/***/ },
+/* 271 */,
+/* 272 */
 /*!****************************************************************!*\
   !*** ./src/page-templates/master-template/master-template.jsx ***!
   \****************************************************************/
@@ -32744,7 +32835,7 @@
 	  value: true
 	});
 	
-	var _nav = __webpack_require__(/*! ./nav/nav */ 270);
+	var _nav = __webpack_require__(/*! ./nav/nav */ 273);
 	
 	var _nav2 = _interopRequireDefault(_nav);
 	
@@ -32770,7 +32861,7 @@
 	};
 
 /***/ },
-/* 270 */
+/* 273 */
 /*!********************************************************!*\
   !*** ./src/page-templates/master-template/nav/nav.jsx ***!
   \********************************************************/
@@ -32782,19 +32873,19 @@
 	    value: true
 	});
 	
-	var _navLogo = __webpack_require__(/*! ./nav-logo/nav-logo */ 271);
+	var _navLogo = __webpack_require__(/*! ./nav-logo/nav-logo */ 274);
 	
 	var _navLogo2 = _interopRequireDefault(_navLogo);
 	
-	var _quickLinks = __webpack_require__(/*! ./quick-links/quick-links */ 272);
+	var _quickLinks = __webpack_require__(/*! ./quick-links/quick-links */ 275);
 	
 	var _quickLinks2 = _interopRequireDefault(_quickLinks);
 	
-	var _rightNav = __webpack_require__(/*! ./right-nav/right-nav */ 273);
+	var _rightNav = __webpack_require__(/*! ./right-nav/right-nav */ 276);
 	
 	var _rightNav2 = _interopRequireDefault(_rightNav);
 	
-	var _templateStore = __webpack_require__(/*! ../../../stores/template-store */ 275);
+	var _templateStore = __webpack_require__(/*! ../../../stores/template-store */ 278);
 	
 	var _templateStore2 = _interopRequireDefault(_templateStore);
 	
@@ -32833,7 +32924,7 @@
 	};
 
 /***/ },
-/* 271 */
+/* 274 */
 /*!**********************************************************************!*\
   !*** ./src/page-templates/master-template/nav/nav-logo/nav-logo.jsx ***!
   \**********************************************************************/
@@ -32876,7 +32967,7 @@
 	};
 
 /***/ },
-/* 272 */
+/* 275 */
 /*!****************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/quick-links/quick-links.jsx ***!
   \****************************************************************************/
@@ -32943,7 +33034,7 @@
 	};
 
 /***/ },
-/* 273 */
+/* 276 */
 /*!************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/right-nav/right-nav.jsx ***!
   \************************************************************************/
@@ -32957,7 +33048,7 @@
 	
 	var _mobxReact = __webpack_require__(/*! mobx-react */ 249);
 	
-	var _userMenu = __webpack_require__(/*! ../user-menu/user-menu */ 274);
+	var _userMenu = __webpack_require__(/*! ../user-menu/user-menu */ 277);
 	
 	var _userMenu2 = _interopRequireDefault(_userMenu);
 	
@@ -33007,7 +33098,7 @@
 	};
 
 /***/ },
-/* 274 */
+/* 277 */
 /*!************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/user-menu/user-menu.jsx ***!
   \************************************************************************/
@@ -33089,7 +33180,7 @@
 	};
 
 /***/ },
-/* 275 */
+/* 278 */
 /*!**************************************!*\
   !*** ./src/stores/template-store.js ***!
   \**************************************/
@@ -33109,7 +33200,7 @@
 	exports.default = TemplateStore;
 
 /***/ },
-/* 276 */
+/* 279 */
 /*!**********************!*\
   !*** ./src/app.sass ***!
   \**********************/

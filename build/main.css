@@ -6,6 +6,17 @@ klatsch-question-page klatsch-in-page-alert .jumbotron {
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 2em; }
+klatsch-quick-picks {
+  display: block; }
+  klatsch-quick-picks .quick-pick-bar {
+    display: inline-block; }
+    klatsch-quick-picks .quick-pick-bar .quick-pick {
+      height: 9rem;
+      width: 16rem;
+      margin-right: 1rem;
+      border-radius: 15%; }
+  klatsch-quick-picks button {
+    display: inline-block; }
 klatsch-multi-select {
   display: block; }
   klatsch-multi-select .fa-check-square:before {
@@ -31,6 +42,8 @@ body {
     float: left; }
   body .right {
     float: right; }
+  body main {
+    margin-top: 75px; }
 
 klatsch-home-page .home-bg {
   width: 100%;
