@@ -1,6 +1,6 @@
 import nav from './nav/nav';
 
-export default React => ({children}, props) => {
+export default React => ({children}) => {
     const Nav = nav(React);
 
     return (

@@ -1,7 +1,6 @@
-import {observer} from 'mobx-react';
 import userMenu from '../user-menu/user-menu';
 
-export default React => observer((props) => {
+export default React => props => {
     const UserMenu = userMenu(React);
 
     return (
@@ -26,4 +25,4 @@ export default React => observer((props) => {
             </ul>
         </klatsch-right-nav>
     );
-});
+};
