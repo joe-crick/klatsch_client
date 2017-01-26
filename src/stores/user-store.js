@@ -1,4 +1,3 @@
-import {extendObservable, action} from 'mobx';
 import Global from './global-store';
 
 let UserStore = {
@@ -7,10 +6,7 @@ let UserStore = {
 	genderSelectLabel: 'I am a',
 	ageLabel: 'Age',
 	zipCodeText: Global.zipCodeText,
-	profileText: 'Profile'
-};
-
-extendObservable(UserStore, {
+	profileText: 'Profile',
 	profile: {
 		nickname: 'test-user',
 		picture: 'http://hilobrow.com/wp-content/uploads/2009/05/channing-550.jpg'
@@ -40,17 +36,17 @@ extendObservable(UserStore, {
 		{className: '', value: '18', label: 'Two spirit'},
 		{className: '', value: '19', label: 'Other'}
 	]
-});
+};
 
 /**
  * dropDownAction
  * @param  {[type]} function dropDownAction(option [description]
  */
-UserStore.dropDownAction = action(function dropDownAction(option) {
+UserStore.dropDownAction = function dropDownAction(option) {
 	let selectedIndex = UserStore.genderOptions.indexOf(option);
 	let selectedRange = Object.assign({}, UserStore.genderOptions[selectedIndex]);
 	selectedRange.selected = !selectedRange.selected;
 	UserStore.genderOptions[selectedIndex] = selectedRange;
-});
+};
 
 export default UserStore;

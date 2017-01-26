@@ -5,17 +5,11 @@ import createTagLine from './tag-line/tag-line';
 
 export default React => {
 
-	const {string} = React.PropTypes;
-
 	return function HomePage(props) {
 
 		let LoginBar = createLoginBar(React);
 		let TagLine = createTagLine(React);
 		let SignUpBar = createSignUpBar(React);
-
-		HomePage.PropTypes = {
-			tagLine: string
-		};
 
 		return {
 

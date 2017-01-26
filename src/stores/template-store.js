@@ -1,7 +1,5 @@
-const TemplateStore = {
+export default {
   browseMatches: 'Browse Fits',
   visitors: 'Visitors',
   messages: 'Messages'
 };
-
-export default TemplateStore;

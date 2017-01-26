@@ -2548,10 +2548,6 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-folktale@^2.0.0-alpha2:
-  version "2.0.0-alpha2"
-  resolved "https://registry.yarnpkg.com/folktale/-/folktale-2.0.0-alpha2.tgz#550de29c439f6afec73bf5e2a3f5c6e9d20aa49a"
-
 for-each@^0.3.2, for-each@~0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/for-each/-/for-each-0.3.2.tgz#2c40450b9348e97f281322593ba96704b9abd4d4"
@@ -3820,10 +3816,6 @@ mobx-react@^3.1.0:
   dependencies:
     hoist-non-react-statics "^1.2.0"
 
-mobx@^2.1.7:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/mobx/-/mobx-2.7.0.tgz#cf3d82d18c0ca7f458d8f2a240817b3dc7e54a01"
-
 moment@^2.13.0, moment@^2.14.1:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
@@ -4712,6 +4704,16 @@ querystring@0.2.0:
 querystringify@0.0.x:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-0.0.4.tgz#0cf7f84f9463ff0ae51c4c4b142d95be37724d9c"
+
+ramda-fantasy@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/ramda-fantasy/-/ramda-fantasy-0.7.0.tgz#ac77a7a5d55dfc1ddc224ac418e9be8900c65d17"
+  dependencies:
+    ramda ">=0.15.0"
+
+ramda@>=0.15.0, ramda@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.23.0.tgz#ccd13fff73497a93974e3e86327bfd87bd6e8e2b"
 
 ramda@^0.17.1:
   version "0.17.1"

@@ -22,7 +22,7 @@ export default React => {
 
 		Dashboard.PropTypes ={
 			userList: array,
-			showProfile: func
+			showProfile: func.isRequired
 		};
 
 		return {

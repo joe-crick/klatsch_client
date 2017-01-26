@@ -1,6 +1,5 @@
-import {observer} from 'mobx-react';
 
-export default React => observer((props) => {
+export default React => (props) => {
     let loginTitle = props.store.title === 'Hello' ? 'Login' : 'Logged In';
 
     return (
@@ -13,4 +12,4 @@ export default React => observer((props) => {
             <div className="clearfix"></div>
         </klatsch-login-bar>
     );
-});
+};

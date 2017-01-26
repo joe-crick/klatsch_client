@@ -10,7 +10,7 @@ export default React => {
 	return function Questions(props) {
 
 		Questions.PropTypes = {
-			questions: array
+			questions: array.isRequired
 		};
 
 		let Question = createQuestion(React);
