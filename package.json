@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "folktale": "^2.0.0-alpha2",
     "local-links": "^1.4.0",
     "lodash.assign": "^3.2.0",
     "lodash.has": "^3.2.1",
@@ -16,7 +17,6 @@
     "octicons": "^2.2.0",
     "qs": "^3.1.0",
     "ramda": "^0.23.0",
-    "ramda-fantasy": "^0.7.0",
     "react": "^15.2.0",
     "react-datepicker": "^0.28.1",
     "react-dom": "^15.1.0",

@@ -9,10 +9,12 @@ export default React => {
 		};
 
 		return {
+
 			props,
 
 			render() {
-				return (<klatsch-tag-line>
+				return (
+					<klatsch-tag-line>
 						{props.tagLine}
 					</klatsch-tag-line>
 				);
