@@ -1,6 +1,7 @@
-import INITIAL_STATE from '../stores/auth-store';
+import INITIAL_STATE from '../stores/home-store';
+import Either from 'data.either';
+import Identity from 'ramda/src/identity';
 import setState from './set-state';
-import React from 'react';
 
 // Action type name constants
 export const actionType = {
@@ -17,8 +18,10 @@ const actionMap = new Map();
 actionMap.set(actionType.LOG_IN, logUserIn);
 actionMap.set(actionType.LOG_OUT, logUserOut);
 
-export default (state = INITIAL_STATE, action) => {
-	const currentAction = actionMap.get(action.type);
-	const newState = currentAction ? setState(action, state)(method) : state;
-	return newState
-}
+export default (state = INITIAL_STATE, action) =>
+
+	Either(actionMap.get(action.type), state)
+		.fold(
+			method => setState(action, state)(method),
+			Identity
+		);

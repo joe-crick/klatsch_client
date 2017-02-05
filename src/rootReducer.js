@@ -1,6 +1,13 @@
 import {combineReducers} from 'redux';
+// Reducers
 import authReducer from './reducers/auth-reducer';
+import homeReducer from './reducers/auth-reducer';
+
+// Constants
+import globalStore from './stores/global-store';
 
 export default combineReducers({
-	authReducer
+	authStore: authReducer,
+	homeStore: homeReducer,
+	globalStore: globalStore
 });

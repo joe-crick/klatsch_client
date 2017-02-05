@@ -1,9 +1,8 @@
 import {Map} from 'immutable';
 
-const AuthStore = Map({
+export default Map({
     auth:{
 		isAuthenticated: false
     }
 });
 
-export default AuthStore;

@@ -36,15 +36,6 @@ klatsch-multi-select {
       padding: 7px 7px;
       outline: none; }
 
-body {
-  background-color: snow; }
-  body .left {
-    float: left; }
-  body .right {
-    float: right; }
-  body main {
-    margin-top: 75px; }
-
 klatsch-home-page .home-bg {
   width: 100%;
   background-size: cover;
@@ -131,5 +122,17 @@ klatsch .nav-menu {
 .small-circle {
   border-radius: 100%;
   display: inline-block; }
+
+body {
+  background-color: snow; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+main {
+  margin-top: 75px; }
 
 /*# sourceMappingURL=main.css.map*/

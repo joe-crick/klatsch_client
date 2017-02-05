@@ -1,12 +1,7 @@
-import GlobalStore from './global-store';
-let {emailText, passwordText, closeText, zipCodeText} = GlobalStore;
+import {Map} from 'immutable';
 
-let HomeStore = {
+export default Map({
     login : 'Login',
-    emailText,
-    passwordText,
-    closeText,
-    zipCodeText,
     ageRangeLabel: 'Age Range',
     selectTitle: 'Select Age Ranges',
     tagLine: 'Connecting Families for Friends, Playdates, and More',
@@ -18,17 +13,6 @@ let HomeStore = {
 		{className: '', value: '3', label: 'Early Elementary 5 - 7 yrs'},
 		{className: '', value: '4', label: 'Late Elementary 7 - 10 yrs'},
 		{className: '', value: '5', label: 'Pre-teen 10 -12 yrs'}
-	],
-    showLoginModal() {
-      $('#login-modal').modal('toggle');
-    }
-};
+	]
+});
 
-HomeStore.dropDownAction = function dropDownAction(option){
-  let selectedIndex = HomeStore.ageRanges.indexOf(option);
-  let selectedRange = Object.assign({}, HomeStore.ageRanges[selectedIndex]);
-  selectedRange.selected = !selectedRange.selected;
-  HomeStore.ageRanges[selectedIndex] = selectedRange;
-};
-
-export default HomeStore;

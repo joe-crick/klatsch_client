@@ -2,6 +2,12 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
+const sassLoaders = [
+    'css-loader',
+    'postcss-loader',
+    'sass-loader?sourceMap&indentedSyntax=sass&includePaths[]=' + path.resolve(__dirname, './src')
+];
+
 module.exports = {
     entry: [
         './src/app.js'
@@ -13,18 +19,14 @@ module.exports = {
     },
     devtool: 'source-map',
     module: {
-        rules: [
+        loaders: [
             {
                 exclude: /node_modules/,
                 loader: 'babel'
             },
             {
                 test: /\.sass$/,
-                use: [
-					'css-loader',
-					'postcss-loader',
-					'sass-loader?sourceMap&indentedSyntax=sass&includePaths[]=' + path.resolve(__dirname, './src')
-				]
+                loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
             }
         ]
     },
