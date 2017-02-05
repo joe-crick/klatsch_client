@@ -6,6 +6,7 @@ export default Map({
     selectTitle: 'Select Age Ranges',
     tagLine: 'Connecting Families for Friends, Playdates, and More',
 	title: 'Hello',
+	zipCodeText: 'Postal Code',
 	ageRanges: [
 		{className: '', value: '0', label: 'Baby 0 - 1.5 yrs'},
 		{className: '', value: '1', label: 'Toddler 1.5 - 3 yrs'},
