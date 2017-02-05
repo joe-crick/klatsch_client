@@ -1,6 +1,4 @@
 import INITIAL_STATE from '../stores/home-store';
-import Either from 'data.either';
-import Identity from 'ramda/src/identity';
 import setState from './set-state';
 
 // Action type name constants
@@ -19,9 +17,4 @@ actionMap.set(actionType.LOG_IN, logUserIn);
 actionMap.set(actionType.LOG_OUT, logUserOut);
 
 export default (state = INITIAL_STATE, action) =>
-
-	Either(actionMap.get(action.type), state)
-		.fold(
-			method => setState(action, state)(method),
-			Identity
-		);
+	actionMap.get(action.type) ? setState(action, state)(method) : state;

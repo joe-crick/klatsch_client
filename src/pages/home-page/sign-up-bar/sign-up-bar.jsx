@@ -1,5 +1,13 @@
 import createMultiSelect from '../../../components/multi-select/multi-select';
 
+const zipCodeText = 'zipCodeText';
+const zipCodeTextValue = 'zipCodeTextValue';
+const ageRangeLabel = 'ageRangeLabel';
+const ageRanges = 'ageRanges';
+const selectTitle = 'selectTitle';
+const dropDownAction = 'dropDownAction';
+const register = 'register';
+
 export default React => {
 
 	const {string} = React.PropTypes;
@@ -27,23 +35,23 @@ export default React => {
 							<div className="row login-container container">
 								<div className="col-md-3">
 									<fieldset className="form-group">
-										<label htmlFor="zip-code">{store.zipCodeText}</label>
+										<label htmlFor="zip-code">{store.get(zipCodeText)}</label>
 										<input id="zip-code" className="form-control"
-											   placeholder={store.zipCodeText} value={store.zipCodeTextValue}/>
+											   placeholder={store.get(zipCodeText)} value={store.get(zipCodeTextValue)}/>
 									</fieldset>
 								</div>
 								<div className="col-md-4">
 									<fieldset className="form-group">
-										<label>{store.ageRangeLabel}</label>
+										<label>{store.get(ageRangeLabel)}</label>
 										<MultiSelect
-											options={store.ageRanges}
-											dropDownAction={store.dropDownAction}
-											selectTitle={store.selectTitle}/>
+											options={store.get(ageRanges)}
+											dropDownAction={store.get(dropDownAction)}
+											selectTitle={store.get(selectTitle)}/>
 									</fieldset>
 								</div>
 								<div className="col-md-4 continue-button">
 									<button type="button" className="btn btn-primary continue-button"
-											onClick={store.register}>
+											onClick={store.get(register)}>
 										Continue
 									</button>
 								</div>

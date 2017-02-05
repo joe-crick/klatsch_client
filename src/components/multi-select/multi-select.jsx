@@ -33,7 +33,7 @@ export default React => {
 									return (
 										<button className='dropdown-item' type="button"
 												key={option.value}
-												onClick={event => props.dropDownAction(option)}>
+												onClick={event => alert(option)}>
 											<span className={option.selected ? 'fa fa-check-square' : ''}/>
 											<span
 												className={option.selected ? 'selected' : 'unselected'}>{option.label}</span>
