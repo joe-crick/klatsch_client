@@ -28,24 +28,18 @@ const Dashboard = dashboardFactory(React);
 /**
  * Routing table
  */
-render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
-	document.getElementById('app'));
+const Root = ({store}) => (<Provider store={store}>
+	<Router history={browserHistory}>
+		<Route path='/' component={App}/>
+		<Route component={SiteTemplate}>
+			<Route path='/dashboard' component={Dashboard}/>
+			<Route path='/profile' component={Profile}/>
+		</Route>
+	</Router>
+</Provider>);
 
-// const Root = ({store}) => (<Provider store={store}>
-// 	<Router history={browserHistory}>
-// 		<Route path='/' component={App}/>
-// 		<Route component={SiteTemplate}>
-// 			<Route path='/dashboard' component={Dashboard}/>
-// 			<Route path='/profile' component={Profile}/>
-// 		</Route>
-// 	</Router>
-// </Provider>);
+Root.propTypes = {
+	store: React.PropTypes.object.isRequired,
+};
 
-// Root.propTypes = {
-// 	store: React.PropTypes.object.isRequired,
-// };
-
-// render(<Root store={store} />, document.getElementById('app'));
+render(<Root store={store} />, document.getElementById('app'));
