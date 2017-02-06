@@ -5,33 +5,37 @@ import {connect} from 'react-redux';
 
 const {object} = React.PropTypes;
 
+function App(props) {
 
-class App extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+	App.propTypes = {
+		authStore: object
+	};
 
-	render() {
-		const props = this.props;
+	const component = {
 
-		if (props.authStore.get('isAuthenticated')) {
-			return (
-				<ReactRedirect location='/dashboard'>
-					<this.props.activeRouteHandler />
-				</ReactRedirect>);
-		} else {
-			return (
-				<HomePage
-					authStore={props.authStore}
-					homeStore={props.homeStore}/>
-			);
+		render() {
+			const props = this.props;
+			if (props.authStore.get('isAuthenticated')) {
+				return (
+					<ReactRedirect location='/dashboard'>
+						<this.props.activeRouteHandler />
+					</ReactRedirect>);
+			} else {
+				return (
+					<HomePage
+						authStore={props.authStore}
+						homeStore={props.homeStore}/>
+				);
+			}
 		}
-	}
+	};
+
+	component.prototype = Object.create(React.Component.prototype);
+	React.Component.call(component, props);
+
+	return component;
 }
 
-App.propTypes = {
-	authStore: object
-};
 
 function mapPropsToState(state) {
 	return {
