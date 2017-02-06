@@ -15,7 +15,7 @@ function App(props) {
 		props,
 
 		render() {
-			if (props.authStore.get('idToken')) {
+			if (props.authStore.get('isAuthenticated')) {
 				return (
 					<ReactRedirect location='/dashboard'>
 						<this.props.activeRouteHandler />
