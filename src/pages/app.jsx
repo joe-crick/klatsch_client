@@ -1,9 +1,8 @@
-import React, {Component} from 'react';
-import homePageFactory from './home-page/home-page';
+import React from 'react';
+import HomePage from './home-page/home-page';
 import ReactRedirect from 'react-redirect';
 import {connect} from 'react-redux';
 
-const HomePage = homePageFactory(React);
 const {object} = React.PropTypes;
 
 function App(props) {

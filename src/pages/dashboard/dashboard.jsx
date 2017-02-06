@@ -1,6 +1,8 @@
+import React from 'react';
 import './dashboard.sass';
 import quickPicksFactory from './quick-picks/quick-picks';
 
+// TODO: Temporary Code
 const userList = [
 	{profile: 'Young', img: 'https://childandfamilyri.com/wp-content/uploads/2016/02/young-family.jpg'},
 	{
@@ -13,29 +15,37 @@ const userList = [
 const showProfile = () => {
 };
 
-export default React => {
+// END: Temporary code
 
-	const {array, func} = React.PropTypes;
 
-	return function Dashboard(props) {
-		const QuickPicks = quickPicksFactory(React);
+const {array, func} = React.PropTypes;
 
-		Dashboard.PropTypes ={
-			userList: array,
-			showProfile: func.isRequired
-		};
+/**
+ *
+ * @param props
+ * @returns {*}
+ * @constructor
+ */
+function Dashboard(props) {
+	const QuickPicks = quickPicksFactory(React);
 
-		return {
+	Dashboard.PropTypes = {
+		userList: array,
+		showProfile: func.isRequired
+	};
 
-			props,
+	return {
 
-			render() {
-				return (
-					<klatsch-dashboard>
-						<QuickPicks profiles={userList} showProfile={showProfile}/>
-					</klatsch-dashboard>
-				);
-			}
+		props,
+
+		render() {
+			return (
+				<klatsch-dashboard>
+					<QuickPicks profiles={userList} showProfile={showProfile}/>
+				</klatsch-dashboard>
+			);
 		}
 	}
-};
+}
+
+export default Dashboard;

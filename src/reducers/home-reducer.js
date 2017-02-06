@@ -1,5 +1,4 @@
 import INITIAL_STATE from '../stores/home-store';
-import setState from './set-state';
 
 // Action type name constants
 export const actionType = {
@@ -16,5 +15,7 @@ const actionMap = new Map();
 actionMap.set(actionType.LOG_IN, logUserIn);
 actionMap.set(actionType.LOG_OUT, logUserOut);
 
-export default (state = INITIAL_STATE, action) =>
-	actionMap.get(action.type) ? setState(action, state)(method) : state;
+export default (state = INITIAL_STATE, action) => {
+	const updater = actionMap.get(action.type);
+	return updater ? updater(state) : state;
+}

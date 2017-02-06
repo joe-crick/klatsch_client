@@ -1,36 +1,66 @@
+import React from 'react';
 import createSignUpBar from './sign-up-bar/sign-up-bar';
-import createLoginBar from './login-bar/login-bar';
+import LoginBar from './login-bar/login-bar';
 import createTagLine from './tag-line/tag-line';
+import {loginAction} from './home-page-actions';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
-export default React => {
+/**
+ * @desc The Home Page container component
+ * @param props
+ * @returns {*}
+ * @constructor
+ */
+function HomePage(props) {
 
-	return function HomePage(props) {
+	const TagLine = createTagLine(React);
+	const SignUpBar = createSignUpBar(React);
+	const homeStore = props.homeStore;
 
-		const LoginBar = createLoginBar(React);
-		const TagLine = createTagLine(React);
-		const SignUpBar = createSignUpBar(React);
-		const homeStore = props.homeStore;
+	return {
 
-		return {
+		props,
 
-			props,
-
-			render() {
-				return (
-					<klatsch-home-page>
-						<div className="home-bg">
-							<div className="container">
-								<div className="home-logo"></div>
-								<div>
-									<LoginBar store={homeStore} authStore={props.authStore}/>
-									<SignUpBar store={homeStore}/>
-									<TagLine tagLine={homeStore.tagLine}/>
-								</div>
+		render() {
+			return (
+				<klatsch-home-page>
+					<div className="home-bg">
+						<div className="container">
+							<div className="home-logo"></div>
+							<div>
+								<LoginBar loginButtonText={props.loginButtonText} loginAction={props.loginAction}/>
+								<SignUpBar store={homeStore}/>
+								<TagLine tagLine={homeStore.tagLine}/>
 							</div>
 						</div>
-					</klatsch-home-page>
-				)
-			}
+					</div>
+				</klatsch-home-page>
+			)
 		}
 	}
-};
+}
+
+/**
+ * @desc Bind actions
+ * @param dispatch
+ * @returns {*}
+ */
+function matchDispatchToProps(dispatch) {
+	return bindActionCreators({loginAction}, dispatch)
+}
+
+/**
+ * @desc Bind redux state
+ * @param state
+ * @returns {{authStore: *, homeStore: *}}
+ */
+function matchStateToProps(state){
+	const loginButtonText = 'get' in state.authStore ? state.authStore.get('loginButtonText') : '';
+	return {
+		loginButtonText,
+		homeStore: state.homeStore
+	}
+}
+
+export default connect(matchStateToProps, matchDispatchToProps)(HomePage);

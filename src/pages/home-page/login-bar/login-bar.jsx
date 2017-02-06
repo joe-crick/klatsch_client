@@ -1,12 +1,12 @@
+import React from 'react';
 
-export default React => (props) => {
-    let loginTitle = props.store.title === 'Hello' ? 'Login' : 'Logged In';
+export default props => {
 
     return (
         <klatsch-login-bar>
             <div className="pull-right">
-                <button className='btn btn-default' onClick={props.authStore.setIdToken}>
-                    {loginTitle}
+                <button className='btn btn-default' onClick={props.loginAction}>
+				{props.loginButtonText}
                 </button>
             </div>
             <div className="clearfix"></div>

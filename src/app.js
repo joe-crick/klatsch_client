@@ -7,7 +7,7 @@ import {createStore} from 'redux';
 import rootReducer from './rootReducer';
 
 import profileFactory from './pages/questions/questions.jsx';
-import dashboardFactory from './pages/dashboard/dashboard';
+import Dashboard from './pages/dashboard/dashboard';
 import siteTemplate from './page-templates/master-template/master-template';
 import './app.sass';
 
@@ -23,7 +23,6 @@ const store = createStore(rootReducer);
 
 const SiteTemplate = siteTemplate(React);
 const Profile = profileFactory(React);
-const Dashboard = dashboardFactory(React);
 
 /**
  * Routing table
