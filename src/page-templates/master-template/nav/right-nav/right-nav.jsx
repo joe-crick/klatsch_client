@@ -1,6 +1,5 @@
 import React from 'react';
-import userMenu from '../user-menu/user-menu';
-const UserMenu = userMenu(React);
+import UserMenu from '../user-menu/user-menu';
 
 export default props => (
 	<klatsch-right-nav>
