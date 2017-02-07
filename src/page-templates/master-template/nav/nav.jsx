@@ -1,9 +1,7 @@
 import React from 'react';
 import NavLogo from './nav-logo/nav-logo';
 import QuickLinks from './quick-links/quick-links';
-import rightNav from './right-nav/right-nav';
-
-const RightNav = rightNav(React);
+import RightNav from './right-nav/right-nav';
 
 export default props => (
 	<klatsch-nav>
