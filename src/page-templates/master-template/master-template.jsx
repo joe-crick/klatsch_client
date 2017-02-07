@@ -1,14 +1,14 @@
+import React from 'react';
 import nav from './nav/nav';
 
-export default React => ({children}) => {
-    const Nav = nav(React);
+const Nav = nav(React);
 
-    return (
-      <klatsch>
-        <Nav />
-        <main>
-          {children}
-        </main>
-      </klatsch>
-    )
-};
+export default ({children}) => (
+	<klatsch>
+		<Nav />
+		<main>
+			{children}
+		</main>
+	</klatsch>
+);
+

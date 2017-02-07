@@ -1,4 +1,6 @@
 import React from 'react';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 import './dashboard.sass';
 import QuickPicks from './quick-picks/quick-picks';
 
@@ -49,4 +51,16 @@ function Dashboard(props) {
 	}
 }
 
-export default Dashboard;
+
+/**
+ * @desc Bind redux state
+ * @param state
+ * @returns {{authStore: *, homeStore: *}}
+ */
+function matchStateToProps(state){
+	return {
+		userList
+	}
+}
+
+export default connect(matchStateToProps)(Dashboard);

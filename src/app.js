@@ -8,7 +8,7 @@ import rootReducer from './rootReducer';
 
 import profileFactory from './pages/questions/questions.jsx';
 import Dashboard from './pages/dashboard/dashboard';
-import siteTemplate from './page-templates/master-template/master-template';
+import SiteTemplate from './page-templates/master-template/master-template';
 import './app.sass';
 
 // user: cupid0cpuid
@@ -21,7 +21,6 @@ if (window !== undefined) {
 
 const store = createStore(rootReducer);
 
-const SiteTemplate = siteTemplate(React);
 const Profile = profileFactory(React);
 
 /**
