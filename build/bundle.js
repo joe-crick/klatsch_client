@@ -79,19 +79,19 @@
 	
 	var _rootReducer2 = _interopRequireDefault(_rootReducer);
 	
-	var _questions = __webpack_require__(/*! ./pages/questions/questions.jsx */ 300);
+	var _questions = __webpack_require__(/*! ./pages/questions/questions.jsx */ 297);
 	
 	var _questions2 = _interopRequireDefault(_questions);
 	
-	var _dashboard = __webpack_require__(/*! ./pages/dashboard/dashboard */ 308);
+	var _dashboard = __webpack_require__(/*! ./pages/dashboard/dashboard */ 305);
 	
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 	
-	var _masterTemplate = __webpack_require__(/*! ./page-templates/master-template/master-template */ 314);
+	var _masterTemplate = __webpack_require__(/*! ./page-templates/master-template/master-template */ 311);
 	
 	var _masterTemplate2 = _interopRequireDefault(_masterTemplate);
 	
-	__webpack_require__(/*! ./app.sass */ 320);
+	__webpack_require__(/*! ./app.sass */ 317);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -107,7 +107,6 @@
 	
 	var SiteTemplate = (0, _masterTemplate2.default)(_react2.default);
 	var Profile = (0, _questions2.default)(_react2.default);
-	var Dashboard = (0, _dashboard2.default)(_react2.default);
 	
 	/**
 	 * Routing table
@@ -124,7 +123,7 @@
 				_react2.default.createElement(
 					_reactRouter.Route,
 					{ component: SiteTemplate },
-					_react2.default.createElement(_reactRouter.Route, { path: '/dashboard', component: Dashboard }),
+					_react2.default.createElement(_reactRouter.Route, { path: '/dashboard', component: _dashboard2.default }),
 					_react2.default.createElement(_reactRouter.Route, { path: '/profile', component: Profile })
 				)
 			)
@@ -27970,15 +27969,14 @@
 	
 	function App(props) {
 	
-		App.PropTypes = {
+		App.propTypes = {
 			authStore: object
 		};
 	
-		return {
-			props: props,
-	
+		var component = {
 			render: function render() {
-				if (props.authStore.get('idToken')) {
+				var props = this.props;
+				if (props.authStore.get('isAuthenticated')) {
 					return _react2.default.createElement(
 						_reactRedirect2.default,
 						{ location: '/dashboard' },
@@ -27991,6 +27989,11 @@
 				}
 			}
 		};
+	
+		component.prototype = Object.create(_react2.default.Component.prototype);
+		_react2.default.Component.call(component, props);
+	
+		return component;
 	}
 	
 	function mapPropsToState(state) {
@@ -28069,7 +28072,7 @@
 							_react2.default.createElement(
 								'div',
 								null,
-								_react2.default.createElement(_loginBar2.default, { loginButtonText: props.authStore.loginButtonText, loginAction: _homePageActions.loginAction }),
+								_react2.default.createElement(_loginBar2.default, { loginButtonText: props.loginButtonText, loginAction: props.loginAction }),
 								_react2.default.createElement(SignUpBar, { store: homeStore }),
 								_react2.default.createElement(TagLine, { tagLine: homeStore.tagLine })
 							)
@@ -28095,8 +28098,9 @@
 	 * @returns {{authStore: *, homeStore: *}}
 	 */
 	function matchStateToProps(state) {
+		var loginButtonText = 'get' in state.authStore ? state.authStore.get('loginButtonText') : '';
 		return {
-			authStore: state.authStore,
+			loginButtonText: loginButtonText,
 			homeStore: state.homeStore
 		};
 	}
@@ -28403,7 +28407,7 @@
 				type: 'LOG_IN',
 				payload: user
 			};
-		};
+		}();
 	};
 	
 	var logUserOut = exports.logUserOut = function logUserOut(user) {
@@ -30891,11 +30895,11 @@
 	
 	var _authReducer2 = _interopRequireDefault(_authReducer);
 	
-	var _homeReducer = __webpack_require__(/*! ./reducers/home-reducer */ 297);
+	var _homeReducer = __webpack_require__(/*! ./reducers/home-reducer */ 294);
 	
 	var _homeReducer2 = _interopRequireDefault(_homeReducer);
 	
-	var _globalStore = __webpack_require__(/*! ./stores/global-store */ 299);
+	var _globalStore = __webpack_require__(/*! ./stores/global-store */ 296);
 	
 	var _globalStore2 = _interopRequireDefault(_globalStore);
 	
@@ -30929,10 +30933,6 @@
 	
 	var _authStore2 = _interopRequireDefault(_authStore);
 	
-	var _setState = __webpack_require__(/*! ./set-state */ 294);
-	
-	var _setState2 = _interopRequireDefault(_setState);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// Action type name constants
@@ -30957,7 +30957,9 @@
 	exports.default = function () {
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _authStore2.default;
 		var action = arguments[1];
-		return actionMap.get(action.type) ? (0, _setState2.default)(action, state)(method) : state;
+	
+		var updater = actionMap.get(action.type);
+		return updater ? updater(state) : state;
 	};
 
 /***/ },
@@ -30970,16 +30972,14 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+		value: true
 	});
 	
 	var _immutable = __webpack_require__(/*! immutable */ 293);
 	
 	exports.default = (0, _immutable.Map)({
-	    auth: {
-	        isAuthenticated: false,
-	        loginButtonText: 'Login'
-	    }
+		isAuthenticated: false,
+		loginButtonText: 'Login'
 	});
 
 /***/ },
@@ -35971,454 +35971,6 @@
 
 /***/ },
 /* 294 */
-/*!***********************************!*\
-  !*** ./src/reducers/set-state.js ***!
-  \***********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _data = __webpack_require__(/*! data.maybe */ 295);
-	
-	var _data2 = _interopRequireDefault(_data);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var setState = function setState(action, state) {
-		return function (method) {
-			return (0, _data2.default)(action.subState).getOrElse(function () {
-				return method(state, action.payload);
-			}, function () {
-				return state.update(action.subState, function (subState) {
-					return method(subState, action.payload);
-				});
-			});
-		};
-	};
-	
-	exports.default = setState;
-
-/***/ },
-/* 295 */
-/*!***********************************!*\
-  !*** ./~/data.maybe/lib/index.js ***!
-  \***********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// Copyright (c) 2013-2014 Quildreen Motta <quildreen@gmail.com>
-	//
-	// Permission is hereby granted, free of charge, to any person
-	// obtaining a copy of this software and associated documentation files
-	// (the "Software"), to deal in the Software without restriction,
-	// including without limitation the rights to use, copy, modify, merge,
-	// publish, distribute, sublicense, and/or sell copies of the Software,
-	// and to permit persons to whom the Software is furnished to do so,
-	// subject to the following conditions:
-	//
-	// The above copyright notice and this permission notice shall be
-	// included in all copies or substantial portions of the Software.
-	//
-	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-	// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-	// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-	// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-	// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-	// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-	
-	module.exports = __webpack_require__(/*! ./maybe */ 296)
-
-/***/ },
-/* 296 */
-/*!***********************************!*\
-  !*** ./~/data.maybe/lib/maybe.js ***!
-  \***********************************/
-/***/ function(module, exports) {
-
-	// Copyright (c) 2013-2014 Quildreen Motta <quildreen@gmail.com>
-	//
-	// Permission is hereby granted, free of charge, to any person
-	// obtaining a copy of this software and associated documentation files
-	// (the "Software"), to deal in the Software without restriction,
-	// including without limitation the rights to use, copy, modify, merge,
-	// publish, distribute, sublicense, and/or sell copies of the Software,
-	// and to permit persons to whom the Software is furnished to do so,
-	// subject to the following conditions:
-	//
-	// The above copyright notice and this permission notice shall be
-	// included in all copies or substantial portions of the Software.
-	//
-	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-	// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-	// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-	// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-	// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-	// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-	
-	/**
-	 * @module lib/maybe
-	 */
-	module.exports = Maybe
-	
-	// -- Aliases ----------------------------------------------------------
-	var clone         = Object.create
-	var unimplemented = function(){ throw new Error('Not implemented.') }
-	var noop          = function(){ return this                         }
-	
-	// -- Implementation ---------------------------------------------------
-	
-	/**
-	 * A structure for values that may not be present, or computations that may
-	 * fail. `Maybe(a)` explicitly models the effects that are implicit in
-	 * `Nullable` types, thus has none of the problems associated with
-	 * `null` or `undefined` — like `NullPointerExceptions`.
-	 *
-	 * The class models two different cases:
-	 *
-	 *  + `Just a` — represents a `Maybe(a)` that contains a value. `a` may
-	 *     be any value, including `null` or `undefined`.
-	 *
-	 *  + `Nothing` — represents a `Maybe(a)` that has no values. Or a
-	 *     failure that needs no additional information.
-	 *
-	 * Common uses of this structure includes modelling values that may or may
-	 * not be present in a collection, thus instead of needing a
-	 * `collection.has(a)`, the `collection.get(a)` operation gives you all
-	 * the information you need — `collection.get(a).is-nothing` being
-	 * equivalent to `collection.has(a)`; Similarly the same reasoning may
-	 * be applied to computations that may fail to provide a value, e.g.:
-	 * `collection.find(predicate)` can safely return a `Maybe(a)` instance,
-	 * even if the collection contains nullable values.
-	 *
-	 * Furthermore, the values of `Maybe(a)` can be combined and manipulated
-	 * by using the expressive monadic operations. This allows safely
-	 * sequencing operations that may fail, and safely composing values that
-	 * you don't know whether they're present or not, failing early
-	 * (returning a `Nothing`) if any of the operations fail.
-	 *
-	 * If one wants to store additional information about failures, the
-	 * [Either][] and [Validation][] structures provide such a capability, and
-	 * should be used instead of the `Maybe(a)` structure.
-	 *
-	 * [Either]: https://github.com/folktale/data.either
-	 * [Validation]: https://github.com/folktale/data.validation
-	 *
-	 *
-	 * @class
-	 */
-	function Maybe() {}
-	
-	// The case for successful values
-	Just.prototype = clone(Maybe.prototype)
-	function Just(a){
-	  this.value = a
-	}
-	
-	// The case for failure values
-	Nothing.prototype = clone(Maybe.prototype)
-	function Nothing(){}
-	
-	
-	// -- Constructors -----------------------------------------------------
-	
-	/**
-	 * Constructs a new `Maybe[α]` structure with an absent value. Commonly used
-	 * to represent a failure.
-	 *
-	 * @summary Void → Maybe[α]
-	 */
-	Maybe.Nothing = function() {
-	  return new Nothing
-	}
-	Maybe.prototype.Nothing = Maybe.Nothing
-	
-	/**
-	 * Constructs a new `Maybe[α]` structure that holds the single value
-	 * `α`. Commonly used to represent a success.
-	 *
-	 * `α` can be any value, including `null`, `undefined` or another
-	 * `Maybe[α]` structure.
-	 *
-	 * @summary α → Maybe[α]
-	 */
-	Maybe.Just = function(a) {
-	  return new Just(a)
-	}
-	Maybe.prototype.Just = Maybe.Just
-	
-	
-	// -- Conversions ------------------------------------------------------
-	
-	/**
-	 * Constructs a new `Maybe[α]` structure from a nullable type.
-	 *
-	 * If the value is either `null` or `undefined`, this function returns a
-	 * `Nothing`, otherwise the value is wrapped in a `Just(α)`.
-	 *
-	 * @summary α → Maybe[α]
-	 */
-	Maybe.fromNullable = function(a) {
-	  return a != null?       new Just(a)
-	  :      /* otherwise */  new Nothing
-	}
-	Maybe.prototype.fromNullable = Maybe.fromNullable
-	
-	/**
-	 * Constructs a new `Maybe[β]` structure from an `Either[α, β]` type.
-	 *
-	 * The left side of the `Either` becomes `Nothing`, and the right side
-	 * is wrapped in a `Just(β)`.
-	 *
-	 * @summary Either[α, β] → Maybe[β]
-	 */
-	Maybe.fromEither = function(a) {
-	  return a.fold(Maybe.Nothing, Maybe.Just)
-	}
-	Maybe.prototype.fromEither = Maybe.fromEither
-	
-	/**
-	 * Constructs a new `Maybe[β]` structure from a `Validation[α, β]` type.
-	 *
-	 * The failure side of the `Validation` becomes `Nothing`, and the right
-	 * side is wrapped in a `Just(β)`.
-	 *
-	 * @method
-	 * @summary Validation[α, β] → Maybe[β]
-	 */
-	Maybe.fromValidation           = Maybe.fromEither
-	Maybe.prototype.fromValidation = Maybe.fromEither
-	
-	
-	// -- Predicates -------------------------------------------------------
-	
-	/**
-	 * True if the `Maybe[α]` structure contains a failure (i.e.: `Nothing`).
-	 *
-	 * @summary Boolean
-	 */
-	Maybe.prototype.isNothing   = false
-	Nothing.prototype.isNothing = true
-	
-	
-	/**
-	 * True if the `Maybe[α]` structure contains a single value (i.e.: `Just(α)`).
-	 *
-	 * @summary Boolean
-	 */
-	Maybe.prototype.isJust = false
-	Just.prototype.isJust  = true
-	
-	
-	// -- Applicative ------------------------------------------------------
-	
-	/**
-	 * Creates a new `Maybe[α]` structure holding the single value `α`.
-	 *
-	 * `α` can be any value, including `null`, `undefined`, or another
-	 * `Maybe[α]` structure.
-	 *
-	 * @summary α → Maybe[α]
-	 */
-	Maybe.of = function(a) {
-	  return new Just(a)
-	}
-	Maybe.prototype.of = Maybe.of
-	
-	
-	/**
-	 * Applies the function inside the `Maybe[α]` structure to another
-	 * applicative type.
-	 *
-	 * The `Maybe[α]` structure should contain a function value, otherwise a
-	 * `TypeError` is thrown.
-	 *
-	 * @method
-	 * @summary (@Maybe[α → β], f:Applicative[_]) => f[α] → f[β]
-	 */
-	Maybe.prototype.ap = unimplemented
-	
-	Nothing.prototype.ap = noop
-	
-	Just.prototype.ap = function(b) {
-	  return b.map(this.value)
-	}
-	
-	
-	
-	
-	// -- Functor ----------------------------------------------------------
-	
-	/**
-	 * Transforms the value of the `Maybe[α]` structure using a regular unary
-	 * function.
-	 *
-	 * @method
-	 * @summary @Maybe[α] => (α → β) → Maybe[β]
-	 */
-	Maybe.prototype.map   = unimplemented
-	Nothing.prototype.map = noop
-	
-	Just.prototype.map = function(f) {
-	  return this.of(f(this.value))
-	}
-	
-	
-	// -- Chain ------------------------------------------------------------
-	
-	/**
-	 * Transforms the value of the `Maybe[α]` structure using an unary function
-	 * to monads.
-	 *
-	 * @method
-	 * @summary (@Maybe[α], m:Monad[_]) => (α → m[β]) → m[β]
-	 */
-	Maybe.prototype.chain   = unimplemented
-	Nothing.prototype.chain = noop
-	
-	Just.prototype.chain = function(f) {
-	  return f(this.value)
-	}
-	
-	
-	// -- Show -------------------------------------------------------------
-	
-	/**
-	 * Returns a textual representation of the `Maybe[α]` structure.
-	 *
-	 * @method
-	 * @summary @Maybe[α] => Void → String
-	 */
-	Maybe.prototype.toString = unimplemented
-	
-	Nothing.prototype.toString = function() {
-	  return 'Maybe.Nothing'
-	}
-	
-	Just.prototype.toString = function() {
-	  return 'Maybe.Just(' + this.value + ')'
-	}
-	
-	
-	// -- Eq ---------------------------------------------------------------
-	
-	/**
-	 * Tests if a `Maybe[α]` structure is equal to another `Maybe[α]` structure.
-	 *
-	 * @method
-	 * @summary @Maybe[α] => Maybe[α] → Boolean
-	 */
-	Maybe.prototype.isEqual = unimplemented
-	
-	Nothing.prototype.isEqual = function(b) {
-	  return b.isNothing
-	}
-	
-	Just.prototype.isEqual = function(b) {
-	  return b.isJust
-	  &&     b.value === this.value
-	}
-	
-	
-	// -- Extracting and recovering ----------------------------------------
-	
-	/**
-	 * Extracts the value out of the `Maybe[α]` structure, if it
-	 * exists. Otherwise throws a `TypeError`.
-	 *
-	 * @method
-	 * @summary @Maybe[α] => Void → a,      :: partial, throws
-	 * @see {@link module:lib/maybe~Maybe#getOrElse} — A getter that can handle failures
-	 * @throws {TypeError} if the structure has no value (`Nothing`).
-	 */
-	Maybe.prototype.get = unimplemented
-	
-	Nothing.prototype.get = function() {
-	  throw new TypeError("Can't extract the value of a Nothing.")
-	}
-	
-	Just.prototype.get = function() {
-	  return this.value
-	}
-	
-	
-	/**
-	 * Extracts the value out of the `Maybe[α]` structure. If there is no value,
-	 * returns the given default.
-	 *
-	 * @method
-	 * @summary @Maybe[α] => α → α
-	 */
-	Maybe.prototype.getOrElse = unimplemented
-	
-	Nothing.prototype.getOrElse = function(a) {
-	  return a
-	}
-	
-	Just.prototype.getOrElse = function(_) {
-	  return this.value
-	}
-	
-	
-	/**
-	 * Transforms a failure into a new `Maybe[α]` structure. Does nothing if the
-	 * structure already contains a value.
-	 *
-	 * @method
-	 * @summary @Maybe[α] => (Void → Maybe[α]) → Maybe[α]
-	 */
-	Maybe.prototype.orElse = unimplemented
-	
-	Nothing.prototype.orElse = function(f) {
-	  return f()
-	}
-	
-	Just.prototype.orElse = function(_) {
-	  return this
-	}
-	
-	
-	/**
-	 * Catamorphism.
-	 * 
-	 * @method
-	 * @summary @Maybe[α] => { Nothing: Void → β, Just: α → β } → β
-	 */
-	Maybe.prototype.cata = unimplemented
-	
-	Nothing.prototype.cata = function(pattern) {
-	  return pattern.Nothing()
-	}
-	
-	Just.prototype.cata = function(pattern) {
-	  return pattern.Just(this.value);
-	}
-	
-	
-	/**
-	 * JSON serialisation
-	 *
-	 * @method
-	 * @summary @Maybe[α] => Void → Object
-	 */
-	Maybe.prototype.toJSON = unimplemented
-	
-	Nothing.prototype.toJSON = function() {
-	  return { '#type': 'folktale:Maybe.Nothing' }
-	}
-	
-	Just.prototype.toJSON = function() {
-	  return { '#type': 'folktale:Maybe.Just'
-	         , value: this.value }
-	}
-
-
-/***/ },
-/* 297 */
 /*!**************************************!*\
   !*** ./src/reducers/home-reducer.js ***!
   \**************************************/
@@ -36431,13 +35983,9 @@
 	});
 	exports.actionType = undefined;
 	
-	var _homeStore = __webpack_require__(/*! ../stores/home-store */ 298);
+	var _homeStore = __webpack_require__(/*! ../stores/home-store */ 295);
 	
 	var _homeStore2 = _interopRequireDefault(_homeStore);
-	
-	var _setState = __webpack_require__(/*! ./set-state */ 294);
-	
-	var _setState2 = _interopRequireDefault(_setState);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -36463,11 +36011,13 @@
 	exports.default = function () {
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _homeStore2.default;
 		var action = arguments[1];
-		return actionMap.get(action.type) ? (0, _setState2.default)(action, state)(method) : state;
+	
+		var updater = actionMap.get(action.type);
+		return updater ? updater(state) : state;
 	};
 
 /***/ },
-/* 298 */
+/* 295 */
 /*!**********************************!*\
   !*** ./src/stores/home-store.js ***!
   \**********************************/
@@ -36492,7 +36042,7 @@
 	});
 
 /***/ },
-/* 299 */
+/* 296 */
 /*!************************************!*\
   !*** ./src/stores/global-store.js ***!
   \************************************/
@@ -36517,7 +36067,7 @@
 	});
 
 /***/ },
-/* 300 */
+/* 297 */
 /*!*******************************************!*\
   !*** ./src/pages/questions/questions.jsx ***!
   \*******************************************/
@@ -36529,19 +36079,19 @@
 		value: true
 	});
 	
-	var _questionStore = __webpack_require__(/*! ../../stores/question-store */ 301);
+	var _questionStore = __webpack_require__(/*! ../../stores/question-store */ 298);
 	
 	var _questionStore2 = _interopRequireDefault(_questionStore);
 	
-	var _question = __webpack_require__(/*! ../../components/question/question.jsx */ 302);
+	var _question = __webpack_require__(/*! ../../components/question/question.jsx */ 299);
 	
 	var _question2 = _interopRequireDefault(_question);
 	
-	var _inPageAlert = __webpack_require__(/*! ../../components/in-page-alert/in-page-alert */ 303);
+	var _inPageAlert = __webpack_require__(/*! ../../components/in-page-alert/in-page-alert */ 300);
 	
 	var _inPageAlert2 = _interopRequireDefault(_inPageAlert);
 	
-	__webpack_require__(/*! ./question-page.sass */ 304);
+	__webpack_require__(/*! ./question-page.sass */ 301);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -36582,7 +36132,7 @@
 	};
 
 /***/ },
-/* 301 */
+/* 298 */
 /*!**************************************!*\
   !*** ./src/stores/question-store.js ***!
   \**************************************/
@@ -36596,7 +36146,7 @@
 	exports.default = {};
 
 /***/ },
-/* 302 */
+/* 299 */
 /*!**********************************************!*\
   !*** ./src/components/question/question.jsx ***!
   \**********************************************/
@@ -36653,7 +36203,7 @@
 	};
 
 /***/ },
-/* 303 */
+/* 300 */
 /*!********************************************************!*\
   !*** ./src/components/in-page-alert/in-page-alert.jsx ***!
   \********************************************************/
@@ -36702,7 +36252,7 @@
 	};
 
 /***/ },
-/* 304 */
+/* 301 */
 /*!************************************************!*\
   !*** ./src/pages/questions/question-page.sass ***!
   \************************************************/
@@ -36712,10 +36262,10 @@
 	"use strict";
 
 /***/ },
-/* 305 */,
-/* 306 */,
-/* 307 */,
-/* 308 */
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */
 /*!*******************************************!*\
   !*** ./src/pages/dashboard/dashboard.jsx ***!
   \*******************************************/
@@ -36731,9 +36281,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	__webpack_require__(/*! ./dashboard.sass */ 309);
+	__webpack_require__(/*! ./dashboard.sass */ 306);
 	
-	var _quickPicks = __webpack_require__(/*! ./quick-picks/quick-picks */ 311);
+	var _quickPicks = __webpack_require__(/*! ./quick-picks/quick-picks */ 308);
 	
 	var _quickPicks2 = _interopRequireDefault(_quickPicks);
 	
@@ -36786,7 +36336,7 @@
 	exports.default = Dashboard;
 
 /***/ },
-/* 309 */
+/* 306 */
 /*!********************************************!*\
   !*** ./src/pages/dashboard/dashboard.sass ***!
   \********************************************/
@@ -36796,8 +36346,8 @@
 	"use strict";
 
 /***/ },
-/* 310 */,
-/* 311 */
+/* 307 */,
+/* 308 */
 /*!*********************************************************!*\
   !*** ./src/pages/dashboard/quick-picks/quick-picks.jsx ***!
   \*********************************************************/
@@ -36811,7 +36361,7 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 179);
 	
-	__webpack_require__(/*! ./quick-picks.sass */ 312);
+	__webpack_require__(/*! ./quick-picks.sass */ 309);
 	
 	exports.default = function (React) {
 		var string = React.PropTypes.string;
@@ -36870,7 +36420,7 @@
 	};
 
 /***/ },
-/* 312 */
+/* 309 */
 /*!**********************************************************!*\
   !*** ./src/pages/dashboard/quick-picks/quick-picks.sass ***!
   \**********************************************************/
@@ -36880,8 +36430,8 @@
 	"use strict";
 
 /***/ },
-/* 313 */,
-/* 314 */
+/* 310 */,
+/* 311 */
 /*!****************************************************************!*\
   !*** ./src/page-templates/master-template/master-template.jsx ***!
   \****************************************************************/
@@ -36893,7 +36443,7 @@
 	  value: true
 	});
 	
-	var _nav = __webpack_require__(/*! ./nav/nav */ 315);
+	var _nav = __webpack_require__(/*! ./nav/nav */ 312);
 	
 	var _nav2 = _interopRequireDefault(_nav);
 	
@@ -36919,7 +36469,7 @@
 	};
 
 /***/ },
-/* 315 */
+/* 312 */
 /*!********************************************************!*\
   !*** ./src/page-templates/master-template/nav/nav.jsx ***!
   \********************************************************/
@@ -36931,15 +36481,15 @@
 	    value: true
 	});
 	
-	var _navLogo = __webpack_require__(/*! ./nav-logo/nav-logo */ 316);
+	var _navLogo = __webpack_require__(/*! ./nav-logo/nav-logo */ 313);
 	
 	var _navLogo2 = _interopRequireDefault(_navLogo);
 	
-	var _quickLinks = __webpack_require__(/*! ./quick-links/quick-links */ 317);
+	var _quickLinks = __webpack_require__(/*! ./quick-links/quick-links */ 314);
 	
 	var _quickLinks2 = _interopRequireDefault(_quickLinks);
 	
-	var _rightNav = __webpack_require__(/*! ./right-nav/right-nav */ 318);
+	var _rightNav = __webpack_require__(/*! ./right-nav/right-nav */ 315);
 	
 	var _rightNav2 = _interopRequireDefault(_rightNav);
 	
@@ -36974,7 +36524,7 @@
 	};
 
 /***/ },
-/* 316 */
+/* 313 */
 /*!**********************************************************************!*\
   !*** ./src/page-templates/master-template/nav/nav-logo/nav-logo.jsx ***!
   \**********************************************************************/
@@ -37030,7 +36580,7 @@
 	};
 
 /***/ },
-/* 317 */
+/* 314 */
 /*!****************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/quick-links/quick-links.jsx ***!
   \****************************************************************************/
@@ -37097,7 +36647,7 @@
 	};
 
 /***/ },
-/* 318 */
+/* 315 */
 /*!************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/right-nav/right-nav.jsx ***!
   \************************************************************************/
@@ -37109,7 +36659,7 @@
 	    value: true
 	});
 	
-	var _userMenu = __webpack_require__(/*! ../user-menu/user-menu */ 319);
+	var _userMenu = __webpack_require__(/*! ../user-menu/user-menu */ 316);
 	
 	var _userMenu2 = _interopRequireDefault(_userMenu);
 	
@@ -37159,7 +36709,7 @@
 	};
 
 /***/ },
-/* 319 */
+/* 316 */
 /*!************************************************************************!*\
   !*** ./src/page-templates/master-template/nav/user-menu/user-menu.jsx ***!
   \************************************************************************/
@@ -37241,7 +36791,7 @@
 	};
 
 /***/ },
-/* 320 */
+/* 317 */
 /*!**********************!*\
   !*** ./src/app.sass ***!
   \**********************/

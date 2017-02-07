@@ -11,7 +11,9 @@ function App(props) {
 		authStore: object
 	};
 
-	const component = {
+	return {
+
+		props,
 
 		render() {
 			const props = this.props;
@@ -30,10 +32,6 @@ function App(props) {
 		}
 	};
 
-	component.prototype = Object.create(React.Component.prototype);
-	React.Component.call(component, props);
-
-	return component;
 }
 
 

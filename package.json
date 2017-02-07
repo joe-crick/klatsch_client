@@ -19,6 +19,7 @@
     "octicons": "^2.2.0",
     "qs": "^3.1.0",
     "ramda": "^0.23.0",
+    "ramda-fantasy": "^0.7.0",
     "react": "^15.2.0",
     "react-datepicker": "^0.28.1",
     "react-dom": "^15.1.0",
