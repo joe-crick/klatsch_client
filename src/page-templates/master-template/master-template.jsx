@@ -1,7 +1,5 @@
 import React from 'react';
-import nav from './nav/nav';
-
-const Nav = nav(React);
+import Nav from './nav/nav';
 
 export default ({children}) => (
 	<klatsch>
