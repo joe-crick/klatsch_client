@@ -1,11 +1,8 @@
+import {actionType} from '../../reducers/auth-reducer';
+
 export const loginAction = () => function (user) {
 	return {
-		type: 'LOG_IN',
+		type: actionType.LOG_IN,
 		payload: user
 	}
 }();
-
-export const logUserOut = user => ({
-	type: 'LOG_IN',
-	payload: user
-});
