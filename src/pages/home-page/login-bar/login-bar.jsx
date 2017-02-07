@@ -5,7 +5,7 @@ export default props => {
     return (
         <klatsch-login-bar>
             <div className="pull-right">
-                <button className='btn btn-default' onClick={props.loginAction}>
+                <button className='btn btn-default' onClick={props.logUserIn}>
 				{props.loginButtonText}
                 </button>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import createSignUpBar from './sign-up-bar/sign-up-bar';
 import LoginBar from './login-bar/login-bar';
 import createTagLine from './tag-line/tag-line';
-import {loginAction} from './home-page-actions';
+import {logUserIn} from './home-page-actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
@@ -29,7 +29,7 @@ function HomePage(props) {
 						<div className="container">
 							<div className="home-logo"></div>
 							<div>
-								<LoginBar loginButtonText={props.loginButtonText} loginAction={props.loginAction}/>
+								<LoginBar loginButtonText={props.loginButtonText} logUserIn={props.logUserIn}/>
 								<SignUpBar store={homeStore}/>
 								<TagLine tagLine={homeStore.tagLine}/>
 							</div>
@@ -47,7 +47,7 @@ function HomePage(props) {
  * @returns {*}
  */
 function matchDispatchToProps(dispatch) {
-	return bindActionCreators({loginAction}, dispatch)
+	return bindActionCreators({logUserIn}, dispatch)
 }
 
 /**
