@@ -1,6 +1,6 @@
 import React from 'react';
 import './dashboard.sass';
-import quickPicksFactory from './quick-picks/quick-picks';
+import QuickPicks from './quick-picks/quick-picks';
 
 // TODO: Temporary Code
 const userList = [
@@ -27,7 +27,6 @@ const {array, func} = React.PropTypes;
  * @constructor
  */
 function Dashboard(props) {
-	const QuickPicks = quickPicksFactory(React);
 
 	Dashboard.PropTypes = {
 		userList: array,
@@ -41,7 +40,9 @@ function Dashboard(props) {
 		render() {
 			return (
 				<klatsch-dashboard>
-					<QuickPicks profiles={userList} showProfile={showProfile}/>
+					<QuickPicks
+						profiles={userList}
+						showProfile={showProfile}/>
 				</klatsch-dashboard>
 			);
 		}
