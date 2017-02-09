@@ -1,6 +1,7 @@
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const sassLoaders = [
 	'css-loader',
@@ -31,7 +32,13 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin('[name].css')
+		new ExtractTextPlugin('[name].css'),
+		new SWPrecacheWebpackPlugin({
+			cacheId: 'klatsch',
+			filename: 'klatsch-service-worker.js',
+			minify: false,
+			staticFileGlobsIgnorePatterns: [/\.map$/]
+		})
 	],
 	resolve: {
 		extensions: ['.js', '.jsx', '.sass']
