@@ -1,4 +1,6 @@
-export default React => props => {
+import React from 'react';
+
+export default props => {
 
 	return (
 		<klatsch-question-container>

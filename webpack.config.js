@@ -26,7 +26,7 @@ module.exports = {
 			},
 			{
 				test: /\.sass$/,
-				use: ExtractTextPlugin.extract({fallback: 'style-loader', loader: sassLoaders.join('!')})
+				use: ExtractTextPlugin.extract({fallback: 'style-loader', use: sassLoaders.join('!')})
 			}
 		]
 	},
