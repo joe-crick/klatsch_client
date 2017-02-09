@@ -1,24 +1,15 @@
-export default React => {
+import React from 'react';
 
-	const {string} = React.PropTypes;
+const {string} = React.PropTypes;
 
-	return function TagLine(props) {
+const TagLine = props => (
+	<klatsch-tag-line>
+		{props.tagLine}
+	</klatsch-tag-line>
+);
 
-		TagLine.PropTypes = {
-			tagLine: string.isRequired
-		};
+TagLine.PropTypes = {
+	tagLine: string.isRequired
+};
 
-		return {
-
-			props,
-
-			render() {
-				return (
-					<klatsch-tag-line>
-						{props.tagLine}
-					</klatsch-tag-line>
-				);
-			}
-		}
-	}
-}
+export default TagLine;

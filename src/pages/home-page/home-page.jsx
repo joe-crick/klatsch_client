@@ -1,7 +1,7 @@
 import React from 'react';
 import SignUpBar from './sign-up-bar/sign-up-bar';
 import LoginBar from './login-bar/login-bar';
-import createTagLine from './tag-line/tag-line';
+import TagLine from './tag-line/tag-line';
 import {logUserIn} from './home-page-actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -14,7 +14,6 @@ import {connect} from 'react-redux';
  */
 function HomePage(props) {
 
-	const TagLine = createTagLine(React);
 	const homeStore = props.homeStore;
 
 	return {

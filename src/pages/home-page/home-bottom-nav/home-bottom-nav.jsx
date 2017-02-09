@@ -1,5 +1,6 @@
+import React from 'react';
 
-export default React => props => (
+export default props => (
 	<klatsch-home-bottom-nav>
 		<ul className="col-md-10 list-group">
 			{props.navItems.map((item, idx) => <li key={`bnav${idx}`}>
