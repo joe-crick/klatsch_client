@@ -85,20 +85,14 @@ klatsch-sign-up-bar .continue-button {
     width: 100%;
     max-width: 100%; }
   klatsch-sign-up-bar .login-container {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -ms-flex-direction: column;
-        flex-direction: column; } }
+    align-content: center;
+    flex-direction: column; } }
 
 klatsch-home-bottom-nav ul {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-align: start;
-      align-items: flex-start; }
+  justify-content: space-around;
+  align-items: flex-start; }
   klatsch-home-bottom-nav ul li {
     display: inline-block; }
 
@@ -134,5 +128,3 @@ body {
 
 main {
   margin-top: 75px; }
-
-/*# sourceMappingURL=main.css.map*/
