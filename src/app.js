@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import rootReducer from './rootReducer';
 
-import profileFactory from './pages/questions/questions.jsx';
+import Profile from './pages/questions/questions.jsx';
 import Dashboard from './pages/dashboard/dashboard';
 import SiteTemplate from './page-templates/master-template/master-template';
 import './app.sass';
@@ -20,8 +20,6 @@ if (window !== undefined) {
 }
 
 const store = createStore(rootReducer);
-
-const Profile = profileFactory(React);
 
 /**
  * Routing table
