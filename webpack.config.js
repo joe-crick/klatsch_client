@@ -1,7 +1,7 @@
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const Precache = require('./sw-precache-webpack-plugin');
 
 const sassLoaders = [
 	'css-loader',
@@ -14,7 +14,7 @@ module.exports = {
 		'./src/app.js'
 	],
 	output: {
-		path: __dirname + '/build',
+		path: path.resolve(__dirname, 'build/'),
 		publicPath: '/build',
 		filename: 'bundle.js'
 	},
@@ -33,11 +33,17 @@ module.exports = {
 	},
 	plugins: [
 		new ExtractTextPlugin('[name].css'),
-		new SWPrecacheWebpackPlugin({
+		new Precache({
 			cacheId: 'klatsch',
 			filename: 'klatsch-service-worker.js',
 			minify: false,
-			staticFileGlobsIgnorePatterns: [/\.map$/]
+			staticFileGlobsIgnorePatterns: [/\.map$/],
+			runtimeCaching: [
+				{
+					urlPattern: '/',
+					handler: 'cacheFirst',
+				}
+			]
 		})
 	],
 	resolve: {
@@ -45,6 +51,7 @@ module.exports = {
 	},
 	devServer: {
 		historyApiFallback: true,
-		contentBase: './'
+		contentBase: './',
+		outputPath: path.resolve(__dirname, 'build/')
 	}
 };
