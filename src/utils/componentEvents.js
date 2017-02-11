@@ -1,5 +1,5 @@
 function toggleDropDown(el) {
-    $(el).closest('.btn-group').toggleClass('open');
+    $(el).closest('.btn-group').toggleClass('show');
 }
 
 export {
