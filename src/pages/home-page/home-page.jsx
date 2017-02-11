@@ -8,7 +8,6 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
 
-
 /**
  * @desc The Home Page container component
  * @param props
@@ -27,10 +26,14 @@ function HomePage(props) {
 			return (
 				<klatsch-home-page>
 					<section className="home-bg">
-						<div className="home-logo"></div>
-						<SignUpBar store={homeStore} l/>
-						<LoginButton loginButtonText={props.loginButtonText}/>
-						<TagLine tagLine={homeStore.tagLine}/>
+						<div className="top-bar">
+							<div className="home-logo"></div>
+							<div className="action-container">
+								<SignUpBar store={homeStore} l/>
+								<LoginButton loginButtonText={props.loginButtonText}/>
+							</div>
+							<TagLine tagLine={homeStore.tagLine}/>
+						</div>
 					</section>
 					<section>
 						<HomeBottomNav/>
