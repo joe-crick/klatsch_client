@@ -1,6 +1,5 @@
 import React from 'react';
 import MultiSelect from '../../../components/multi-select/multi-select';
-import LoginBar from '../login-bar/login-bar';
 
 const zipCodeText = 'zipCodeText';
 const zipCodeTextValue = 'zipCodeTextValue';
