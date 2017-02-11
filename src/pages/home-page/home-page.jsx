@@ -17,12 +17,14 @@ import {connect} from 'react-redux';
 function HomePage(props) {
 
 	const homeStore = props.homeStore;
+	const tagLine = 'tagLine';
 
 	return {
 
 		props,
 
 		render() {
+
 			return (
 				<klatsch-home-page>
 					<section className="home-bg">
@@ -32,7 +34,7 @@ function HomePage(props) {
 								<SignUpBar store={homeStore} l/>
 								<LoginButton logUserIn={props.logUserIn} loginButtonText={props.loginButtonText}/>
 							</div>
-							<TagLine tagLine={homeStore.tagLine}/>
+							<TagLine tagLine={homeStore.get(tagLine)}/>
 						</div>
 					</section>
 					<section>

@@ -2,9 +2,11 @@ import React from 'react';
 
 const {string} = React.PropTypes;
 
+const tagLine = 'tagLine';
+
 const TagLine = props => (
 	<klatsch-tag-line>
-		{props.tagLine}
+		<div>{props.tagLine}</div>
 	</klatsch-tag-line>
 );
 
