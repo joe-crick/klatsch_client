@@ -30,7 +30,7 @@ function HomePage(props) {
 							<div className="home-logo"></div>
 							<div className="action-container">
 								<SignUpBar store={homeStore} l/>
-								<LoginButton loginButtonText={props.loginButtonText}/>
+								<LoginButton logUserIn={props.logUserIn} loginButtonText={props.loginButtonText}/>
 							</div>
 							<TagLine tagLine={homeStore.tagLine}/>
 						</div>
