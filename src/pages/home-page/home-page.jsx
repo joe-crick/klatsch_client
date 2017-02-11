@@ -37,7 +37,7 @@ function HomePage(props) {
 							<form className="form-inline">
 								<div className="row login-container container">
 									<div className="container">
-										<div className="col-md-4 home-logo pull-left"></div>
+										<div className="col-md-6 home-logo pull-left"></div>
 										<div className="col-md-2">
 											<fieldset className="form-group">
 												<input id="zip-code" className="form-control"
