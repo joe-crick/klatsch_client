@@ -35,7 +35,7 @@ module.exports = {
 		new ExtractTextPlugin('[name].css'),
 		new Precache({
 			cacheId: 'klatsch',
-			filename: 'klatsch-service-worker.js',
+			filename: 'build/klatsch-service-worker.js',
 			minify: false,
 			staticFileGlobsIgnorePatterns: [/\.map$/],
 			runtimeCaching: [

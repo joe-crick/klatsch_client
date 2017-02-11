@@ -22,6 +22,13 @@ if (window !== undefined) {
 const store = createStore(rootReducer);
 
 /**
+ * Register the ServiceWorker
+ */
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('/klatsch-service-worker.js');
+}
+
+/**
  * Routing table
  */
 const Root = ({store}) => (<Provider store={store}>

@@ -2,6 +2,7 @@ import React from 'react';
 import SignUpBar from './sign-up-bar/sign-up-bar';
 import LoginBar from './login-bar/login-bar';
 import TagLine from './tag-line/tag-line';
+import HomeBottomNav from './home-bottom-nav/home-bottom-nav'
 import {logUserIn} from './home-page-actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -23,7 +24,7 @@ function HomePage(props) {
 		render() {
 			return (
 				<klatsch-home-page>
-					<div className="home-bg">
+					<section className="home-bg">
 						<div className="container">
 							<div className="home-logo"></div>
 							<div>
@@ -32,7 +33,10 @@ function HomePage(props) {
 								<TagLine tagLine={homeStore.tagLine}/>
 							</div>
 						</div>
-					</div>
+					</section>
+					<section>
+						<HomeBottomNav/>
+					</section>
 				</klatsch-home-page>
 			)
 		}
