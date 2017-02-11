@@ -38,7 +38,7 @@ export default function SignUpBar(props) {
 										   placeholder={store.get(zipCodeText)} value={store.get(zipCodeTextValue)}/>
 								</fieldset>
 							</div>
-							<div className="col-md-4">
+							<div className="col-md-3">
 								<fieldset className="form-group">
 									<label>{store.get(ageRangeLabel)}</label>
 									<MultiSelect
@@ -47,7 +47,7 @@ export default function SignUpBar(props) {
 										selectTitle={store.get(selectTitle)}/>
 								</fieldset>
 							</div>
-							<div className="col-md-4 continue-button">
+							<div className="col-md-6 continue-button">
 								<button type="button" className="btn btn-primary continue-button"
 										onClick={store.get(register)}>
 									Continue
