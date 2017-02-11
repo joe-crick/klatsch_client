@@ -25,13 +25,16 @@ function HomePage(props) {
 			return (
 				<klatsch-home-page>
 					<section className="home-bg">
-						<div className="container">
-							<div className="home-logo"></div>
-							<div>
-								<LoginBar loginButtonText={props.loginButtonText} logUserIn={props.logUserIn}/>
-								<SignUpBar store={homeStore}/>
-								<TagLine tagLine={homeStore.tagLine}/>
-							</div>
+						<div className="container-background">
+							<form>
+								<div className="row login-container container">
+									<div className="container">
+										<div className="home-logo pull-left"></div>
+										<SignUpBar store={homeStore}/>
+										<LoginBar loginButtonText={props.loginButtonText} logUserIn={props.logUserIn}/>
+										<TagLine tagLine={homeStore.tagLine}/></div>
+								</div>
+							</form>
 						</div>
 					</section>
 					<section>
@@ -57,7 +60,7 @@ function matchDispatchToProps(dispatch) {
  * @param state
  * @returns {{authStore: *, homeStore: *}}
  */
-function matchStateToProps(state){
+function matchStateToProps(state) {
 	const loginButtonText = 'get' in state.authStore ? state.authStore.get('loginButtonText') : '';
 	return {
 		loginButtonText,
