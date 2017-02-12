@@ -1,19 +1,24 @@
 @import ../../../sass_vars
 
-.klatsch-quick-picks
-  display: flex
-  justify-content: center
+.klatsch-quick-picks-container
   background-color: $sea-greenish
   padding-top: 30px
   padding-bottom: 30px
-  .quick-pick-bar
-    display: inline-block
-    .quick-pick
-      height: 9rem
-      width: 16rem
-      margin-right: 1rem
-      border-radius: 15%
-  .quick-picks-refresh
-    display: inline-block
-    &:hover
-      background-color: $sea-coralish
+  h3
+    text-align: center
+    color: snow
+  .klatsch-quick-picks
+    display: flex
+    justify-content: center
+    padding-top: 15px
+    .quick-pick-bar
+      display: inline-block
+      .quick-pick
+        height: 9rem
+        width: 16rem
+        margin-right: 1rem
+        border-radius: 15%
+    .quick-picks-refresh
+      display: inline-block
+      &:hover
+        background-color: $sea-coralish

@@ -4,9 +4,9 @@ import ActionCenterMessage from './action-center-message/action-center-message';
 
 // TODO: Replace with actual data
 const loop = [
-	<ActionCenterMessage hasBeenOpened={false}/>,
-	<ActionCenterMessage hasBeenOpened={true}/>,
-	<ActionCenterMessage hasBeenOpened={false}/>,
+	<span key="1"><ActionCenterMessage hasBeenOpened={false}/></span>,
+	<span key="2"><ActionCenterMessage hasBeenOpened={true}/></span>,
+	<span key="3"><ActionCenterMessage hasBeenOpened={false}/></span>,
 ];
 
 const ActionCenter = props => {

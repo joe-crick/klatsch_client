@@ -1,0 +1,10 @@
+@import ../../sass_vars
+.klatsch-tooltip
+  .fa-question-circle
+    color: $sea-coralish
+    cursor: help
+    &:hover + .klatsch-tooltip-body
+      display: block
+  .klatsch-tooltip-body
+    display: none
+    position: absolute
