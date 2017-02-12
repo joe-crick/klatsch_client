@@ -13,7 +13,7 @@ const homeFooter = props => {
 				</div>
 				<div className="row">
 					<div className="col footer-copyright">
-						© Klatsch 2017
+						© Klatzch 2017
 						<div className="footer-social">
 							{/*If there ends up being some kind of social thing, put it here*/}
 						</div>
