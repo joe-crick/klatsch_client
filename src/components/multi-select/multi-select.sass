@@ -1,5 +1,8 @@
-klatsch-multi-select
-  display: block
+@import "../../sass_vars"
+
+.klatsch-multi-select
+  .btn
+    cursor: pointer
   .fa-check-square:before
     color: green
     margin-left: -15px
@@ -11,8 +14,10 @@ klatsch-multi-select
     .dropdown-item
       border: 0
       background-color: transparent
-      width: 100%
+      width: 90%
       text-align: left
       margin-left: 15px
       padding: 7px 7px
       outline: none
+      &:hover
+        background-color: $sea-greenish
