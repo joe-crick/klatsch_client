@@ -1,8 +1,7 @@
 import React from 'react';
-import SignUpBar from './sign-up-bar/sign-up-bar';
 import HomeBottomNav from './home-bottom-nav/home-bottom-nav'
 import TagLine from './tag-line/tag-line';
-import LoginButton from './login-bar/login-bar';
+import HomeNav from './home-nav/home-nav';
 import HomeFooter from './home-footer/home-footer';
 import {logUserIn} from './home-page-actions';
 import {bindActionCreators} from 'redux';
@@ -30,13 +29,12 @@ function HomePage(props) {
 				<klatsch-home-page>
 					<section className="home-bg">
 						<div className="top-bar">
-							<div className="home-logo"></div>
-							<div className="action-container">
-								<SignUpBar store={homeStore} l/>
-								<LoginButton logUserIn={props.logUserIn} loginButtonText={props.loginButtonText}/>
-							</div>
+							<HomeNav
+								homeStore={homeStore}
+								logUserIn={props.logUserIn}
+								loginButtonText={props.loginButtonText}/>
 						</div>
-						<TagLine tagLine={homeStore.get(tagLine)}/>
+						{/*<TagLine tagLine={homeStore.get(tagLine)}/>*/}
 					</section>
 					<section>
 						<HomeBottomNav/>
