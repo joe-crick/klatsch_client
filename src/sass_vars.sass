@@ -12,6 +12,10 @@ $break-small-max: 568px
   @media (min-width: #{$break-med-min}) and (max-width: #{$break-med-max})
     @content
 
+@mixin large
+  @media (min-width: #{$break-med-max})
+    @content
+
 
 // Colors
 $sea-greenish: #bfd8d2

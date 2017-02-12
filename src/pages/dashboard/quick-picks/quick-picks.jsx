@@ -32,12 +32,12 @@ function QuickPicks(props) {
 				<div className="klatsch-quick-picks-container">
 					<div className="container">
 						<div className="row">
-							<div className="col-sm-12 col-lg-5">
+							<div className="col-sm-12 col-lg-6 col-md-8">
 								<h3>Top Matches</h3>
 								<Tooltip>
 									{topMatchesText}
 								</Tooltip></div>
-							<div className="col quick-picks-refresh-container">
+							<div className="col-sm-1 col-md-4 cold-lg-6 quick-picks-refresh-container">
 								<button className="btn btn-klatsch-primary quick-picks-refresh">
 									<span className="fa fa-refresh"/>
 								</button>

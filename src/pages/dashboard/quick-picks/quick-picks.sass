@@ -15,6 +15,8 @@
       display: inline-block
       &:hover
         background-color: $sea-coralish
+      @include large
+        float: right
   .klatsch-tooltip
     position: relative
     left: 10px
@@ -24,11 +26,12 @@
     padding-top: 15px
     .container
       .quick-pick-bar
-        @include small
-          margin-left: auto
+        text-align: center
         .quick-pick
           height: 9rem
           width: 16rem
           margin-right: 1rem
           border-radius: 15%
+          @include small
+            margin-right: 0
 
