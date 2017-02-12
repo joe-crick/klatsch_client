@@ -4,7 +4,7 @@ import LoginButton from '../login-bar/login-bar';
 
 const HomeNav = props => {
 	return (
-		<nav className="navbar navbar-toggleable-md navbar-light bg-faded home-nav">
+		<nav className="navbar fixed-top navbar-toggleable-md navbar-light bg-faded home-nav">
 			<button className="navbar-toggler navbar-toggler-right"
 					type="button"
 					data-toggle="collapse"

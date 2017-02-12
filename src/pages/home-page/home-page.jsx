@@ -28,12 +28,10 @@ function HomePage(props) {
 			return (
 				<klatsch-home-page>
 					<section className="home-bg">
-						<div className="top-bar">
-							<HomeNav
-								homeStore={homeStore}
-								logUserIn={props.logUserIn}
-								loginButtonText={props.loginButtonText}/>
-						</div>
+						<HomeNav
+							homeStore={homeStore}
+							logUserIn={props.logUserIn}
+							loginButtonText={props.loginButtonText}/>
 						{/*<TagLine tagLine={homeStore.get(tagLine)}/>*/}
 					</section>
 					<section>

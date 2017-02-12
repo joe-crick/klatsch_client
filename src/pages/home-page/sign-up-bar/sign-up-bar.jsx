@@ -28,20 +28,22 @@ export default function SignUpBar(props) {
 		render() {
 
 			return (
-				<form className="form-inline">
-					<input id="zip-code" className="form-control mb-2 mr-sm-2 mb-sm-0"
-						   placeholder={store.get(zipCodeText)} value={store.get(zipCodeTextValue)}/>
-					<label className="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-						<MultiSelect
-							options={store.get(ageRanges)}
-							dropDownAction={store.get(dropDownAction)}
-							selectTitle={store.get(selectTitle)}/>
-					</label>
+				<div className="navbar-nav mr-auto">
+					<form className="form-inline nav-item">
+						<input id="zip-code" className="form-control mb-2 mr-sm-2 mb-sm-0"
+							   placeholder={store.get(zipCodeText)} value={store.get(zipCodeTextValue)}/>
+						<label className="custom-control mb-2 mr-sm-2 mb-sm-0 age-select">
+							<MultiSelect
+								options={store.get(ageRanges)}
+								dropDownAction={store.get(dropDownAction)}
+								selectTitle={store.get(selectTitle)}/>
+						</label>
 						<button type="submit" className="btn btn-primary continue-button"
 								onClick={store.get(register)}>
 							Continue
 						</button>
-				</form>
+					</form>
+				</div>
 			);
 		}
 	}
