@@ -30,10 +30,11 @@ function QuickPicks(props) {
 		render() {
 			return (
 				<div className="klatsch-quick-picks-container">
-					<h3>Top Matches</h3>
+					<h3 className="pull-left">Top Matches</h3>
 					<Tooltip>
 						{topMatchesText}
 					</Tooltip>
+					<div className="clearfix"/>
 					<div className="klatsch-quick-picks">
 						{props.profiles ?
 							(<div>
