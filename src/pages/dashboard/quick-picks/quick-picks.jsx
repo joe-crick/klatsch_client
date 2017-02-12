@@ -39,7 +39,7 @@ function QuickPicks(props) {
 										);
 									})}
 								</div>
-								<button className="btn btn-default"><span className="glyphicon glyphicon-refresh"/>
+								<button className="btn btn-klatsch-primary"><span className="fa fa-refresh"/>
 								</button>
 							</div>
 						)
