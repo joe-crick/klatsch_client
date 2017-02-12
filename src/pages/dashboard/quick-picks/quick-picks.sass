@@ -16,14 +16,17 @@
     display: flex
     justify-content: center
     padding-top: 15px
-    .quick-pick-bar
-      display: inline-block
-      .quick-pick
-        height: 9rem
-        width: 16rem
-        margin-right: 1rem
-        border-radius: 15%
-    .quick-picks-refresh
-      display: inline-block
-      &:hover
-        background-color: $sea-coralish
+    .container
+      .quick-pick-bar
+        @include small
+          margin-left: auto
+        .quick-pick
+          height: 9rem
+          width: 16rem
+          margin-right: 1rem
+          border-radius: 15%
+      .quick-picks-refresh
+        display: inline-block
+        margin-top: 25%
+        &:hover
+          background-color: $sea-coralish

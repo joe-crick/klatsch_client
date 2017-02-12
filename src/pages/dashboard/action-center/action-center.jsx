@@ -14,10 +14,10 @@ const ActionCenter = props => {
 		<div className="container action-center">
 			<h4 className="action-center-title">Action Center</h4>
 			<div className="row">
-				<div className="col-6 action-messages">
+				<div className="col-md-6 col-sm-12 action-messages">
 					{loop}
 				</div>
-				<div className="col-2 action-center-separator"/>
+				<div className="col-md-2 col-sm-0 action-center-separator"/>
 				<div className="col action-question-teaser">
 					<QuestionTeaser/>
 				</div>

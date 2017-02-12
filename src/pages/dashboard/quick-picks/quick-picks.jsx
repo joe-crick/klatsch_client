@@ -37,20 +37,24 @@ function QuickPicks(props) {
 					<div className="clearfix"/>
 					<div className="klatsch-quick-picks">
 						{props.profiles ?
-							(<div>
-									<div className="quick-pick-bar">
+							(<div className="container">
+									<div className="row quick-pick-bar">
 										{props.profiles.map(function (user, idx) {
 											return (
-												<Link key={idx} to={`/profile/${user.profile}`}>
-													<img className='quick-pick' src={user.img}
-														 onClick={props.showProfile(user.profile)}/>
-												</Link>
+												<div className="col" key={idx}>
+													<Link to={`/profile/${user.profile}`}>
+														<img className='quick-pick' src={user.img}
+															 onClick={props.showProfile(user.profile)}/>
+													</Link>
+												</div>
 											);
 										})}
+										<div className="col">
+											<button className="btn btn-klatsch-primary quick-picks-refresh">
+												<span className="fa fa-refresh"/>
+											</button>
+										</div>
 									</div>
-									<button className="btn btn-klatsch-primary quick-picks-refresh">
-										<span className="fa fa-refresh"/>
-									</button>
 								</div>
 							)
 							: <h3>No Profiles Found</h3>
