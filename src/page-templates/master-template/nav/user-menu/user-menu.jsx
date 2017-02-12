@@ -2,12 +2,10 @@ import {Link} from 'react-router';
 import authStore from '../../../../stores/auth-store';
 
 export default props => (
-	<li className="dropdown">
+	<li className="dropdown user-profile-avatar" title="User Profile">
 		<a href="#" className="dropdown-toggle" data-toggle="dropdown"
 		   role="button" aria-haspopup="true" aria-expanded="false">
-			<div className="small-circle user-profile-avatar" title="Profile">
-				<span className="glyphicon glyphicon-user" aria-hidden="true"></span>
-			</div>
+			<span className="fa fa-user" aria-hidden="true"></span>
 			<span className="caret"></span>
 		</a>
 		<ul className="dropdown-menu">
