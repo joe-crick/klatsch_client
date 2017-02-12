@@ -1,6 +1,7 @@
 import React from 'react';
 import SignUpBar from '../sign-up-bar/sign-up-bar';
 import LoginButton from '../login-bar/login-bar';
+import HomeLogo from '../../../components/home-logo/home-logo';
 
 const HomeNav = props => {
 	return (
@@ -14,7 +15,7 @@ const HomeNav = props => {
 					aria-label="Toggle navigation">
 				<span className="navbar-toggler-icon"/>
 			</button>
-			<div className="home-logo"></div>
+			<HomeLogo/>
 
 			<div className="collapse navbar-collapse" id="navContent">
 				<SignUpBar store={props.homeStore} l/>

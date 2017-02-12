@@ -1,6 +1,7 @@
 import React from 'react';
 import QuickLinks from './quick-links/quick-links';
 import RightNav from './right-nav/right-nav';
+import HomeLogo from '../../../components/home-logo/home-logo';
 
 export default props => (
 	<nav className="navbar fixed-top navbar-toggleable-md navbar-light bg-faded home-nav">
@@ -13,7 +14,7 @@ export default props => (
 				aria-label="Toggle navigation">
 			<span className="navbar-toggler-icon"/>
 		</button>
-		<div className="home-logo"></div>
+		<HomeLogo/>
 		<div className="collapse navbar-collapse" id="navContent">
 			<QuickLinks/>
 			<RightNav/>
