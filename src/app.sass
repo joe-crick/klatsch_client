@@ -12,6 +12,7 @@
 @import pages/dashboard/action-center/action-center
 @import pages/dashboard/question-teaser/question-teaser
 @import pages/dashboard/user-mini-profile/user-mini-profile
+@import pages/dashboard/email-notification/email-notification
 
 body
   background-color: snow
@@ -36,6 +37,8 @@ body
     background-color: $sea-coralish
     color: snow
     cursor: pointer
+    &:hover
+      background-color: $sea-greenish
   .btn-klatsch-secondary
     background-color: $sea-greenish
     color: snow
@@ -52,3 +55,14 @@ body
     background-color: snow
 main
   margin-top: 75px
+
+// Always show scroll bars when they're present, because not doing so is just bad usability!
+::-webkit-scrollbar
+  -webkit-appearance: none
+  width: 7px
+
+
+::-webkit-scrollbar-thumb
+  border-radius: 4px
+  background-color: rgba(0,0,0,.5)
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5)

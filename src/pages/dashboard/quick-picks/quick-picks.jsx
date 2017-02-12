@@ -39,7 +39,7 @@ function QuickPicks(props) {
 										);
 									})}
 								</div>
-								<button className="btn btn-klatsch-primary">
+								<button className="btn btn-klatsch-primary quick-picks-refresh">
 									<span className="fa fa-refresh"/>
 								</button>
 							</div>

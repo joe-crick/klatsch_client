@@ -1,4 +1,5 @@
 import React from 'react';
+import EmailNotification from '../email-notification/email-notification';
 
 const UserMiniProfile = props => {
 	return (
@@ -16,9 +17,7 @@ const UserMiniProfile = props => {
 					<span className="location">Seattle, WA</span>
 				</div>
 			</div>
-			<div className="pull -left">
-				<a href="#" className="action-center-mail-notification"><span className="fa fa-envelope"/></a>
-			</div>
+			<EmailNotification/>
 			<div className="clearfix"/>
 		</div>
 	);
