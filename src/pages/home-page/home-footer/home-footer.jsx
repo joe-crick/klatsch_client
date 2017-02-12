@@ -5,11 +5,11 @@ const homeFooter = props => {
 		<div className="footer-container">
 			<div className="container signup-footer">
 				<div className="row footer">
-					<div className="col"><a className="white-link" href="/press" target="_blank"> Press </a></div>
-					<div className="col"><a className="white-link" href="/about" target="_blank"> About </a></div>
-					<div className="col"><a className="white-link" href="/support" target="_blank"> Support </a></div>
-					<div className="col"><a className="white-link" href="/legal/privacy" target="_blank"> Privacy </a></div>
-					<div className="col"><a className="white-link" href="/legal/t-and-c" target="_blank"> Terms </a></div>
+					<div className="col"><a className="link white-link" href="/press" target="_blank"> Press </a></div>
+					<div className="col"><a className="link white-link" href="/about" target="_blank"> About </a></div>
+					<div className="col"><a className="link white-link" href="/support" target="_blank"> Support </a></div>
+					<div className="col"><a className="link white-link" href="/legal/privacy" target="_blank"> Privacy </a></div>
+					<div className="col"><a className="link white-link" href="/legal/t-and-c" target="_blank"> Terms </a></div>
 				</div>
 				<div className="row">
 					<div className="col footer-copyright">
