@@ -1,5 +1,4 @@
 import React from 'react';
-import EmailNotification from '../email-link-icon/email-link-icon';
 
 const UserMiniProfile = props => {
 	return (

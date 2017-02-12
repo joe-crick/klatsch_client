@@ -1,9 +1,13 @@
 import React from 'react';
 import QuestionTeaser from '../question-teaser/question-teaser';
-import ActionCenterMessage from '../action-center-message/action-center-message';
+import ActionCenterMessage from './action-center-message/action-center-message';
 
 // TODO: Replace with actual data
-const loop = [<ActionCenterMessage/>,<ActionCenterMessage/>,<ActionCenterMessage/>];
+const loop = [
+	<ActionCenterMessage hasBeenOpened={false}/>,
+	<ActionCenterMessage hasBeenOpened={true}/>,
+	<ActionCenterMessage hasBeenOpened={false}/>,
+];
 
 const ActionCenter = props => {
 	return (
