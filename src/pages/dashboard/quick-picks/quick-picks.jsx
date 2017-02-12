@@ -30,10 +30,20 @@ function QuickPicks(props) {
 		render() {
 			return (
 				<div className="klatsch-quick-picks-container">
-					<h3 className="pull-left">Top Matches</h3>
-					<Tooltip>
-						{topMatchesText}
-					</Tooltip>
+					<div className="container">
+						<div className="row">
+							<div className="col-sm-12 col-lg-5">
+								<h3>Top Matches</h3>
+								<Tooltip>
+									{topMatchesText}
+								</Tooltip></div>
+							<div className="col quick-picks-refresh-container">
+								<button className="btn btn-klatsch-primary quick-picks-refresh">
+									<span className="fa fa-refresh"/>
+								</button>
+							</div>
+						</div>
+					</div>
 					<div className="clearfix"/>
 					<div className="klatsch-quick-picks">
 						{props.profiles ?
@@ -49,11 +59,6 @@ function QuickPicks(props) {
 												</div>
 											);
 										})}
-										<div className="col">
-											<button className="btn btn-klatsch-primary quick-picks-refresh">
-												<span className="fa fa-refresh"/>
-											</button>
-										</div>
 									</div>
 								</div>
 							)
