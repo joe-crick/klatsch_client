@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './nav/nav';
+import PageFooter from '../../components/page-footer/page-footer';
 
 export default ({children}) => (
 	<klatsch>
@@ -7,6 +8,7 @@ export default ({children}) => (
 		<main>
 			{children}
 		</main>
+		<PageFooter/>
 	</klatsch>
 );
 

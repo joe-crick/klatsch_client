@@ -2,7 +2,7 @@ import React from 'react';
 import HomeBottomNav from './home-bottom-nav/home-bottom-nav'
 import TagLine from './tag-line/tag-line';
 import HomeNav from './home-nav/home-nav';
-import HomeFooter from './home-footer/home-footer';
+import PageFooter from '../../components/page-footer/page-footer';
 import {logUserIn} from './home-page-actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -38,7 +38,7 @@ function HomePage(props) {
 						<HomeBottomNav/>
 					</section>
 					<section>
-						<HomeFooter/>
+						<PageFooter/>
 					</section>
 				</klatsch-home-page>
 			)
