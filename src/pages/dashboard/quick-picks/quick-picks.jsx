@@ -26,7 +26,7 @@ function QuickPicks(props) {
 
 		render() {
 			return (
-				<klatsch-quick-picks>
+				<div className="klatsch-quick-picks">
 					{props.profiles ?
 						(<div>
 								<div className="quick-pick-bar">
@@ -39,13 +39,14 @@ function QuickPicks(props) {
 										);
 									})}
 								</div>
-								<button className="btn btn-default"><span className="glyphicon glyphicon-refresh"/>
+								<button className="btn btn-klatsch-primary">
+									<span className="fa fa-refresh"/>
 								</button>
 							</div>
 						)
 						: <h3>No Profiles Found</h3>
 					}
-				</klatsch-quick-picks>
+				</div>
 			)
 		}
 	}
