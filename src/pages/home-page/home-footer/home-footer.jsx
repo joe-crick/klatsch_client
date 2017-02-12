@@ -18,6 +18,9 @@ const homeFooter = props => {
 							{/*If there ends up being some kind of social thing, put it here*/}
 						</div>
 					</div>
+					<div className="col">
+						<img className="klatsch-k" src="/src/img/klatsch_k.svg"/>
+					</div>
 				</div>
 			</div>
 		</div>
