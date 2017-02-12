@@ -16,32 +16,28 @@ export default function MultiSelect(props) {
 		props,
 
 		render(){
-			return (<klatsch-multi-select>
-					<div className="btn-group">
-						<button
-							type="button"
-							className="btn btn-defau lt dropdown-toggle"
+			return (
+				<div className="btn-group klatsch-multi-select">
+					<button type="button"
+							className="btn btn-secondary dropdown-toggle"
 							aria-haspopup="true"
 							aria-expanded="false"
 							onClick={event => toggleDropDown(event.target)}>
-							{props.selectTitle}
-							<span className="caret"/>
-						</button>
-						<div className="dropdown-menu">
-							{props.options.map(function (option) {
-								return (
-									<button className='dropdown-item' type="button"
-											key={option.value}
-											onClick={event => alert(option)}>
-										<span className={option.selected ? 'fa fa-check-square' : ''}/>
-										<span
-											className={option.selected ? 'selected' : 'unselected'}>{option.label}</span>
-									</button>
-								);
-							})}
-						</div>
+						{props.selectTitle}
+					</button>
+					<div className="dropdown-menu">
+						{props.options.map(function (option) {
+							return (
+								<a className='dropdown-item'
+								   key={option.value}
+								   onClick={event => alert(option)}>
+									<span className={option.selected ? 'fa fa-check-square' : ''}/>
+									<span className={option.selected ? 'selected' : 'unselected'}>{option.label}</span>
+								</a>
+							);
+						})}
 					</div>
-				</klatsch-multi-select>
+				</div>
 			)
 		}
 	}
