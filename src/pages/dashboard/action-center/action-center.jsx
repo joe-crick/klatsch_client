@@ -10,7 +10,7 @@ const ActionCenter = props => {
 					<h4>Action Center</h4>
 					<UserMiniProfile/>
 				</div>
-				<div className="col">
+				<div className="col action-question-teaser">
 					<QuestionTeaser/>
 				</div>
 			</div>
