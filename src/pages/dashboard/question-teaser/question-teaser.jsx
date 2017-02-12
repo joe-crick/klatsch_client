@@ -3,14 +3,15 @@ import React from 'react';
 const QuestionTeaser = props => {
 	return (
 		<aside className="question-teaser page-right-block">
-			<h3>Improve your matches</h3>
+			<h4>Get Better Results</h4>
 			<p className="question">
-				<a href="#">What is your opinion of breastfeeding?</a>
+				<span>What is your opinion of breastfeeding?</span>
 			</p>
-			<div className="buttons">
-				<a href="#" className="btn btn-klatsch-primary"> Answer </a>
-				<a href="#" className="btn btn-secondary"> Skip </a>
+			<div className="question-teaser-buttons pull-right">
+				<a href="#" className="btn btn-klatsch-primary teaser-answer"> Answer </a>
+				<a href="#" className="btn btn-secondary teaser-skip"> Skip </a>
 			</div>
+			<div className="clearfix"/>
 		</aside>
 	);
 };

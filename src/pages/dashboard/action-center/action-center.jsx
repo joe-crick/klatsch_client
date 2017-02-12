@@ -5,12 +5,14 @@ import UserMiniProfile from '../user-mini-profile/user-mini-profile';
 const ActionCenter = props => {
 	return (
 		<div className="container action-center">
-			<div className="col">
-				<div className="action-center">Action Center</div>
-				<UserMiniProfile/>
-			</div>
-			<div className="col">
-				<QuestionTeaser/>
+			<div className="row">
+				<div className="col-8 action-messages">
+					<h4>Action Center</h4>
+					<UserMiniProfile/>
+				</div>
+				<div className="col">
+					<QuestionTeaser/>
+				</div>
 			</div>
 		</div>
 	);
