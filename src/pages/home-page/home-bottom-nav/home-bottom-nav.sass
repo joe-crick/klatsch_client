@@ -1,16 +1,12 @@
-klatsch-home-bottom-nav
+.klatsch-home-bottom-nav
   margin-top: 50px
   padding-bottom: 50px
-  display: block
-  ul
-    display: flex
-    justify-content: space-around
-    align-items: flex-start
-    li
-      display: block
-      .footer-image
-        height: 150px
-        width: 150px
-      div
-        text-align: center
-        font-weight: 800
+  .footer-image
+    height: 150px
+    width: 150px
+    @media screen and (min-device-width : 320px) and (max-device-width : 568px)
+      height: 70px
+      width: 70px
+  div
+    text-align: center
+    font-weight: 800
