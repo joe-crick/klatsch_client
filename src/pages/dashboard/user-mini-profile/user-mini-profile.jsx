@@ -1,5 +1,5 @@
 import React from 'react';
-import EmailNotification from '../email-notification/email-notification';
+import EmailNotification from '../email-link-icon/email-link-icon';
 
 const UserMiniProfile = props => {
 	return (
@@ -17,8 +17,6 @@ const UserMiniProfile = props => {
 					<span className="location">Seattle, WA</span>
 				</div>
 			</div>
-			<EmailNotification/>
-			<div className="clearfix"/>
 		</div>
 	);
 };

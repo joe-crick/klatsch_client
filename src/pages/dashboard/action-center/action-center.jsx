@@ -1,9 +1,9 @@
 import React from 'react';
 import QuestionTeaser from '../question-teaser/question-teaser';
-import UserMiniProfile from '../user-mini-profile/user-mini-profile';
+import ActionCenterMessage from '../action-center-message/action-center-message';
 
 // TODO: Replace with actual data
-const loop = [<UserMiniProfile/>,<UserMiniProfile/>,<UserMiniProfile/>]
+const loop = [<ActionCenterMessage/>,<ActionCenterMessage/>,<ActionCenterMessage/>];
 
 const ActionCenter = props => {
 	return (
