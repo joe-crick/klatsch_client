@@ -38,7 +38,7 @@ export default function SignUpBar(props) {
 								dropDownAction={store.get(dropDownAction)}
 								selectTitle={store.get(selectTitle)}/>
 						</label>
-						<button type="submit" className="btn btn-primary continue-button"
+						<button type="submit" className="btn btn-klatsch-primary continue-button"
 								onClick={store.get(register)}>
 							Continue
 						</button>
