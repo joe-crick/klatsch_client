@@ -32,7 +32,7 @@ function HomePage(props) {
 							homeStore={homeStore}
 							logUserIn={props.logUserIn}
 							loginButtonText={props.loginButtonText}/>
-						{/*<TagLine tagLine={homeStore.get(tagLine)}/>*/}
+						<TagLine tagLine={homeStore.get(tagLine)}/>
 					</section>
 					<section>
 						<HomeBottomNav/>

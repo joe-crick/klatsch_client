@@ -1,4 +1,17 @@
-$break-large: 1200px
-$break-med: 800px
-$break-small: 425px
+// Media Query Mixins
+$break-med-min: 768px
+$break-med-max: 1023px
+$break-small-min: 320px
+$break-small-max: 568px
+
+@mixin small
+  @media (min-width: #{$break-small-min}) and (max-width: #{$break-small-max})
+    @content
+
+@mixin med
+  @media (min-width: #{$break-med-min}) and (max-width: #{$break-med-max})
+    @content
+
+
+// Colors
 $sea-greenish: #bfd8d2

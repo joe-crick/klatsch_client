@@ -5,9 +5,7 @@ const {string} = React.PropTypes;
 const tagLine = 'tagLine';
 
 const TagLine = props => (
-	<klatsch-tag-line>
-		<div>{props.tagLine}</div>
-	</klatsch-tag-line>
+	<div className="klatsch-tag-line">{props.tagLine}</div>
 );
 
 TagLine.PropTypes = {
