@@ -22,6 +22,7 @@
 @import pages/profile/profile
 @import pages/profile/profile-header/profile-header
 @import pages/profile/profile-header/profile-header-summary/profile-header-summary
+@import pages/profile/profile-header/profile-actions/profile-actions
 
 body
   background-color: $sea-white
@@ -43,6 +44,11 @@ body
     cursor: pointer
   .btn-klatsch-danger
     background-color: $sea-reddish
+    color: $sea-white
+    &:hover
+      background-color: $sea-pinkish
+  .btn-klatsch-success
+    background-color: $sea-yellowish
     color: $sea-white
     &:hover
       background-color: $sea-pinkish
