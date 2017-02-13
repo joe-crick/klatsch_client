@@ -1,5 +1,6 @@
 import React from 'react';
 import InsightCenterNotification from './insight-center-notification/insight-center-notification';
+import Tooltip from '../../../components/tooltip/tooltip';
 
 // TODO: Replace with actual data
 const loop = [
@@ -10,8 +11,11 @@ const loop = [
 
 const InsightCenter = props => {
 	return (
-		<div className="container">
-			<h4 className="action-center-title">Insight Center</h4>
+		<div className="container insight-center">
+			<h4 className="insight-center-title">Insight Center</h4>
+			<Tooltip>
+				See who is viewing you, and review profiles you've viewed in the past.
+			</Tooltip>
 			<div className="insight-center">
 				<ul className="nav nav-tabs" role="tablist">
 					<li className="nav-item">
