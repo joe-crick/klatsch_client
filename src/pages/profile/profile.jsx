@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import ProfileHeader from './profile-header/profile-header';
 
 const {} = React.PropTypes;
 
@@ -14,7 +15,9 @@ function Profile(props) {
 		render() {
 			return (
 				<div className="klatsch-profile">
-					Hello World
+					<div className="klatsch-profile-header-container">
+						<ProfileHeader/>
+					</div>
 				</div>
 			);
 		}
