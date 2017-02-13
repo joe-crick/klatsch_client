@@ -16,6 +16,7 @@ const UserMiniProfile = props => {
 					<span className="location">Seattle, WA</span>
 				</div>
 			</div>
+			<div className="clearfix"/>
 		</div>
 	);
 };

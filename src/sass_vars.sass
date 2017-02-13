@@ -1,8 +1,9 @@
 // Media Query Mixins
-$break-med-min: 768px
-$break-med-max: 1023px
+$break-med-min: 570px
+$break-med-max: 767px
 $break-small-min: 320px
 $break-small-max: 568px
+$break-lg-max: 1023px
 
 @mixin small
   @media (min-width: #{$break-small-min}) and (max-width: #{$break-small-max})
@@ -13,7 +14,7 @@ $break-small-max: 568px
     @content
 
 @mixin large
-  @media (min-width: #{$break-med-max})
+  @media (min-width: #{$break-lg-max})
     @content
 
 
