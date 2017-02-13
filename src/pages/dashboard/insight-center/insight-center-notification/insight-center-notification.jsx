@@ -6,12 +6,17 @@ const timeOnProfile = '3 min';
 
 const InsightCenterNotification = props => {
 	return (
-		<div className="insight-center-message">
-			<UserMiniProfile/>
-			<div className="time-on-profile">
-				Time on Profile: {timeOnProfile}
+		<div className="container insight-center-message">
+			<div className="row">
+				<div className="col">
+					<UserMiniProfile/>
+				</div>
+				<div className="col-sm-0"/>
+				<div className="col time-on-profile">
+					Time on Profile: {timeOnProfile}
+				</div>
+				<div className="clearfix"/>
 			</div>
-			<div className="clearfix"/>
 		</div>
 	);
 };
