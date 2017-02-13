@@ -24,7 +24,7 @@ const ProfileHeaderSummary = props => {
 				Family Status:
 			</div>
 			<div className="col">
-				Couple
+				Married Couple
 			</div>
 		</div>
 		<div className="row">
