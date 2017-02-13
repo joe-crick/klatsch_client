@@ -1,6 +1,7 @@
 import React from 'react';
 import InsightCenterNotification from './insight-center-notification/insight-center-notification';
 import Favorite from './favorite/favorite';
+import InsightCenterHistory from './insight-center-history/insight-center-history';
 import Tooltip from '../../../components/tooltip/tooltip';
 
 // TODO: Replace with actual data
@@ -8,6 +9,12 @@ const loop = [
 	<span key="1"><InsightCenterNotification/></span>,
 	<span key="2"><InsightCenterNotification/></span>,
 	<span key="3"><InsightCenterNotification/></span>,
+];
+
+const history = [
+	<span key="1"><InsightCenterHistory/></span>,
+	<span key="2"><InsightCenterHistory/></span>,
+	<span key="3"><InsightCenterHistory/></span>,
 ];
 
 const favs = [
@@ -49,7 +56,7 @@ const InsightCenter = props => {
 					</div>
 					<div className="tab-pane" id="history" role="tabpanel">
 						<div className="insight-data-pane insight-visits">
-							<div className="vertical-scrollable-section">{loop}</div>
+							<div className="vertical-scrollable-section">{history}</div>
 						</div>
 					</div>
 				</div>
