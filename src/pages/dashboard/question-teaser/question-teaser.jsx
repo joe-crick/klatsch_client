@@ -1,9 +1,13 @@
 import React from 'react';
+import Tooltip from '../../../components/tooltip/tooltip';
 
 const QuestionTeaser = props => {
 	return (
 		<aside className="question-teaser page-right-block">
-			<h4>Get Better Results</h4>
+			<h4 className="question-teaser-title">Get Better Results</h4>
+			<Tooltip>
+				Improve your matches, by answering questions.
+			</Tooltip>
 			<p className="question">
 				<span>What is your opinion of breastfeeding?</span>
 			</p>

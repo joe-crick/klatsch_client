@@ -4,7 +4,7 @@ import UserMiniProfile from '../../user-mini-profile/user-mini-profile';
 const InsightCenterNotification = props => {
 	return (
 		<div className="container favorite-entry">
-			<div className="row">
+			<div className="row highlight-row">
 				<div className="col-sm-8 col-md-7 col-lg-7">
 					<UserMiniProfile/>
 				</div>
