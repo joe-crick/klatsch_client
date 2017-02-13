@@ -12,7 +12,7 @@ export default props => (
 			<form className="form-inline">
 				<div className="input-group">
 					<input type="text" className="form-control" placeholder="Find a user" aria-describedby="basic-addon1"/>
-					<span className="input-group-addon">Go!</span>
+					<span className="input-group-addon quick-find-user">Go!</span>
 				</div>
 			</form>
 		</li>
