@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import rootReducer from './rootReducer';
 
-import Profile from './pages/questions/questions.jsx';
+import Profile from './pages/profile/profile';
 import Dashboard from './pages/dashboard/dashboard';
 import SiteTemplate from './page-templates/master-template/master-template';
 import './app.sass';
