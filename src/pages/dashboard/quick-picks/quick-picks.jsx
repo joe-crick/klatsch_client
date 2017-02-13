@@ -36,7 +36,8 @@ function QuickPicks(props) {
 								<h3>Top Matches</h3>
 								<Tooltip>
 									{topMatchesText}
-								</Tooltip></div>
+								</Tooltip>
+							</div>
 							<div className="col-sm-1 col-md-4 cold-lg-6 quick-picks-refresh-container">
 								<button className="btn btn-klatsch-primary quick-picks-refresh">
 									<span className="fa fa-refresh"/>

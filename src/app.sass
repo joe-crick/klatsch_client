@@ -15,6 +15,8 @@
 @import pages/dashboard/question-teaser/question-teaser
 @import pages/dashboard/user-mini-profile/user-mini-profile
 @import pages/dashboard/email-link-icon/email-link-icon
+@import pages/dashboard/insight-center/insight-center
+@import pages/dashboard/insight-center/insight-center-notification/insight-center-notification
 
 body
   background-color: $sea-white
@@ -25,10 +27,13 @@ body
     float: left
   .right
     float: right
+  // LINKS
   .link
     cursor: pointer
   .white-link
     color: $sea-white
+
+    // BUTTONS
   .btn-klatsch-primary
     background-color: $sea-coralish
     color: $sea-white
@@ -41,6 +46,15 @@ body
     cursor: pointer
   .navbar, .dropdown-menu
     background-color: $sea-white
+
+  // LAYOUT
+  .vertical-separator
+    border-right: 1px solid $border-color
+
+  // WIDGETS
+  .vertical-scrollable-section
+    overflow-y: scroll
+    max-height: 200px
 main
   margin-top: 75px
 

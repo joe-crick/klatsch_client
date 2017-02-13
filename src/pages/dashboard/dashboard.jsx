@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import './dashboard.sass';
 import QuickPicks from './quick-picks/quick-picks';
 import ActionCenter from './action-center/action-center';
+import InsightCenter from './insight-center/insight-center';
 
 // TODO: Temporary Code
 const userList = [
@@ -47,6 +48,7 @@ function Dashboard(props) {
 						profiles={userList}
 						showProfile={showProfile}/>
 					<ActionCenter/>
+					<InsightCenter/>
 				</klatsch-dashboard>
 			);
 		}
