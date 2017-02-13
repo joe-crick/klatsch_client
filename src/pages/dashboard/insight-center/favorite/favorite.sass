@@ -2,8 +2,10 @@
 
 .favorite-entry
   .delete-favorite
-    position: absolute
-    right: 0
+    @include small
+      position: absolute
+      .btn
+        float: right
   .user-mini-profile
     @include med
       .userinfo

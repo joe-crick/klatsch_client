@@ -9,7 +9,7 @@ const InsightCenterNotification = props => {
 					<UserMiniProfile/>
 				</div>
 				<div className="col-sm-0"/>
-				<div className="col-sm-0 delete-favorite">
+				<div className="col-sm-0 col-md-5 delete-favorite">
 					<button className="btn btn-klatsch-danger" onClick={() => alert('TODO: Implement Delete')}>x</button>
 				</div>
 				<div className="clearfix"/>
