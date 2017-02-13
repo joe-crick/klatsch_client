@@ -10,17 +10,31 @@ const loop = [
 
 const InsightCenter = props => {
 	return (
-		<div className="container insight-center">
-			<h4 className="insight-center-title">Insight Center</h4>
-			<div className="row">
-				<div className="col-md-5 col-sm-12 insight-visitors">
-					<h6>Your Visitors</h6>
-					<div>{loop}</div>
-				</div>
-				<div className="col-md-2 col-sm-0 vertical-separator"/>
-				<div className="col insight-visits">
-					<h6>Visit History</h6>
-					<div>{loop}</div>
+		<div className="container">
+			<h4 class="action-center-title">Insight Center</h4>
+			<div className="insight-center">
+				<ul className="nav nav-tabs" role="tablist">
+					<li className="nav-item">
+						<a className="nav-link active" data-toggle="tab" href="#visitors" role="tab">Visitors</a>
+					</li>
+					<li className="nav-item">
+						<a className="nav-link" data-toggle="tab" href="#history" role="tab">History</a>
+					</li>
+				</ul>
+
+				<div className="tab-content">
+					<div className="tab-pane active" id="visitors" role="tabpanel">
+						<div className="insight-visitors">
+							<div className="sub-title">YOUR VISITORS</div>
+							<div className="vertical-scrollable-section">{loop}</div>
+						</div>
+					</div>
+					<div className="tab-pane" id="history" role="tabpanel">
+						<div className="insight-visits">
+							<div className="sub-title">VISIT HISTORY</div>
+							<div className="vertical-scrollable-section">{loop}</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

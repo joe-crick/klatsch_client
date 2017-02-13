@@ -47,6 +47,11 @@ body
   .navbar, .dropdown-menu
     background-color: $sea-white
 
+  // TEXT
+  .sub-title
+    font-weight: bolder
+    margin-bottom: 5px
+
   // LAYOUT
   .vertical-separator
     border-right: 1px solid $border-color
@@ -55,6 +60,13 @@ body
   .vertical-scrollable-section
     overflow-y: scroll
     max-height: 200px
+    // Override style in BS tabs
+  .nav-tabs
+    a
+      color: $sea-black
+    .nav-link.active
+      background-color: $sea-white
+
 main
   margin-top: 75px
 
