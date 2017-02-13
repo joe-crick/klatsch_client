@@ -11,7 +11,7 @@ const loop = [
 const InsightCenter = props => {
 	return (
 		<div className="container">
-			<h4 class="action-center-title">Insight Center</h4>
+			<h4 className="action-center-title">Insight Center</h4>
 			<div className="insight-center">
 				<ul className="nav nav-tabs" role="tablist">
 					<li className="nav-item">
