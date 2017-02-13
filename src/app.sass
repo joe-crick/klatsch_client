@@ -17,6 +17,7 @@
 @import pages/dashboard/email-link-icon/email-link-icon
 @import pages/dashboard/insight-center/insight-center
 @import pages/dashboard/insight-center/insight-center-notification/insight-center-notification
+@import pages/dashboard/insight-center/favorite/favorite
 
 body
   background-color: $sea-white
@@ -34,16 +35,21 @@ body
     color: $sea-white
 
     // BUTTONS
+  .btn
+    cursor: pointer
+  .btn-klatsch-danger
+    background-color: $sea-reddish
+    color: $sea-white
+    &:hover
+      background-color: $sea-pinkish
   .btn-klatsch-primary
     background-color: $sea-coralish
     color: $sea-white
-    cursor: pointer
     &:hover
       background-color: $sea-greenish
   .btn-klatsch-secondary
     background-color: $sea-greenish
     color: $sea-white
-    cursor: pointer
   .navbar, .dropdown-menu
     background-color: $sea-white
 
