@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ProfileHeader from './profile-header/profile-header';
+import ProfileBody from './profile-body/profile-body';
 
 const {} = React.PropTypes;
 
@@ -17,6 +18,9 @@ function Profile(props) {
 				<div className="klatsch-profile">
 					<div className="klatsch-profile-header-container">
 						<ProfileHeader/>
+					</div>
+					<div className="klatsch-profile-body-container">
+						<ProfileBody/>
 					</div>
 				</div>
 			);
