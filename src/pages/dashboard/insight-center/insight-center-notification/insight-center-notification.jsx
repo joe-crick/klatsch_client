@@ -6,9 +6,9 @@ const timeOnProfile = '3 min';
 
 const InsightCenterNotification = props => {
 	return (
-		<div className="action-center-message">
+		<div className="insight-center-message">
 			<UserMiniProfile/>
-			<div className="pull-left">
+			<div className="time-on-profile">
 				Time on Profile: {timeOnProfile}
 			</div>
 			<div className="clearfix"/>
