@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Router, Route, IndexRoute, Link, browserHistory} from 'react-router';
+import {Router, Route, browserHistory} from 'react-router';
 import App from './pages/app.jsx';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';

@@ -5,4 +5,4 @@ export default {
   earlyElementary: 3,
   lateElementary: 4,
   preTeen: 5
-}
+};

@@ -18,4 +18,4 @@ actionMap.set(actionType.LOG_OUT, logUserOut);
 export default (state = INITIAL_STATE, action) => {
   const updater = actionMap.get(action.type);
   return updater ? updater(state) : state;
-}
+};
