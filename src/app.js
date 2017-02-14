@@ -8,6 +8,7 @@ import rootReducer from './rootReducer';
 
 import Profile from './pages/profile/profile';
 import Dashboard from './pages/dashboard/dashboard';
+import Matches from './pages/matches/matches';
 import SiteTemplate from './page-templates/master-template/master-template';
 import './app.sass';
 
@@ -31,18 +32,21 @@ if ('serviceWorker' in navigator) {
 /**
  * Routing table
  */
-const Root = ({store}) => (<Provider store={store}>
-	<Router history={browserHistory}>
-		<Route path='/' component={App}/>
-		<Route component={SiteTemplate}>
-			<Route path='/dashboard' component={Dashboard}/>
-			<Route path='/profile' component={Profile}/>
-		</Route>
-	</Router>
-</Provider>);
+const Root = ({store}) => (
+	<Provider store={store}>
+		<Router history={browserHistory}>
+			<Route path='/' component={App}/>
+			<Route component={SiteTemplate}>
+				<Route path='/dashboard' component={Dashboard}/>
+				<Route path='/profile' component={Profile}/>
+				<Route path='/matches' component={Matches}/>
+			</Route>
+		</Router>
+	</Provider>
+);
 
 Root.propTypes = {
 	store: React.PropTypes.object.isRequired,
 };
 
-render(<Root store={store} />, document.getElementById('app'));
+render(<Root store={store}/>, document.getElementById('app'));

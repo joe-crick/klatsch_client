@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import UserMediumProfile from '../../components/user-medium-profile/user-medium-profile';
 
 const {} = React.PropTypes;
 
@@ -15,7 +16,12 @@ function Matches(props) {
 			return (
 				<div className="klatsch-matches container">
 					<div className="row">
-
+						<div className="col">
+							<UserMediumProfile/>
+						</div>
+						<div className="col">
+							<UserMediumProfile/>
+						</div>
 					</div>
 				</div>
 			);

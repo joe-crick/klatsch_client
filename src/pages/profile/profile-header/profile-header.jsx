@@ -1,6 +1,6 @@
 import React from 'react';
-import ProfileHeaderTagline from '../../../components/user-medium-profile/user-medium-profile';
-import ProfileActions from './profile-actions/profile-actions';
+import UserMediumProfile from '../../../components/user-medium-profile/user-medium-profile';
+import ProfileActions from '../../../components/profile-actions/profile-actions';
 import ProfileHeaderSummary from './profile-header-summary/profile-header-summary';
 
 const ProfileHeader = props => {
@@ -8,7 +8,7 @@ const ProfileHeader = props => {
 		<div className="klatsch-profile-header container">
 			<div className="row">
 				<div className="col-lg-5 col-md-9">
-					<ProfileHeaderTagline/>
+					<UserMediumProfile/>
 				</div>
 				<div className="col-lg-4">
 					<ProfileHeaderSummary/>

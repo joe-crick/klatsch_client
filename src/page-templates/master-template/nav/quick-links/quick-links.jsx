@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default props => (
 	<ul className="navbar-nav mr-auto mt-2 mt-lg-0 klatsch-quick-links">
 		<li className="nav-item">
-			<a className="btn btn-klatsch-primary find-friends" href="#">Find Friends <span className="sr-only">(current)</span></a>
+			<Link className="btn btn-klatsch-primary find-friends" to="/matches">Find Friends</Link>
 		</li>
 		<li className="nav-item">
 			<form className="form-inline">
