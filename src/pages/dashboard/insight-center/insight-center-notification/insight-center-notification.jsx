@@ -12,7 +12,7 @@ const InsightCenterNotification = props => {
 					<UserMiniProfile/>
 				</div>
 				<div className="col-sm-0"/>
-				<div className="col-sm-1 time-on-profile">
+				<div className="col-sm-2 col-md-4 time-on-profile">
 					<span className="time-on-profile-label">Time on Profile:</span> {timeOnProfile}
 				</div>
 				<div className="clearfix"/>

@@ -1,5 +1,16 @@
 @import ../../../sass_vars
 
+@mixin colored-message-notification
+  text-align: center
+  background-color: $sea-greenish
+  color: white
+  margin-bottom: 5px
+  padding-left: 10px
+  position: absolute
+  right: 0
+  .time-on-profile-label
+    display: none
+
 .insight-center
   padding-bottom: 50px
   .insight-center-title
@@ -10,3 +21,19 @@
     margin-bottom: 20px
   .insight-data-pane
     margin-top: 20px
+  .insight-center-message
+    .row
+      div
+        @include small
+          padding-left: 0
+      .time-on-profile
+        float: left
+        height: 50px
+        line-height: 40px
+        @include med
+          @include colored-message-notification
+        @include small
+          @include colored-message-notification
+          width: inherit
+          border-bottom: 10px solid $sea-whitish
+          font-size: .75rem
