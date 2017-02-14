@@ -1,6 +1,6 @@
 import React from 'react';
 import {WithContext as ReactTags} from 'react-tag-input';
-import TextEditor from '../../../../components/html-text-editor/html-text-editor';
+import TextEditor from '../../../components/html-text-editor/html-text-editor';
 
 const tags = [];
 const bogusFunction = bogus => bogus;
@@ -8,7 +8,6 @@ const bogusFunction = bogus => bogus;
 const BasicContent = props => {
   return (
     <div className="klatsch-edit-profile-basic-content container">
-      <h4 className="basic-content-header">Basic Content</h4>
       <form className="basic-content-form">
         <div className="form-group">
           <div className="row">
