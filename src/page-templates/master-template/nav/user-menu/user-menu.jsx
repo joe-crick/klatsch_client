@@ -14,7 +14,7 @@ export default props => (
 		</a>
 		<ul className="dropdown-menu">
 			<li>
-				<Link to="/profile">Profile</Link>
+				<Link to="/edit-profile">Edit My Profile</Link>
 			</li>
 			<li>
 				<a href="#">Settings</a>
