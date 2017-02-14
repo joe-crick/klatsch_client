@@ -14,10 +14,10 @@ export default props => (
 		</a>
 		<ul className="dropdown-menu">
 			<li>
-				<Link to="/edit-profile">Edit My Profile</Link>
+				<Link to="/edit-profile">Edit Profile</Link>
 			</li>
 			<li>
-				<a href="/account">Settings</a>
+				<a href="/account">Edit Account</a>
 			</li>
 			<li>
 				<a href="#">Help</a>
