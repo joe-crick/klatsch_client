@@ -1,5 +1,6 @@
 import React from 'react';
 import BasicContent from './basic-content/basic-content';
+import Photos from './photos/photos';
 
 const ProfileBody = props => {
 	return (
@@ -14,7 +15,7 @@ const ProfileBody = props => {
 					<BasicContent/>
 				</div>
 				<div className="tab-pane" id="photos" role="tabpanel">
-					Photos
+					<Photos/>
 				</div>
 			</div>
 		</div>
