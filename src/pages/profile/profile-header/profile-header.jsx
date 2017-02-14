@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileHeaderTagline from '../../../components/user-medium-profile/profile-header-tagline';
+import ProfileHeaderTagline from '../../../components/user-medium-profile/user-medium-profile';
 import ProfileActions from './profile-actions/profile-actions';
 import ProfileHeaderSummary from './profile-header-summary/profile-header-summary';
 
