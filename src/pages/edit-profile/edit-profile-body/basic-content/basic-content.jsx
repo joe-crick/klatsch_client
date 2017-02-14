@@ -15,7 +15,7 @@ const BasicContent = props => {
 						<div className="col-lg-5">
 							<label htmlFor="email">Email address</label>
 							<input type="email" className="form-control" id="email" aria-describedby="emailHelp"
-								   placeholder="Enter email"/>
+								   placeholder="Enter email" autoFocus/>
 							<small id="emailHelp" className="form-text text-muted">
 								We'll never share your email with anyone else.
 							</small>
