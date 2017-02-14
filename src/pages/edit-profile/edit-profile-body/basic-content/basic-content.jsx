@@ -1,9 +1,8 @@
 import React from 'react';
 import {WithContext as ReactTags} from 'react-tag-input';
-import {Editor, EditorState} from 'draft-js';
+import TextEditor from '../../../../components/html-text-editor/html-text-editor';
 
 const tags = [];
-const editorState = EditorState.createEmpty();
 const bogusFunction = bogus => bogus;
 
 const BasicContent = props => {
@@ -30,7 +29,7 @@ const BasicContent = props => {
 				</div>
 				<div className="form-group">
 					<label>Bio</label>
-					<Editor editorState={editorState}/>
+					<TextEditor/>
 				</div>
 				<div className="form-group">
 					<label>Family </label>
