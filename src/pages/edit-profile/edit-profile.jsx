@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import EditProfileBody from './edit-profile-body/edit-profile-body';
+import EditProfileHeader from './edit-profile-header/edit-profile-body';
 import BasicContent from './basic-content/basic-content';
 import Photos from './photos/photos';
 
@@ -18,7 +18,7 @@ function Profile(props) {
       return (
         <div className="klatsch-edit-profile">
           <div className="klatsch-edit-profile-body-container">
-            <EditProfileBody/>
+            <EditProfileHeader/>
           </div>
           <div className="tab-content">
             <div className="tab-pane active" id="basics" role="tabpanel">
