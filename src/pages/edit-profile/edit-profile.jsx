@@ -6,22 +6,22 @@ const {} = React.PropTypes;
 
 function Profile(props) {
 
-	Profile.propTypes = {};
+  Profile.propTypes = {};
 
-	return {
+  return {
 
-		props,
+    props,
 
-		render() {
-			return (
-				<div className="klatsch-edit-profile">
-					<div className="klatsch-edit-profile-body-container">
-						<EditProfileBody/>
-					</div>
-				</div>
-			);
-		}
-	};
+    render() {
+      return (
+        <div className="klatsch-edit-profile">
+          <div className="klatsch-edit-profile-body-container">
+            <EditProfileBody/>
+          </div>
+        </div>
+      );
+    }
+  };
 
 }
 

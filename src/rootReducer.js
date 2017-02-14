@@ -7,7 +7,7 @@ import homeReducer from './reducers/home-reducer';
 import globalStore from './stores/global-store';
 
 export default combineReducers({
-	authStore: authReducer,
-	homeStore: homeReducer,
-	globalStore: globalStore
+  authStore: authReducer,
+  homeStore: homeReducer,
+  globalStore: globalStore
 });

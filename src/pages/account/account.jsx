@@ -5,24 +5,24 @@ const {} = React.PropTypes;
 
 function Account(props) {
 
-	Account.propTypes = {};
+  Account.propTypes = {};
 
-	return {
+  return {
 
-		props,
+    props,
 
-		render() {
-			return (
-				<div className="klatsch-account">
-					<div className="container">
-						<h4 className="klatsch-account-header">
-							My Account
-						</h4>
-					</div>
-				</div>
-			);
-		}
-	};
+    render() {
+      return (
+        <div className="klatsch-account">
+          <div className="container">
+            <h4 className="klatsch-account-header">
+              My Account
+            </h4>
+          </div>
+        </div>
+      );
+    }
+  };
 
 }
 

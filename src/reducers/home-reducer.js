@@ -2,8 +2,8 @@ import INITIAL_STATE from '../stores/home-store';
 
 // Action type name constants
 export const actionType = {
-	LOG_IN: 'LOG_IN',
-	LOG_OUT: 'LOG_OUT'
+  LOG_IN: 'LOG_IN',
+  LOG_OUT: 'LOG_OUT'
 };
 
 // Action methods - methods that create a new state
@@ -16,6 +16,6 @@ actionMap.set(actionType.LOG_IN, logUserIn);
 actionMap.set(actionType.LOG_OUT, logUserOut);
 
 export default (state = INITIAL_STATE, action) => {
-	const updater = actionMap.get(action.type);
-	return updater ? updater(state) : state;
+  const updater = actionMap.get(action.type);
+  return updater ? updater(state) : state;
 }

@@ -7,25 +7,25 @@ const {} = React.PropTypes;
 
 function Profile(props) {
 
-	Profile.propTypes = {};
+  Profile.propTypes = {};
 
-	return {
+  return {
 
-		props,
+    props,
 
-		render() {
-			return (
-				<div className="klatsch-profile">
-					<div className="klatsch-profile-header-container">
-						<ProfileHeader/>
-					</div>
-					<div className="klatsch-profile-body-container">
-						<ProfileBody/>
-					</div>
-				</div>
-			);
-		}
-	};
+    render() {
+      return (
+        <div className="klatsch-profile">
+          <div className="klatsch-profile-header-container">
+            <ProfileHeader/>
+          </div>
+          <div className="klatsch-profile-body-container">
+            <ProfileBody/>
+          </div>
+        </div>
+      );
+    }
+  };
 
 }
 

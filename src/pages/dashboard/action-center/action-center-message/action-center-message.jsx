@@ -3,13 +3,13 @@ import UserMiniProfile from '../../../../components/user-mini-profile/user-mini-
 import EmailLinkIcon from '../../email-link-icon/email-link-icon';
 
 const ActionCenterMessage = props => {
-	return (
-		<div className="action-center-message">
-			<UserMiniProfile/>
-			<EmailLinkIcon hasBeenOpened={props.hasBeenOpened}/>
-			<div className="clearfix"/>
-		</div>
-	);
+  return (
+    <div className="action-center-message">
+      <UserMiniProfile/>
+      <EmailLinkIcon hasBeenOpened={props.hasBeenOpened}/>
+      <div className="clearfix"/>
+    </div>
+  );
 };
 
 ActionCenterMessage.propTypes = {};

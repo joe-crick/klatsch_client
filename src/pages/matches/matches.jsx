@@ -5,25 +5,25 @@ import MatchResults from './match-results/match-results';
 
 function Matches(props) {
 
-	Matches.propTypes = {};
+  Matches.propTypes = {};
 
-	return {
+  return {
 
-		props,
+    props,
 
-		render() {
-			return (
-				<div className="klatsch-matches">
-					<div className="klatsch-match-header-bar">
-						<h3 className="match-header">Your Matches</h3>
-					</div>
-					<div className="container">
-						<MatchResults/>
-					</div>
-				</div>
-			);
-		}
-	};
+    render() {
+      return (
+        <div className="klatsch-matches">
+          <div className="klatsch-match-header-bar">
+            <h3 className="match-header">Your Matches</h3>
+          </div>
+          <div className="container">
+            <MatchResults/>
+          </div>
+        </div>
+      );
+    }
+  };
 
 }
 

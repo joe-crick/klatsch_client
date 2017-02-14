@@ -19,7 +19,7 @@ import './app.sass';
 
 // Put React on the window for React tools
 if (window !== undefined) {
-	window.React = React;
+  window.React = React;
 }
 
 const store = createStore(rootReducer);
@@ -28,29 +28,29 @@ const store = createStore(rootReducer);
  * Register the ServiceWorker
  */
 if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('/klatsch-service-worker.js');
+  navigator.serviceWorker.register('/klatsch-service-worker.js');
 }
 
 /**
  * Routing table
  */
 const Root = ({store}) => (
-	<Provider store={store}>
-		<Router history={browserHistory}>
-			<Route path='/' component={App}/>
-			<Route component={SiteTemplate}>
-				<Route path='/dashboard' component={Dashboard}/>
-				<Route path='/profile' component={Profile}/>
-				<Route path='/matches' component={Matches}/>
-				<Route path="/edit-profile" component={EditProfile}/>
-				<Route path="/account" component={Account}/>
-			</Route>
-		</Router>
-	</Provider>
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path='/' component={App}/>
+      <Route component={SiteTemplate}>
+        <Route path='/dashboard' component={Dashboard}/>
+        <Route path='/profile' component={Profile}/>
+        <Route path='/matches' component={Matches}/>
+        <Route path="/edit-profile" component={EditProfile}/>
+        <Route path="/account" component={Account}/>
+      </Route>
+    </Router>
+  </Provider>
 );
 
 Root.propTypes = {
-	store: React.PropTypes.object.isRequired,
+  store: React.PropTypes.object.isRequired,
 };
 
 render(<Root store={store}/>, document.getElementById('app'));

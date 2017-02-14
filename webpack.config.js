@@ -26,6 +26,12 @@ module.exports = {
 				loader: 'babel-loader'
 			},
 			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				enforce: 'pre',
+				use: [{loader: 'eslint-loader', options: {rules: {semi: 0}}}],
+			},
+			{
 				test: /\.sass$/,
 				use: ExtractTextPlugin.extract({fallback: 'style-loader', use: sassLoaders.join('!')})
 			}

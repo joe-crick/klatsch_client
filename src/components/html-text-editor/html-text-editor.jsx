@@ -7,16 +7,16 @@ const editorState = EditorState.createEmpty();
 const bogusFunction = blah => blah;
 
 const HtmlTextEditor = props => {
-	return (
-		<Editor
-			editorState={editorState}
-			toolbarClassName="home-toolbar"
-			wrapperClassName="home-wrapper"
-			editorClassName="home-editor"
-			onEditorStateChange={bogusFunction}
-			uploadCallback={bogusFunction}
-		/>
-	);
+  return (
+    <Editor
+      editorState={editorState}
+      toolbarClassName="home-toolbar"
+      wrapperClassName="home-wrapper"
+      editorClassName="home-editor"
+      onEditorStateChange={bogusFunction}
+      uploadCallback={bogusFunction}
+    />
+  );
 };
 
 HtmlTextEditor.propTypes = {};

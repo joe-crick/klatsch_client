@@ -1,7 +1,7 @@
 import {Map} from 'immutable';
 
 export default Map({
-	isAuthenticated: false,
-	loginButtonText: 'Login'
+  isAuthenticated: false,
+  loginButtonText: 'Login'
 });
 

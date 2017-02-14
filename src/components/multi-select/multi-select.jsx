@@ -1,44 +1,46 @@
 import React from 'react';
-import {toggleDropDown} from '../../utils/componentEvents';
+
+// TODO: Implement this without using jQuery
 
 const {string, func, array} = React.PropTypes;
+const toggleDropDown = blah => blah;
 
 export default function MultiSelect(props) {
 
-	MultiSelect.PropTypes = {
-		selectTitle: string.isRequired,
-		dropDownAction: func.isRequired,
-		options: array
-	};
+  MultiSelect.PropTypes = {
+    selectTitle: string.isRequired,
+    dropDownAction: func.isRequired,
+    options: array
+  };
 
-	return {
+  return {
 
-		props,
+    props,
 
-		render(){
-			return (
-				<div className="btn-group klatsch-multi-select">
-					<button type="button"
-							className="btn btn-secondary dropdown-toggle"
-							aria-haspopup="true"
-							aria-expanded="false"
-							onClick={event => toggleDropDown(event.target)}>
-						{props.selectTitle}
-					</button>
-					<div className="dropdown-menu">
-						{props.options.map(function (option) {
-							return (
-								<a className='dropdown-item'
-								   key={option.value}
-								   onClick={event => alert(option)}>
-									<span className={option.selected ? 'fa fa-check-square' : ''}/>
-									<span className={option.selected ? 'selected' : 'unselected'}>{option.label}</span>
-								</a>
-							);
-						})}
-					</div>
-				</div>
-			)
-		}
-	}
+    render(){
+      return (
+        <div className="btn-group klatsch-multi-select">
+          <button type="button"
+              className="btn btn-secondary dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+              onClick={event => toggleDropDown(event.target)}>
+            {props.selectTitle}
+          </button>
+          <div className="dropdown-menu">
+            {props.options.map(function (option) {
+              return (
+                <a className='dropdown-item'
+                   key={option.value}
+                   onClick={event => alert(option)}>
+                  <span className={option.selected ? 'fa fa-check-square' : ''}/>
+                  <span className={option.selected ? 'selected' : 'unselected'}>{option.label}</span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )
+    }
+  }
 }

@@ -16,34 +16,34 @@ import {connect} from 'react-redux';
  */
 function HomePage(props) {
 
-	const homeStore = props.homeStore;
-	const tagLine = 'tagLine';
+  const homeStore = props.homeStore;
+  const tagLine = 'tagLine';
 
-	return {
+  return {
 
-		props,
+    props,
 
-		render() {
+    render() {
 
-			return (
-				<klatsch-home-page>
-					<section className="home-bg">
-						<HomeNav
-							homeStore={homeStore}
-							logUserIn={props.logUserIn}
-							loginButtonText={props.loginButtonText}/>
-						<TagLine tagLine={homeStore.get(tagLine)}/>
-					</section>
-					<section>
-						<HomeBottomNav/>
-					</section>
-					<section>
-						<PageFooter/>
-					</section>
-				</klatsch-home-page>
-			)
-		}
-	}
+      return (
+        <klatsch-home-page>
+          <section className="home-bg">
+            <HomeNav
+              homeStore={homeStore}
+              logUserIn={props.logUserIn}
+              loginButtonText={props.loginButtonText}/>
+            <TagLine tagLine={homeStore.get(tagLine)}/>
+          </section>
+          <section>
+            <HomeBottomNav/>
+          </section>
+          <section>
+            <PageFooter/>
+          </section>
+        </klatsch-home-page>
+      )
+    }
+  }
 }
 
 /**
@@ -52,7 +52,7 @@ function HomePage(props) {
  * @returns {*}
  */
 function matchDispatchToProps(dispatch) {
-	return bindActionCreators({logUserIn}, dispatch)
+  return bindActionCreators({logUserIn}, dispatch)
 }
 
 /**
@@ -61,11 +61,11 @@ function matchDispatchToProps(dispatch) {
  * @returns {{authStore: *, homeStore: *}}
  */
 function matchStateToProps(state) {
-	const loginButtonText = 'get' in state.authStore ? state.authStore.get('loginButtonText') : '';
-	return {
-		loginButtonText,
-		homeStore: state.homeStore
-	}
+  const loginButtonText = 'get' in state.authStore ? state.authStore.get('loginButtonText') : '';
+  return {
+    loginButtonText,
+    homeStore: state.homeStore
+  }
 }
 
 export default connect(matchStateToProps, matchDispatchToProps)(HomePage);
