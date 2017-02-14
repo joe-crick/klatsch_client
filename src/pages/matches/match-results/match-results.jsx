@@ -7,7 +7,7 @@ const MatchResults = props => {
 		<div className="klatsch-match-results container">
 			<div className="row">
 				<div className="col match-entry">
-					<div className="row">
+					<div className="row highlight-row">
 						<div className="col-lg-6">
 							<UserMediumProfile/>
 						</div>
@@ -17,7 +17,7 @@ const MatchResults = props => {
 					</div>
 				</div>
 				<div className="col match-entry">
-					<div className="row">
+					<div className="row highlight-row">
 						<div className="col-lg-6">
 							<UserMediumProfile/>
 						</div>
