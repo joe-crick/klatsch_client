@@ -8,13 +8,17 @@ const ProfileHeader = props => {
 		<div className="klatsch-profile-header container">
 			<div className="row">
 				<div className="col-lg-5 col-md-9">
-					<UserMediumProfile/>
+					<div className="row">
+						<div className="col-sm-12 profile-title-container">
+							<UserMediumProfile/>
+						</div>
+						<div className="col profile-actions-container">
+							<ProfileActions/>
+						</div>
+					</div>
 				</div>
-				<div className="col-lg-4">
+				<div className="col-lg-6">
 					<ProfileHeaderSummary/>
-				</div>
-				<div className="klatsch-profile-header-actions col-lg-2 col-md-12">
-					<ProfileActions/>
 				</div>
 			</div>
 		</div>
