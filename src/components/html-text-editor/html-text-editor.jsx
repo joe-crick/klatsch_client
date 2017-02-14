@@ -5,14 +5,18 @@ import { Editor } from 'react-draft-wysiwyg';
 // TODO: Make this real
 const editorState = EditorState.createEmpty();
 const bogusFunction = blah => blah;
+const toolbar = {
+  options: ['list', 'textAlign']
+};
 
 const HtmlTextEditor = props => {
   return (
     <Editor
+      toolbar={toolbar}
       editorState={editorState}
-      toolbarClassName="home-toolbar"
-      wrapperClassName="home-wrapper"
-      editorClassName="home-editor"
+      toolbarClassName="text-edit-toolbar"
+      wrapperClassName="text-edit-wrapper"
+      editorClassName="text-edit-editor"
       onEditorStateChange={bogusFunction}
       uploadCallback={bogusFunction}
     />
