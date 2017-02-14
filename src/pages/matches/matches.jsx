@@ -1,8 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import UserMediumProfile from '../../components/user-medium-profile/user-medium-profile';
-
 const {} = React.PropTypes;
+import MatchResults from './match-results/match-results';
 
 function Matches(props) {
 
@@ -14,14 +13,12 @@ function Matches(props) {
 
 		render() {
 			return (
-				<div className="klatsch-matches container">
-					<div className="row">
-						<div className="col">
-							<UserMediumProfile/>
-						</div>
-						<div className="col">
-							<UserMediumProfile/>
-						</div>
+				<div className="klatsch-matches">
+					<div className="klatsch-match-header-bar">
+						<h3 className="match-header">Your Matches</h3>
+					</div>
+					<div className="container">
+						<MatchResults/>
 					</div>
 				</div>
 			);
