@@ -10,7 +10,7 @@ import Profile from './pages/profile/profile';
 import Dashboard from './pages/dashboard/dashboard';
 import Matches from './pages/matches/matches';
 import EditProfile from './pages/edit-profile/edit-profile';
-import Account from './pages/edit-profile/account/account';
+import Support from './pages/support/support';
 import SiteTemplate from './page-templates/master-template/master-template';
 import './app.sass';
 
@@ -43,6 +43,7 @@ const Root = ({store}) => (
         <Route path='/profile' component={Profile}/>
         <Route path='/matches' component={Matches}/>
         <Route path="/edit-profile" component={EditProfile}/>
+        <Route path="/support" component={Support}/>
       </Route>
     </Router>
   </Provider>
