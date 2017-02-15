@@ -18,6 +18,24 @@ function Account(props) {
             <h4 className="klatsch-account-header">
               My Account
             </h4>
+            <form className="basic-content-form">
+              <div className="form-group">
+                <div className="row">
+                  <div className="col-lg-5">
+                    <label htmlFor="email">Email address</label>
+                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp"
+                           placeholder="Enter email" autoFocus/>
+                    <small id="emailHelp" className="form-text text-muted">
+                      We'll never share your email with anyone else.
+                    </small>
+                  </div>
+                  <div className="col-lg-5">
+                    <label htmlFor="password">Password</label>
+                    <input type="password" className="form-control" id="password" placeholder="Password"/>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       );

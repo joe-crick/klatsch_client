@@ -29,7 +29,6 @@
     "react-redirect": "^1.0.0",
     "react-redux": "^5.0.2",
     "react-router": "^2.4.1",
-    "react-tag-input": "^4.6.2",
     "redux": "^3.6.0",
     "slugger": "^1.0.0",
     "standard": "^4.3.1",

@@ -1,47 +1,21 @@
 import React from 'react';
-import {WithContext as ReactTags} from 'react-tag-input';
-import TextEditor from '../../../components/html-text-editor/html-text-editor';
+import BadgeInput from '../../../components/badge-input/badge-input';
 
-const tags = [];
-const bogusFunction = bogus => bogus;
+// TODO: Replace with real data
+const tags = ['test','this','out'];
+const noOp = event => event.preventDefault();
 
 const BasicContent = props => {
   return (
     <div className="klatsch-edit-profile-basic-content container">
-      <form className="basic-content-form">
+      <form className="basic-content-form" onSubmit={noOp}>
         <div className="form-group">
-          <div className="row">
-            <div className="col-lg-5">
-              <label htmlFor="email">Email address</label>
-              <input type="email" className="form-control" id="email" aria-describedby="emailHelp"
-                   placeholder="Enter email" autoFocus/>
-              <small id="emailHelp" className="form-text text-muted">
-                We'll never share your email with anyone else.
-              </small>
-            </div>
-            <div className="col-lg-5">
-              <label htmlFor="password">Password</label>
-              <input type="password" className="form-control" id="password" placeholder="Password"/>
-            </div>
-          </div>
+          <label>Bio</label>
+            <textarea className="form-control" id="exampleTextarea" rows="3"/>
         </div>
         <div className="form-group">
           <label>Bio</label>
-          <TextEditor/>
-        </div>
-        <div className="form-group">
-          <label>Family </label>
-          <ReactTags tags={tags}
-                 handleDelete={bogusFunction}
-                 handleAddition={bogusFunction}
-                 handleDrag={bogusFunction}/>
-        </div>
-        <div className="form-group">
-          <label>Interests</label>
-          <ReactTags tags={tags}
-                 handleDelete={bogusFunction}
-                 handleAddition={bogusFunction}
-                 handleDrag={bogusFunction}/>
+          <BadgeInput tags={tags}/>
         </div>
       </form>
     </div>
