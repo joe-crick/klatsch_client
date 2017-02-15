@@ -17,7 +17,7 @@ export default props => (
 				<Link to="/edit-profile">Edit Profile</Link>
 			</li>
 			<li>
-				<a href="/account">Edit Account</a>
+				<a href="#">Edit Account</a>
 			</li>
 			<li>
 				<a href="#">Help</a>

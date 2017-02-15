@@ -43,7 +43,6 @@ const Root = ({store}) => (
         <Route path='/profile' component={Profile}/>
         <Route path='/matches' component={Matches}/>
         <Route path="/edit-profile" component={EditProfile}/>
-        <Route path="/account" component={Account}/>
       </Route>
     </Router>
   </Provider>
