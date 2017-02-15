@@ -1416,7 +1416,7 @@ circular-json@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.1.tgz#be8b36aefccde8b3ca7aa2d6afc07a37242c0d2d"
 
-classnames@^2.2.1, classnames@^2.2.5:
+classnames@^2.2.1:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -2070,20 +2070,6 @@ domutils@1.5, domutils@1.5.1:
     dom-serializer "0"
     domelementtype "1"
 
-draft-js@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/draft-js/-/draft-js-0.10.0.tgz#29d16191012b932fdab28a9b37ec1538f421abf6"
-  dependencies:
-    fbjs "^0.8.7"
-    immutable "~3.7.4"
-    object-assign "^4.1.0"
-
-draftjs-utils@^0.6.3:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/draftjs-utils/-/draftjs-utils-0.6.3.tgz#8c53e01bc28a9d3f622f4fcbf0c34cc472fe481a"
-  dependencies:
-    immutable "^3.x.x"
-
 du@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/du/-/du-0.1.0.tgz#f26e340a09c7bc5b6fd69af6dbadea60fa8c6f4d"
@@ -2674,7 +2660,7 @@ fbjs@0.1.0-alpha.10:
     promise "^7.0.3"
     whatwg-fetch "^0.9.0"
 
-fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.7:
+fbjs@^0.8.1, fbjs@^0.8.4:
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.8.tgz#02f1b6e0ea0d46c24e0b51a2d24df069563a5ad6"
   dependencies:
@@ -3221,13 +3207,9 @@ ignore@^3.0.9, ignore@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.2.0.tgz#8d88f03c3002a0ac52114db25d2c673b0bf1e435"
 
-immutable@^3.8.1, immutable@^3.x.x:
+immutable@^3.8.1:
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
-
-immutable@~3.7.4:
-  version "3.7.6"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.7.6.tgz#13b4d3cb12befa15482a26fe1b2ebae640071e4b"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
@@ -4138,7 +4120,7 @@ mkdirp@0.5, mkdirp@0.x.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp
   dependencies:
     minimist "0.0.8"
 
-moment@^2.13.0, moment@^2.14.1:
+moment@^2.13.0:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
 
@@ -5129,14 +5111,6 @@ react-dom@^15.1.0:
     fbjs "^0.8.1"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
-
-react-draft-wysiwyg@^1.7.4:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/react-draft-wysiwyg/-/react-draft-wysiwyg-1.7.4.tgz#e729b22696272636c37f3960be2bad8f768aace8"
-  dependencies:
-    classnames "^2.2.5"
-    draftjs-utils "^0.6.3"
-    immutable "^3.8.1"
 
 react-dropzone@^3.10.0:
   version "3.10.0"
