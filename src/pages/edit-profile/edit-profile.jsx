@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import EditProfileHeader from './edit-profile-header/edit-profile-body';
+import EditProfileHeader from './edit-profile-header/edit-profile-header';
 import BasicContent from './basic-content/basic-content';
 import Photos from './photos/photos';
+import Account from './account/account';
 
 const {} = React.PropTypes;
 
@@ -26,6 +27,9 @@ function Profile(props) {
             </div>
             <div className="tab-pane" id="photos" role="tabpanel">
               <Photos/>
+            </div>
+            <div className="tab-pane" id="account" role="tabpanel">
+              <Account/>
             </div>
           </div>
         </div>

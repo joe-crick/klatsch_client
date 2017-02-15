@@ -15,10 +15,11 @@ function Account(props) {
       return (
         <div className="klatsch-account">
           <div className="container">
-            <h4 className="klatsch-account-header">
-              My Account
-            </h4>
             <form className="basic-content-form">
+              <div className="form-group">
+                <label>User Name</label>
+                <input type="text" className="form-control"/>
+              </div>
               <div className="form-group">
                 <div className="row">
                   <div className="col-lg-5">
@@ -34,6 +35,17 @@ function Account(props) {
                     <input type="password" className="form-control" id="password" placeholder="Password"/>
                   </div>
                 </div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="country">Country</label>
+                <select className="form-control" id="country">
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>United Arab Emirates</option>
+                  <option>United Airlines</option>
+                </select>
+                <label>Postal Code</label>
+                <input className="form-control"/>
               </div>
             </form>
           </div>

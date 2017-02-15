@@ -10,7 +10,7 @@ import Profile from './pages/profile/profile';
 import Dashboard from './pages/dashboard/dashboard';
 import Matches from './pages/matches/matches';
 import EditProfile from './pages/edit-profile/edit-profile';
-import Account from './pages/account/account';
+import Account from './pages/edit-profile/account/account';
 import SiteTemplate from './page-templates/master-template/master-template';
 import './app.sass';
 
