@@ -8,7 +8,7 @@ const ChatForm = props => {
         <form className="basic-content-form">
           <div className="form-group">
             <div className="row">
-              <div className="message-input-column col-lg-4">
+              <div className="message-input-column col">
                 {/*TODO: Wire this up correctly*/}
                 <div className="input-group">
                   <input type="text" className="form-control" placeholder="Message" aria-describedby="basic-addon"/>
