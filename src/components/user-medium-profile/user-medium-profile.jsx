@@ -1,12 +1,12 @@
 import React from 'react';
+import UserMediumProfileIcon from '../user-medium-profile-icon/user-medium-profile-icon';
 
 const ProfileHeaderSummary = props => {
   return (
     <div className="klatsch-medium-profile container">
       <div className="row">
         <div className="col-lg-4 col-md-4 profile-thumb">
-          <img src="http://www.avatarsdb.com/avatars/dust_of_the_past.gif"
-             className="klatsch-medium-profile-image"/>
+          <UserMediumProfileIcon/>
         </div>
         <div className="col-lg-8 col-md-6 profile-basics">
           <div className="profile-basics-username">Monkey Chunk</div>
