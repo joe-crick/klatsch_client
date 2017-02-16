@@ -20,5 +20,5 @@ export default props => (
 			<RightNav/>
 		</div>
 	</nav>
-)
+);
 

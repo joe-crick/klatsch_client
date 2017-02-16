@@ -65,7 +65,7 @@ function Dashboard(props) {
         </klatsch-dashboard>
       );
     }
-  }
+  };
 }
 
 
@@ -77,7 +77,7 @@ function Dashboard(props) {
 function matchStateToProps(state){
   return {
     userList
-  }
+  };
 }
 
 export default connect(matchStateToProps)(Dashboard);

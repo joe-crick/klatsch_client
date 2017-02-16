@@ -11,7 +11,8 @@ const BasicContent = props => {
     <div className="klatsch-edit-profile-basic-content container">
       <div className="container">
         <div className="main-profile-picture row">
-          <span title="Primary Profile Image"><UserMediumProfileIcon/></span>
+          {/*TODO: Wire this up to open the photos tab*/}
+          <a href="#" title="Primary Profile Image"><UserMediumProfileIcon/></a>
         </div>
         <div className="row">
           <form className="basic-content-form" onSubmit={noOp}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeBottomNav from './home-bottom-nav/home-bottom-nav'
+import HomeBottomNav from './home-bottom-nav/home-bottom-nav';
 import TagLine from './tag-line/tag-line';
 import HomeNav from './home-nav/home-nav';
 import PageFooter from '../../components/page-footer/page-footer';
@@ -41,9 +41,9 @@ function HomePage(props) {
             <PageFooter/>
           </section>
         </klatsch-home-page>
-      )
+      );
     }
-  }
+  };
 }
 
 /**
@@ -52,7 +52,7 @@ function HomePage(props) {
  * @returns {*}
  */
 function matchDispatchToProps(dispatch) {
-  return bindActionCreators({logUserIn}, dispatch)
+  return bindActionCreators({logUserIn}, dispatch);
 }
 
 /**
@@ -65,7 +65,7 @@ function matchStateToProps(state) {
   return {
     loginButtonText,
     homeStore: state.homeStore
-  }
+  };
 }
 
 export default connect(matchStateToProps, matchDispatchToProps)(HomePage);

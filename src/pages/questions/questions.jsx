@@ -27,7 +27,7 @@ export default function Questions(props) {
             {QuestionList}
           </div>
         </klatsch-question-page>
-      )
+      );
     }
-  }
+  };
 }

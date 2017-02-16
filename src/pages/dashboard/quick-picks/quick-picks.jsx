@@ -67,9 +67,9 @@ function QuickPicks(props) {
             }
           </div>
         </div>
-      )
+      );
     }
-  }
+  };
 }
 
 export default QuickPicks;

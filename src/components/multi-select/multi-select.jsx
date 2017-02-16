@@ -40,7 +40,7 @@ export default function MultiSelect(props) {
             })}
           </div>
         </div>
-      )
+      );
     }
-  }
+  };
 }

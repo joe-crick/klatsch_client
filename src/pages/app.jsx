@@ -39,7 +39,7 @@ function mapPropsToState(state) {
   return {
     authStore: state.authStore,
     homeStore: state.homeStore
-  }
+  };
 }
 
 export default connect(mapPropsToState)(App);

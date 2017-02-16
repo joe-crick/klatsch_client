@@ -46,5 +46,5 @@ export default function SignUpBar(props) {
         </div>
       );
     }
-  }
+  };
 }
