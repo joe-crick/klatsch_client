@@ -1,11 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router';
+import UserMiniProfileIcon from '../user-mini-profile-icon/user-mini-profile-icon';
 
 const UserMiniProfile = props => {
   return (
     <div className="user-mini-profile">
       <Link to={`/profile`} className="pull-left">
-        <img src="http://www.avatarsdb.com/avatars/dust_of_the_past.gif" className="mini-profile-image"/>
+        <UserMiniProfileIcon/>
       </Link>
       <div className="user-data pull-left">
         <div className="username">

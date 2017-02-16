@@ -46,11 +46,12 @@ function Dashboard(props) {
     componentDidMount() {
       // TODO: Implement chat correctly
       const doc = document;
-      const showChat = () => {
+      const toggleChat = () => {
         chatContainer.className = chatContainer.className === 'hidden' ? '' : 'hidden';
       };
       const chatContainer = doc.getElementById('chat-container');
-      doc.querySelector('.action-messages').addEventListener('click', showChat);
+      doc.querySelector('.action-messages').addEventListener('click', toggleChat);
+      doc.getElementById('close-chat').addEventListener('click', toggleChat);
     },
 
     render() {
