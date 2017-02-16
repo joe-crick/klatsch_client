@@ -1,0 +1,21 @@
+@import ../../sass_vars
+
+.klatsch-chat
+  height: 400px
+  width: 300px
+  @extend .border
+  position: absolute
+  top: 300px
+  left: 100px
+  background-color: $sea-whitish
+  border-radius: 10px
+  .klatsch-chat-header
+    border-radius: 10px 10px 0 0
+    background-color: $sea-greenish
+    padding: 10px
+    h4
+      cursor: move
+      display: inline-block
+      line-height: 35px
+  .klatsch-chat-history
+    @extend .vertical-scrollable-section

@@ -16,6 +16,8 @@ const userList = [
   {profile: 'Tompson', img: 'http://www.fshalifax.com/wp-content/uploads/2016/09/o-FAMILY-VACATION-facebook.jpg'}
 ];
 
+// TODO: Implement show profile correctly
+
 const showProfile = () => {
 };
 
@@ -40,6 +42,16 @@ function Dashboard(props) {
   return {
 
     props,
+
+    componentDidMount() {
+      // TODO: Implement chat correctly
+      const doc = document;
+      const showChat = () => {
+        chatContainer.className = chatContainer.className === 'hidden' ? '' : 'hidden';
+      };
+      const chatContainer = doc.getElementById('chat-container');
+      doc.querySelector('.action-messages').addEventListener('click', showChat);
+    },
 
     render() {
       return (

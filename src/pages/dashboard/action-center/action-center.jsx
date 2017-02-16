@@ -19,7 +19,7 @@ const ActionCenter = props => {
         (i.e., send as an email, or send as a chat - convert between the two for any given message)
       </Tooltip>
       <div className="row">
-        <div className="col-md-6 col-sm-12 action-messages vertical-scrollable-section">
+        <div className="action-messages col-md-6 col-sm-12 vertical-scrollable-section">
           {loop}
         </div>
         <div className="col-md-2 col-sm-0 vertical-separator"/>

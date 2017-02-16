@@ -14,9 +14,11 @@ function Chat(props) {
     render() {
       return (
         <div className="klatsch-chat">
-          <div className="klatsch-chat-header">
+          <div className="klatsch-chat-header handle">
             <div className="container">
               <h4>Messaging</h4>
+              <button className="btn btn-klatsch-tertiary pull-right">x</button>
+              <div className="clearfix"/>
             </div>
           </div>
           <div className="klatsch-chat-history container">
