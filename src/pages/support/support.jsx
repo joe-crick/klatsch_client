@@ -16,7 +16,7 @@ function Support(props) {
         <div className="klatsch-support">
           <div className="klatsch-support-header-container">
             <div className="header container">
-              <h4>Feedback</h4>
+              <h4>Support</h4>
             </div>
           </div>
           <div className="container">
