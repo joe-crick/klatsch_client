@@ -7,7 +7,9 @@ const EmailNotification = props => {
   
   return (
     <div className="pull -left">
-      <a href="#" className="email-notification" title={hoverTitle}><span className={envelopeClass}/></a>
+      <a href="#" className="email-notification" title={hoverTitle}>
+        <span className={envelopeClass}/>
+      </a>
     </div>
   );
 };

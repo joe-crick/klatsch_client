@@ -9,6 +9,9 @@ export default ({children}) => (
 			{children}
 		</main>
 		<PageFooter/>
+		<div className="hidden">
+      Test
+		</div>
 	</klatsch>
 );
 
