@@ -1,22 +1,29 @@
 import React from 'react';
-import UserMiniProfileIcon from '../../user-mini-profile-icon/user-mini-profile-icon';
+import HistoryEntry from './history-entry/history-entry';
+
+// TODO: Implement this correctly
+const historyEntries = [
+  <HistoryEntry isReply={false} message={'Hello world'}/>,
+  <HistoryEntry isReply={true} message={'Hello world'}/>,
+  <HistoryEntry isReply={false} message={'Hello world'}/>,
+  <HistoryEntry isReply={false} message={'Hello world'}/>,
+  <HistoryEntry isReply={true} message={'Hello world'}/>,
+  <HistoryEntry isReply={true} message={'Hello world'}/>,
+  <HistoryEntry isReply={false} message={'Hello world'}/>
+];
 
 const ChatHistory = props => {
   return (
     <div className="klatsch-chat-history container">
       <div className="row">
-        <div className="col-lg-12 col-sm-12 col-md-12">
-          <div className="row">
-            <div className="icon-col col-sm-2 col-lg-2 col-md-2">
-              <UserMiniProfileIcon/>
-            </div>
-            <div className="col">
-              My message goes here...
-            </div>
-          </div>
-        </div>
+        {historyEntries.map(entry => {
+          return (<div className="col-12">
+              {entry}
+          </div>)
+        })}
       </div>
     </div>
+
   );
 };
 
