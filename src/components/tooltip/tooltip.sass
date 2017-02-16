@@ -2,7 +2,6 @@
 
 .klatsch-tooltip
   display: inline-block
-  min-width: 250px
   position: absolute
   @include small
     min-width: 0
@@ -19,8 +18,12 @@
     border-radius: 10px
     padding: 20px
     text-align: justify
+    min-width: 250px
+    @include med
+      min-width: 200px
     max-width: 350px
     z-index: 2000
     @include small
       left: -150px
       max-width: 200px
+      min-width: 100px
