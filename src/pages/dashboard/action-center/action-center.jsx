@@ -15,8 +15,7 @@ const ActionCenter = props => {
     <div className="container action-center">
       <h4 className="action-center-title">Action Center</h4>
       <Tooltip>
-        NOTE: This should work like a chat app, but give you the ability to switch between asynch and synch
-        (i.e., send as an email, or send as a chat - convert between the two for any given message)
+        The Action Center keeps you up to date on the latest items requiring your attention.
       </Tooltip>
       <div className="row">
         <div className="action-messages col-md-6 col-sm-12 vertical-scrollable-section">

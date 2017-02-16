@@ -1,5 +1,6 @@
 import React from 'react';
 import UserMiniProfile from '../../../../components/user-mini-profile/user-mini-profile';
+import DeleteButton from '../../../../components/delete-button/delete-button';
 
 const InsightCenterNotification = props => {
   return (
@@ -10,7 +11,7 @@ const InsightCenterNotification = props => {
         </div>
         <div className="col-sm-0"/>
         <div className="col-sm-0 col-md-5 delete-favorite">
-          <button className="btn btn-klatsch-danger" onClick={() => alert('TODO: Implement Delete')}>x</button>
+          <DeleteButton/>
         </div>
         <div className="clearfix"/>
       </div>

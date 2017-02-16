@@ -40,7 +40,7 @@ function QuickPicks(props) {
               </div>
               <div className="col-sm-12 col-md-4 cold-lg-6 quick-picks-refresh-container">
                 <button className="btn btn-klatsch-primary quick-picks-refresh">
-                  <span className="fa fa-refresh"/>
+                  See More!
                 </button>
               </div>
             </div>
