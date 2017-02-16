@@ -17,7 +17,7 @@ const ChatHistory = props => {
     <div className="klatsch-chat-history container">
       <div className="row">
         {historyEntries.map(entry => {
-          return (<div className="col-12">
+          return (<div className="col-12 history-row">
               {entry}
           </div>)
         })}

@@ -17,8 +17,12 @@
       cursor: move
       display: inline-block
       line-height: 35px
-  .klatsch-chat-history
-    @extend .vertical-scrollable-section
+  .klatsch-chat-history-container
+    padding-left: 7px
+    background-color: $sea-bright-white
+    overflow-y: scroll // TODO: refactor vertical scrollable section
+    max-height: 57%
+    border-radius: 5px
   .klatsch-chat-form.container
     height: 10%
     position: absolute

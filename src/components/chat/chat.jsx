@@ -24,7 +24,7 @@ function Chat(props) {
               <div className="clearfix"/>
             </div>
           </div>
-          <div className="klatsch-chat-history container">
+          <div className="klatsch-chat-history-container">
             <ChatHistory/>
           </div>
           <div className="klatsch-chat-form container">
