@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ChatHistory from './chat-history/chat-history';
+import ChatForm from './chat-form/chat-form';
 
 const {} = React.PropTypes;
 
@@ -27,7 +28,7 @@ function Chat(props) {
             <ChatHistory/>
           </div>
           <div className="klatsch-chat-form container">
-            Form
+            <ChatForm/>
           </div>
         </div>
       );
