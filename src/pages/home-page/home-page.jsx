@@ -6,6 +6,7 @@ import PageFooter from '../../components/page-footer/page-footer';
 import {logUserIn} from './home-page-actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import ReactRedirect from 'react-redirect';
 
 
 /**
@@ -45,7 +46,7 @@ function HomePage(props) {
 
     renderDashboard() {
       return (
-
+        <ReactRedirect location='/dashboard'/>
       )
     },
 
