@@ -18,10 +18,10 @@ export default props => (
         <Link to="/edit-profile">Edit Profile</Link>
       </li>
       <li>
-        <a href="/edit-profile#account">Edit Account</a>
+        <Link to="/edit-profile#account">Edit Account</Link>
       </li>
       <li>
-        <a href="/support">Help</a>
+        <Link to="/support">Help</Link>
       </li>
       <li role="separator" className="dropdown-divider"/>
       <li>

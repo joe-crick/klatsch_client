@@ -36,7 +36,7 @@ function Support(props) {
                   <div>Do you have a photo or screenshot that would help us?</div>
                   <label className="">
                     <span>Upload it.</span>
-                    <input type="file" value="Upload" id="feedback_file_input" name="file" className="form-control"/>
+                    <input type="file" value="" id="feedback_file_input" name="file" className="form-control"/>
                   </label>
                   <input type="hidden" name="photo_url" id="photo_url" value="" className="form-control"/>
                 </div>
