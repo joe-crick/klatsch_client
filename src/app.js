@@ -25,13 +25,20 @@ if (window !== undefined) {
 const middleware = applyMiddleware(logger());
 const store = createStore(rootReducer, middleware);
 
-// TODO: Troubleshoot compiled version
-
 /**
  * Register the ServiceWorker
  */
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
   navigator.serviceWorker.register('klatsch-service-worker.js');
+}
+
+function requireAuth(nextState, replace) {
+  if (!store.getState().authStore.get('isAuthenticated')) {
+    replace({
+      pathname: '/',
+      state: { nextPathname: nextState.location.pathname }
+    })
+  }
 }
 
 /**
@@ -41,7 +48,7 @@ const Root = ({store}) => (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path='/' component={HomePage}/>
-      <Route component={SiteTemplate}>
+      <Route component={SiteTemplate} onEnter={requireAuth}>
         <Route path='/dashboard' component={Dashboard}/>
         <Route path='/profile' component={Profile}/>
         <Route path='/matches' component={Matches}/>
