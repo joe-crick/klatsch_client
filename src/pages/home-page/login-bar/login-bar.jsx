@@ -5,13 +5,9 @@ export default props => {
 
   return (
     <span className="navbar-text">
-      {/*TODO: Restore redux login*/}
-      {/*<button className='btn btn-klatsch-secondary klatsch-login-button' onClick={props.logUserIn}>*/}
-      {/*{props.loginButtonText}*/}
-    {/*</button>*/}
-    <Link to="/dashboard" className="btn btn-klatsch-secondary">
-      Login
-    </Link>
+      <button className='btn btn-klatsch-secondary klatsch-login-button' onClick={props.logUserIn}>
+        {props.loginButtonText}
+      </button>
     </span>
   );
 };
