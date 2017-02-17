@@ -30,9 +30,9 @@
     "build:pre:temp": "npm-run-all clean-public build:index build:img",
     "build:prod": "babel-node build/build.js",
     "build": "npm-run-all build:pre:temp build:prod build:index",
-    "develop": "webpack-dev-server --inline",
-    "debug-wp": "webpack --display-error-details",
-    "start": "npm-run-all build:dev develop",
+    "webpack:server": "webpack-dev-server --inline",
+    "webpack:debug": "webpack --display-error-details",
+    "dev": "npm-run-all build:dev webpack:server",
     "lint": "eslint --ext .jsx,.js src/**",
     "tape-tests": "babel-tape-runner tests/**/*.js | faucet",
     "test": "npm-run-all tape-tests"
