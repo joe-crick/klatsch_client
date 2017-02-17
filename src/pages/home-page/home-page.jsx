@@ -23,8 +23,7 @@ function HomePage(props) {
 
     props,
 
-    render() {
-
+    renderHomePage() {
       return (
         <klatsch-home-page>
           <section className="home-bg">
@@ -41,7 +40,24 @@ function HomePage(props) {
             <PageFooter/>
           </section>
         </klatsch-home-page>
-      );
+      )
+    },
+
+    renderDashboard() {
+      return (
+
+      )
+    },
+
+    render() {
+
+      const props = this.props;
+      if (props.authStore.get('isAuthenticated')) {
+        return renderDashboard();
+      } else {
+        return renderHomePage();
+      }
+
     }
   };
 }
@@ -64,7 +80,8 @@ function matchStateToProps(state) {
   const loginButtonText = 'get' in state.authStore ? state.authStore.get('loginButtonText') : '';
   return {
     loginButtonText,
-    homeStore: state.homeStore
+    homeStore: state.homeStore,
+    authStore: state.authStore
   };
 }
 
