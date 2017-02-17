@@ -1,65 +1,14 @@
-const autoprefixer = require('autoprefixer');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
-const Precache = require('./sw-precache-webpack-plugin');
 const webpack = require('webpack');
+const webpackDev = require('./webpack.common');
 
-const sassLoaders = [
-	'css-loader',
-	'postcss-loader',
-	'sass-loader?sourceMap&indentedSyntax=sass&includePaths[]=' + path.resolve(__dirname, './src')
-];
-
-module.exports = {
-	entry: [
-		'./src/app.js'
-	],
-	output: {
-		path: path.resolve(__dirname, 'build/'),
-		publicPath: '/build',
-		filename: 'bundle.js'
-	},
-	devtool: 'source-map',
-	module: {
-		rules: [
-			{
-				exclude: /node_modules/,
-				loader: 'babel-loader'
-			},
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				enforce: 'pre',
-				use: [{loader: 'eslint-loader', options: {rules: {semi: 0}}}],
-			},
-			{
-				test: /\.sass$/,
-				use: ExtractTextPlugin.extract({fallback: 'style-loader', use: sassLoaders.join('!')})
-			}
-		]
-	},
-	plugins: [
-		new ExtractTextPlugin('[name].css'),
-		new Precache({
-			cacheId: 'klatsch',
-			filename: 'build/klatsch-service-worker.js',
-			minify: false,
-			staticFileGlobsIgnorePatterns: [/\.map$/],
-			runtimeCaching: [
-				{
-					urlPattern: '/',
-					handler: 'cacheFirst',
-				}
-			]
-		}),
-    new webpack.HotModuleReplacementPlugin()
-	],
-	resolve: {
-		extensions: ['.js', '.jsx', '.sass']
-	},
-	devServer: {
-		historyApiFallback: true,
-		contentBase: './',
-		outputPath: path.resolve(__dirname, 'build/')
-	}
+webpackDev.output.publicPath = '/dev-build';
+webpackDev.output.path = path.resolve(__dirname, 'dev-build/');
+webpackDev.plugins.push(new webpack.HotModuleReplacementPlugin());
+webpackDev.devServer = {
+  historyApiFallback: true,
+    contentBase: './',
+    outputPath: path.resolve(__dirname, 'dev-build/')
 };
+
+module.exports = webpackDev;

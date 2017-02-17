@@ -1,4 +1,7 @@
 node_modules
 .idea
-build
+dev-build
 .env
+public
+docs
+requirements

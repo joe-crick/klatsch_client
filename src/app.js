@@ -28,7 +28,7 @@ const store = createStore(rootReducer, middleware);
 /**
  * Register the ServiceWorker
  */
-if ('serviceWorker' in navigator) {
+if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
   navigator.serviceWorker.register('klatsch-service-worker.js');
 }
 
