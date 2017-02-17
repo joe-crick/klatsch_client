@@ -14,7 +14,7 @@ fs.readFile('index.html', 'utf8', (err, markup) => {
   const $ = cheerio.load(markup);
   $('head').prepend('');
   $('#app-js').attr('src', 'bundle.js');
-  $('#app-css').attr('src', 'main.css');
+  $('#app-css').attr('href', 'main.css');
 
   fs.writeFile('public/index.html', $.html(), 'utf8', function (err) {
     if (err) {
