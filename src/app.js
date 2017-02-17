@@ -3,15 +3,15 @@ import {render} from 'react-dom';
 import {Router, Route, browserHistory} from 'react-router';
 import App from './pages/app.jsx';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import rootReducer from './rootReducer';
-
 import Profile from './pages/profile/profile';
 import Dashboard from './pages/dashboard/dashboard';
 import Matches from './pages/matches/matches';
 import EditProfile from './pages/edit-profile/edit-profile';
 import Support from './pages/support/support';
 import SiteTemplate from './page-templates/master-template/master-template';
+import logger from 'redux-logger';
 import './app.sass';
 
 // user: cupid0cpuid
@@ -22,13 +22,14 @@ if (window !== undefined) {
   window.React = React;
 }
 
-const store = createStore(rootReducer);
+const middleware = applyMiddleware(logger());
+const store = createStore(rootReducer, middleware);
 
 /**
  * Register the ServiceWorker
  */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/klatsch-service-worker.js');
+  navigator.serviceWorker.register('klatsch-service-worker.js');
 }
 
 /**

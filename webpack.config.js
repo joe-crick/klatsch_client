@@ -2,6 +2,7 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const Precache = require('./sw-precache-webpack-plugin');
+const webpack = require('webpack');
 
 const sassLoaders = [
 	'css-loader',
@@ -50,7 +51,8 @@ module.exports = {
 					handler: 'cacheFirst',
 				}
 			]
-		})
+		}),
+    new webpack.HotModuleReplacementPlugin()
 	],
 	resolve: {
 		extensions: ['.js', '.jsx', '.sass']
