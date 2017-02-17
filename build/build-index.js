@@ -1,15 +1,15 @@
 import fs from 'fs';
 import cheerio from 'cheerio';
-import 'colors';
+import colors from 'colors/safe';
 
 /*eslint-disable no-console */
 
 fs.readFile('index.html', 'utf8', (err, markup) => {
   if (err) {
-    return console.log(err);
+    return console.log(colors.red(err));
   }
 
-  console.log('Processing index.html...'.blue);
+  console.log(colors.blue('Processing index.html...'));
 
   const $ = cheerio.load(markup);
   $('head').prepend('');
@@ -18,8 +18,8 @@ fs.readFile('index.html', 'utf8', (err, markup) => {
 
   fs.writeFile('public/index.html', $.html(), 'utf8', function (err) {
     if (err) {
-      return console.log(err);
+      return console.log(colors.red(err));
     }
-    console.log('index.html written to /public'.green);
+    console.log(colors.green('index.html written to /public'));
   });
 });
