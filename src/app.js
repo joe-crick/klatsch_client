@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Router, Route, browserHistory} from 'react-router';
-import App from './pages/app.jsx';
+import HomePage from './pages/home-page/home-page';
 import {Provider} from 'react-redux';
 import {applyMiddleware, createStore} from 'redux';
 import rootReducer from './rootReducer';
@@ -25,6 +25,8 @@ if (window !== undefined) {
 const middleware = applyMiddleware(logger());
 const store = createStore(rootReducer, middleware);
 
+// TODO: Troubleshoot compiled version
+
 /**
  * Register the ServiceWorker
  */
@@ -38,7 +40,7 @@ if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
 const Root = ({store}) => (
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path='/' component={App}/>
+      <Route path='/' component={HomePage}/>
       <Route component={SiteTemplate}>
         <Route path='/dashboard' component={Dashboard}/>
         <Route path='/profile' component={Profile}/>
