@@ -5,38 +5,42 @@ const webpackProd = require('./webpack.common');
 
 webpackProd.output.publicPath = '/public';
 webpackProd.output.path = path.resolve(__dirname, 'public/');
-webpackProd.plugins.push(new webpack.optimize.UglifyJsPlugin({
+
+webpackProd.plugins = webpackProd.plugins.concat([
+  new webpack.optimize.UglifyJsPlugin({
     minimize: true,
     compress: {
       warnings: false
     }
-  }));
-webpackProd.plugins.push(new webpack.DefinePlugin({
-  'process.env': {
-    'NODE_ENV': JSON.stringify('production')
-  }
-}));
-
-webpackProd.plugins.push(new Precache({
-  cacheId: 'klatsch',
-  filename: 'public/klatsch-service-worker.js',
-  minify: false,
-  staticFileGlobsIgnorePatterns: [/\.map$/],
-  runtimeCaching: [
-    {
-      urlPattern: '/',
-      handler: 'cacheFirst',
+  }),
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
     }
-  ]
-}))
+  }),
+  new Precache({
+    cacheId: 'klatsch',
+    filename: 'public/klatsch-service-worker.js',
+    minify: false,
+    staticFileGlobsIgnorePatterns: [/\.map$/],
+    runtimeCaching: [
+      {
+        urlPattern: '/',
+        handler: 'cacheFirst',
+      }
+    ]
+  })
+]);
 
-webpackProd.module.rules.push({
+webpackProd.module.rules = webpackProd.module.rules.concat([
+  {
     test: /\.png$/,
     loader: 'file'
-  });
-webpackProd.module.rules.push({
-  test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-  loader: 'file'
-});
+  },
+  {
+    test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+    loader: 'file'
+  }
+]);
 
 module.exports = webpackProd;

@@ -28,7 +28,7 @@
     "build:pre": "npm-run-all clean-public lint build:index",
     "build:pre:temp": "npm-run-all clean-public build:index",
     "build:prod": "babel-node build/build.js",
-    "deploy": "npm-run-all build:pre:temp build:prod build:index",
+    "build": "npm-run-all build:pre:temp build:prod build:index",
     "develop": "webpack-dev-server --inline",
     "debug-wp": "webpack --display-error-details",
     "start": "npm-run-all build:dev develop",
