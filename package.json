@@ -30,8 +30,10 @@
     "test": "npm-run-all tape-tests"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "data.either": "^1.5.0",
     "data.maybe": "^1.2.2",
+    "feathers-client": "^1.9.0",
     "immutable": "^3.8.1",
     "local-links": "^1.4.0",
     "lodash.assign": "^3.2.0",
@@ -56,6 +58,7 @@
     "react-router": "^2.4.1",
     "redux": "^3.6.0",
     "slugger": "^1.0.0",
+    "socket.io": "^1.7.2",
     "standard": "^4.3.1",
     "surge": "^0.14.2",
     "url-loader": "^0.5.6",
@@ -81,6 +84,7 @@
     "extend-tape": "^1.2.0",
     "extract-text-webpack-plugin": "beta",
     "faucet": "0.0.1",
+    "feathers-reduxify-authentication": "^0.1.1",
     "file-loader": "^0.8.4",
     "json-loader": "^0.5.2",
     "node-sass": "^3.6.0",
