@@ -18,13 +18,17 @@ const HomeNav = props => {
       <HomeLogo/>
 
       <div className="collapse navbar-collapse" id="navContent">
-        <SignUpBar store={props.homeStore} l/>
-        <LoginButton logUserIn={props.logUserIn} loginButtonText={props.loginButtonText}/>
+        <SignUpBar store={props.homeStore} toggleRegistration={props.toggleRegistration} />
+        <LoginButton loginButtonText={props.loginButtonText}/>
       </div>
     </nav>
   );
 };
 
-HomeNav.propTypes = {};
+HomeNav.propTypes = {
+  toggleRegistration: React.PropTypes.func,
+  loginButtonText: React.PropTypes.string,
+  homeStore: React.PropTypes.object
+};
 
 export default HomeNav;

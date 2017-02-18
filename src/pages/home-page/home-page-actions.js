@@ -6,3 +6,10 @@ export const logUserIn = () => function (user) {
     payload: user
   };
 }();
+
+export const toggleRegistrationView = () => function (user) {
+  return {
+    type: actionType.TOGGLE_REGISTRATION_VIEW,
+    payload: user
+  };
+}();

@@ -3,11 +3,12 @@ import HomeBottomNav from './home-bottom-nav/home-bottom-nav';
 import TagLine from './tag-line/tag-line';
 import HomeNav from './home-nav/home-nav';
 import PageFooter from '../../components/page-footer/page-footer';
-import {logUserIn} from './home-page-actions';
+import Registration from './registration/registration';
+import {toggleRegistrationView} from './home-page-actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import ReactRedirect from 'react-redirect';
 
+const isRegistrationVisible = 'isRegistrationVisible';
 
 /**
  * @desc The Home Page container component
@@ -24,13 +25,17 @@ function HomePage(props) {
 
     props,
 
-    renderHomePage() {
+    isRegistrationVisible() {
+      return this.props.authStore.get(isRegistrationVisible) ? <Registration/> : '';
+    },
+
+    render() {
       return (
         <klatsch-home-page>
           <section className="home-bg">
             <HomeNav
               homeStore={homeStore}
-              logUserIn={props.logUserIn}
+              toggleRegistration={props.toggleRegistrationView}
               loginButtonText={props.loginButtonText}/>
             <TagLine tagLine={homeStore.get(tagLine)}/>
           </section>
@@ -40,25 +45,11 @@ function HomePage(props) {
           <section>
             <PageFooter/>
           </section>
+          <section>
+            {this.isRegistrationVisible()}
+          </section>
         </klatsch-home-page>
-      )
-    },
-
-    renderDashboard() {
-      return (
-        <ReactRedirect location='/dashboard'/>
-      )
-    },
-
-    render() {
-
-      const props = this.props;
-      if (props.authStore.get('isAuthenticated')) {
-        return renderDashboard();
-      } else {
-        return renderHomePage();
-      }
-
+      );
     }
   };
 }
@@ -69,7 +60,7 @@ function HomePage(props) {
  * @returns {*}
  */
 function matchDispatchToProps(dispatch) {
-  return bindActionCreators({logUserIn}, dispatch);
+  return bindActionCreators({toggleRegistrationView}, dispatch);
 }
 
 /**
