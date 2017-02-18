@@ -17,9 +17,12 @@ const toggleRegistrationView = state => {
   return state.set(isRegistrationVisible, !isVisible);
 };
 
+const logUserIn = state => state.set('isAuthenticated', true);
+
 // HashMap to directly call the requested method
 const actionMap = new Map();
 actionMap.set(actionType.TOGGLE_REGISTRATION_VIEW, toggleRegistrationView);
+actionMap.set(actionType.LOG_IN, logUserIn);
 
 export default (state = INITIAL_STATE, { type, payload }) => {
   if (type === actionType.LOGGED_IN) {

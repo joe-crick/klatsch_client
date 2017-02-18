@@ -19,7 +19,7 @@ const HomeNav = props => {
 
       <div className="collapse navbar-collapse" id="navContent">
         <SignUpBar store={props.homeStore} toggleRegistration={props.toggleRegistration} />
-        <LoginButton loginButtonText={props.loginButtonText}/>
+        <LoginButton loginButtonText={props.loginButtonText} logUserIn={props.logUserIn}/>
       </div>
     </nav>
   );

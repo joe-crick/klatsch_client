@@ -12,6 +12,7 @@ import Matches from './pages/matches/matches';
 import EditProfile from './pages/edit-profile/edit-profile';
 import Support from './pages/support/support';
 import SiteTemplate from './page-templates/master-template/master-template';
+import Director from './page-templates/director/director';
 import {UserAuthWrapper} from 'redux-auth-wrapper'
 import logger from 'redux-logger';
 import './app.sass';
@@ -39,7 +40,9 @@ if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
 
 // Redirects to /registration by default
 const UserIsAuthenticated = UserAuthWrapper({
-  authSelector: state => state.user,
+  authSelector: state => state.authStore,
+  predicate: user => user.get('isAuthenticated'),
+  authenticatingSelector: state => state.authStore.get('isAuthenticated'),
   failureRedirectPath: '/app',
   redirectAction: routerActions.replace,
   wrapperDisplayName: 'UserIsAuthenticated'
@@ -51,13 +54,15 @@ const UserIsAuthenticated = UserAuthWrapper({
 const Root = ({store}) => (
   <Provider store={store}>
     <Router history={history}>
-      <Route path='/' component={HomePage}/>
-      <Route component={UserIsAuthenticated(SiteTemplate)}>
-        <Route path='/dashboard' component={Dashboard}/>
-        <Route path='/profile' component={Profile}/>
-        <Route path='/matches' component={Matches}/>
-        <Route path="/edit-profile" component={EditProfile}/>
-        <Route path="/support" component={Support}/>
+      <Route component={Director}>
+        <Route path='/' component={HomePage}/>
+        <Route component={UserIsAuthenticated(SiteTemplate)}>
+          <Route path='/dashboard' component={Dashboard}/>
+          <Route path='/profile' component={Profile}/>
+          <Route path='/matches' component={Matches}/>
+          <Route path="/edit-profile" component={EditProfile}/>
+          <Route path="/support" component={Support}/>
+        </Route>
       </Route>
     </Router>
   </Provider>

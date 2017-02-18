@@ -4,7 +4,7 @@ import PageFooter from '../../components/page-footer/page-footer';
 import Chat from '../../components/chat/chat';
 
 export default ({children}) => (
-	<klatsch>
+	<klatsch-master>
 		<Nav />
 		<main>
 			{children}
@@ -13,6 +13,6 @@ export default ({children}) => (
 		<div className="hidden" id="chat-container">
         <Chat/>
 		</div>
-	</klatsch>
+	</klatsch-master>
 );
 

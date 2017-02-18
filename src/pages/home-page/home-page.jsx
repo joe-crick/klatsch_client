@@ -4,7 +4,7 @@ import TagLine from './tag-line/tag-line';
 import HomeNav from './home-nav/home-nav';
 import PageFooter from '../../components/page-footer/page-footer';
 import Registration from './registration/registration';
-import {toggleRegistrationView} from './home-page-actions';
+import {toggleRegistrationView, logUserIn} from './home-page-actions';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
@@ -36,6 +36,7 @@ function HomePage(props) {
             <HomeNav
               homeStore={homeStore}
               toggleRegistration={props.toggleRegistrationView}
+              logUserIn={props.logUserIn}
               loginButtonText={props.loginButtonText}/>
             <TagLine tagLine={homeStore.get(tagLine)}/>
           </section>
@@ -58,7 +59,10 @@ function HomePage(props) {
  * @returns {*}
  */
 function matchDispatchToProps(dispatch) {
-  return bindActionCreators({toggleRegistrationView}, dispatch);
+  return bindActionCreators({
+    toggleRegistrationView,
+    logUserIn
+  }, dispatch);
 }
 
 /**

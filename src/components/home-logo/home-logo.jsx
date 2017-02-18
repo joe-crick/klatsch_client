@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 const HomeLogo = props => {
   return (
     <div className="klatsch-home-logo">
-      <a href="/"><span className="home-logo"/></a>
+      <Link to="/"><span className="home-logo"/></Link>
     </div>
   );
 };
