@@ -45,9 +45,7 @@ function HomePage(props) {
           <section>
             <PageFooter/>
           </section>
-          <section>
-            {this.isRegistrationVisible()}
-          </section>
+          {this.isRegistrationVisible()}
         </klatsch-home-page>
       );
     }
