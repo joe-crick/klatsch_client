@@ -38,15 +38,17 @@ if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
   navigator.serviceWorker.register('klatsch-service-worker.js');
 }
 
+// TODO: Update matchDispatchToProps to conform to template standard
+
 // Redirects to /registration by default
-const UserIsAuthenticated = UserAuthWrapper({
-  authSelector: state => state.authStore,
-  predicate: user => user.get('isAuthenticated'),
-  authenticatingSelector: state => state.authStore.get('isAuthenticated'),
-  failureRedirectPath: '/app',
-  redirectAction: routerActions.replace,
-  wrapperDisplayName: 'UserIsAuthenticated'
-});
+// const UserIsAuthenticated = UserAuthWrapper({
+//   authSelector: state => state.authStore,
+//   predicate: user => user.get('isAuthenticated'),
+//   authenticatingSelector: state => state.authStore.get('isAuthenticated'),
+//   failureRedirectPath: '/app',
+//   redirectAction: routerActions.replace,
+//   wrapperDisplayName: 'UserIsAuthenticated'
+// });
 
 /**
  * Routing table
@@ -56,7 +58,8 @@ const Root = ({store}) => (
     <Router history={history}>
       <Route component={Director}>
         <Route path='/' component={HomePage}/>
-        <Route component={UserIsAuthenticated(SiteTemplate)}>
+        {/*<Route component={UserIsAuthenticated(SiteTemplate)}>*/}
+        <Route component={SiteTemplate}>
           <Route path='/dashboard' component={Dashboard}/>
           <Route path='/profile' component={Profile}/>
           <Route path='/matches' component={Matches}/>

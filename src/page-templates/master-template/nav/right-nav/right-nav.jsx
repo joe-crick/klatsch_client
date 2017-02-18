@@ -13,6 +13,6 @@ export default props => (
 				<span className="fa fa-folder" aria-hidden="true"/>
 			</a>
 		</li>
-		<UserMenu/>
+		<UserMenu logUserOut={props.logUserOut}/>
 	</ul>
 );

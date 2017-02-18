@@ -25,7 +25,7 @@ export default props => (
       </li>
       <li role="separator" className="dropdown-divider"/>
       <li>
-        <a href="#" className="btn btn-link" onClick={authStore.logout}>Logout</a>
+        <button className="btn btn-link" onClick={props.logUserOut}>Logout</button>
       </li>
     </ul>
   </li>

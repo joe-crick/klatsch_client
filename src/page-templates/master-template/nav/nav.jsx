@@ -17,7 +17,7 @@ export default props => (
 		<HomeLogo/>
 		<div className="collapse navbar-collapse" id="navContent">
 			<QuickLinks/>
-			<RightNav/>
+			<RightNav logUserOut={props.logUserOut}/>
 		</div>
 	</nav>
 );
