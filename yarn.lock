@@ -1491,7 +1491,7 @@ circular-json@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.1.tgz#be8b36aefccde8b3ca7aa2d6afc07a37242c0d2d"
 
-classnames@^2.2.1, classnames@^2.2.5:
+classnames@^2.2.1:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -1961,6 +1961,10 @@ data.either@^1.5.0:
 data.maybe@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/data.maybe/-/data.maybe-1.2.2.tgz#f955e4b5572b2eb5047eab93d8bb3a1cc76a2dc3"
+
+date-fns@^1.27.2:
+  version "1.27.2"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.27.2.tgz#ce82f420bc028356cc661fc55c0494a56a990c9c"
 
 date-now@^0.1.4:
   version "0.1.4"
@@ -5677,12 +5681,6 @@ react-dom@^15.1.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-react-draggable@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/react-draggable/-/react-draggable-2.2.3.tgz#17628cb8aaefed639d38e0021b978a685d80b08b"
-  dependencies:
-    classnames "^2.2.5"
-
 react-dropzone@^3.10.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-3.10.0.tgz#d17193f816c038a1c29f1e92411db4a12210f19b"
@@ -5700,17 +5698,6 @@ react-element-to-jsx-string@^2.0.4:
     sortobject "^1.0.0"
     stringify-object "^2.3.1"
     traverse "^0.6.6"
-
-react-hot-api@^0.4.5:
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/react-hot-api/-/react-hot-api-0.4.7.tgz#a7e22a56d252e11abd9366b61264cf4492c58171"
-
-react-hot-loader@^1.2.7:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-1.3.1.tgz#c95647ae78b73dfceff6ec71ffcb04182ff6daf9"
-  dependencies:
-    react-hot-api "^0.4.5"
-    source-map "^0.4.4"
 
 react-json-tree@^0.10.0:
   version "0.10.1"
@@ -6532,15 +6519,15 @@ source-map@0.1.32:
   dependencies:
     amdefine ">=0.0.4"
 
-source-map@^0.4.4, source-map@~0.4.2:
+source-map@^0.5.0, source-map@^0.5.3, source-map@~0.5.0, source-map@~0.5.1, source-map@~0.5.3:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
+
+source-map@~0.4.2:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
   dependencies:
     amdefine ">=0.0.4"
-
-source-map@^0.5.0, source-map@^0.5.3, source-map@~0.5.0, source-map@~0.5.1, source-map@~0.5.3:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
 spark-md5@3.0.0:
   version "3.0.0"
