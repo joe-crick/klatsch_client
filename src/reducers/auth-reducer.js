@@ -1,3 +1,5 @@
+import seamless from 'seamless-immutable';
+const Immutable = seamless.static;
 import INITIAL_STATE from '../stores/auth-store';
 
 // Action type name constants
@@ -13,12 +15,13 @@ const isRegistrationVisible = 'isRegistrationVisible';
 
 // Action methods - methods that create a new state
 const toggleRegistrationView = state => {
-  const isVisible = state.get(isRegistrationVisible);
+  const isVisible = state.isRegistrationVisible;
   return state.set(isRegistrationVisible, !isVisible);
 };
 
-const logUserIn = state => state.set('isAuthenticated', true);
-const logUserOut = state => state.set('isAuthenticated', false);
+const isAuthenticated = 'isAuthenticated';
+const logUserIn = state => Immutable.set(state, isAuthenticated, true);
+const logUserOut = state => Immutable.set(state, isAuthenticated, false);
 
 // HashMap to directly call the requested method
 const actionMap = new Map();
