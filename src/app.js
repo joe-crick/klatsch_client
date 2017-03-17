@@ -13,7 +13,7 @@ import EditProfile from './pages/edit-profile/edit-profile';
 import Support from './pages/support/support';
 import SiteTemplate from './page-templates/master-template/master-template';
 import Director from './page-templates/director/director';
-import {UserAuthWrapper} from 'redux-auth-wrapper'
+import Auth from './auth/auth';
 import logger from 'redux-logger';
 import './app.sass';
 
@@ -30,6 +30,15 @@ const middleware = applyMiddleware(logger(), routingMiddleware);
 const store = createStore(rootReducer, middleware);
 
 const history = syncHistoryWithStore(browserHistory, store);
+
+const auth = Auth('L3TTj8GVzhVqjecNGATft2x9SYUQMcBh', 'klatch.auth0.com');
+
+// validate authentication for private routes
+const requireAuth = (nextState, replace) => {
+  if (!auth.loggedIn()) {
+    replace({ pathname: '/login' })
+  }
+};
 
 /**
  * Register the ServiceWorker
@@ -59,7 +68,7 @@ const Root = ({store}) => (
       <Route component={Director}>
         <Route path='/' component={HomePage}/>
         {/*<Route component={UserIsAuthenticated(SiteTemplate)}>*/}
-        <Route component={SiteTemplate}>
+        <Route component={SiteTemplate} onEnter={requireAuth} >
           <Route path='/dashboard' component={Dashboard}/>
           <Route path='/profile' component={Profile}/>
           <Route path='/matches' component={Matches}/>
