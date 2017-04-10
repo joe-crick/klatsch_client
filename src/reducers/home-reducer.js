@@ -1,3 +1,5 @@
+import seamless from 'seamless-immutable';
+const Immutable = seamless.static;
 import INITIAL_STATE from '../stores/home-store';
 
 // Action type name constants
@@ -7,8 +9,9 @@ export const actionType = {
 };
 
 // Action methods - methods that create a new state
-const logUserIn = state => state.set('isAuthenticated', true);
-const logUserOut = state => state.set('isAuthenticated', false);
+const isAuthenticated = 'isAuthenticated';
+const logUserIn = state => Immutable.set(state, isAuthenticated, true);
+const logUserOut = state => Immutable.set(state, isAuthenticated, false);
 
 // HashMap to directly call the requested method
 const actionMap = new Map();

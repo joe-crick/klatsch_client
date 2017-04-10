@@ -1,6 +1,7 @@
-import {Map} from 'immutable';
+import seamless from 'seamless-immutable';
+const Immutable = seamless.static;
 
-export default Map({
+export default Immutable({
   login: 'Login',
   ageRangeLabel: 'Age Range',
   selectTitle: 'Select Age Ranges',

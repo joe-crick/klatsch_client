@@ -26,7 +26,7 @@ function HomePage(props) {
     props,
 
     isRegistrationVisible() {
-      return this.props.authStore.get(isRegistrationVisible) ? <Registration/> : '';
+      return this.props.authStore.isRegistrationVisible ? <Registration/> : '';
     },
 
     render() {
@@ -38,7 +38,7 @@ function HomePage(props) {
               toggleRegistration={props.toggleRegistrationView}
               logUserIn={props.logUserIn}
               loginButtonText={props.loginButtonText}/>
-            <TagLine tagLine={homeStore.get(tagLine)}/>
+            <TagLine tagLine={homeStore.tagLine}/>
           </section>
           <section>
             <HomeBottomNav/>
@@ -71,9 +71,8 @@ function matchDispatchToProps(dispatch) {
  * @returns {{authStore: *, homeStore: *}}
  */
 function matchStateToProps(state) {
-  const loginButtonText = 'get' in state.authStore ? state.authStore.get('loginButtonText') : '';
   return {
-    loginButtonText,
+    loginButtonText: state.authStore.loginButtonText,
     homeStore: state.homeStore,
     authStore: state.authStore
   };

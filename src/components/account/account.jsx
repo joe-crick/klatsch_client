@@ -1,8 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-const {} = React.PropTypes;
-
 function Account(props) {
 
   Account.propTypes = {};

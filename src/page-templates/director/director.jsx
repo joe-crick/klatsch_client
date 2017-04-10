@@ -13,7 +13,7 @@ function Director(props) {
       const dashboard = '/dashboard';
       // TODO: This will have to be more intelligent
       const isAuthenticated = 'isAuthenticated';
-      const isLoggedIn = this.props.authStore.get(isAuthenticated);
+      const isLoggedIn = this.props.authStore.isAuthenticated;
       if (isLoggedIn && prevProps.router.location.pathname === '/') {
         this.props.router.push(dashboard)
       } else if (!isLoggedIn && prevProps.router.location.pathname !== '/') {
