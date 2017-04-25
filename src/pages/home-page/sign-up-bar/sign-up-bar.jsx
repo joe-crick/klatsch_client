@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const {func} = React.PropTypes;
+const {func} = PropTypes;
 
 export default function SignUpBar(props) {
 

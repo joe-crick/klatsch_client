@@ -5,8 +5,9 @@ import PageFooter from '../../components/page-footer/page-footer';
 import Chat from '../../components/chat/chat';
 import {logUserOut} from './master-template-actions';
 import {bindActionCreators} from 'redux';
+import PropTypes from 'prop-types';
 
-const {func} = React.PropTypes;
+const {func} = PropTypes;
 
 function MasterTemplate(props) {
 

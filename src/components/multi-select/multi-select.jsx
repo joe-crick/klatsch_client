@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // TODO: Implement this without using jQuery
 
-const {string, func, array} = React.PropTypes;
+const {string, func, array} = PropTypes;
 const toggleDropDown = blah => blah;
 
 export default function MultiSelect(props) {

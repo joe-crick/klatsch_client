@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SignUpBar from '../sign-up-bar/sign-up-bar';
 import LoginButton from '../login-bar/login-bar';
 import HomeLogo from '../../../components/home-logo/home-logo';
@@ -26,9 +27,9 @@ const HomeNav = props => {
 };
 
 HomeNav.propTypes = {
-  toggleRegistration: React.PropTypes.func,
-  loginButtonText: React.PropTypes.string,
-  homeStore: React.PropTypes.object
+  toggleRegistration: PropTypes.func,
+  loginButtonText: PropTypes.string,
+  homeStore: PropTypes.object
 };
 
 export default HomeNav;

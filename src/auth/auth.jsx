@@ -1,7 +1,8 @@
-import Auth0Lock from 'auth0-lock'
-import { browserHistory } from 'react-router'
+import Auth0Lock from 'auth0-lock';
+import { browserHistory } from 'react-router';
+import PropTypes from 'prop-types';
 
-const {} = React.PropTypes;
+const {} = PropTypes;
 
 function Auth(clientId, domain) {
 

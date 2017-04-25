@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Question from './question/question.jsx';
 import InPageAlert from '../../components/in-page-alert/in-page-alert';
 import './question-page.sass';
 
-const {array} = React.PropTypes;
+const {array} = PropTypes;
 
 export default function Questions(props) {
 

@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-const {} = React.PropTypes;
+const {} = PropTypes;
 import MatchResults from './match-results/match-results';
 
 function Matches(props) {

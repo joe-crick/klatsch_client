@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import EditProfileHeader from './edit-profile-header/edit-profile-header';
 import BasicContent from './basic-content/basic-content';
 import Photos from './photos/photos';
 import Account from '../../components/account/account';
 
-const {} = React.PropTypes;
+const {} = PropTypes;
 
 function Profile(props) {
 

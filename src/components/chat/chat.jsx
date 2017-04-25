@@ -2,8 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import ChatHistory from './chat-history/chat-history';
 import ChatForm from './chat-form/chat-form';
+import PropTypes from 'prop-types';
 
-const {} = React.PropTypes;
+const {} = PropTypes;
 
 function Chat(props) {
 

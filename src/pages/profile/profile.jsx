@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import ProfileHeader from './profile-header/profile-header';
 import ProfileBody from './profile-body/profile-body';
 
-const {} = React.PropTypes;
+const {} = PropTypes;
 
 function Profile(props) {
 

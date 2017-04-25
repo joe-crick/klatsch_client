@@ -1,5 +1,6 @@
 import React from 'react';
 import {bindActionCreators} from 'redux';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import './dashboard.sass';
 import QuickPicks from './quick-picks/quick-picks';
@@ -24,7 +25,7 @@ const showProfile = () => {
 // END: Temporary code
 
 
-const {array, func} = React.PropTypes;
+const {array, func} = PropTypes;
 
 /**
  *

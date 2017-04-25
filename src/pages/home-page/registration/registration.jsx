@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Field, reduxForm} from 'redux-form';
 import Account from '../../../components/account/account';
 
-const {} = React.PropTypes;
+const {} = PropTypes;
 
 function Login(props) {
 

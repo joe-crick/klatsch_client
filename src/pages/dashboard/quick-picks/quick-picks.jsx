@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import Tooltip from '../../../components/tooltip/tooltip';
 import './quick-picks.sass';
 
 
-const {string} = React.PropTypes;
+const {string} = PropTypes;
 const topMatchesText = 'This section shows a random selection of your top matches. ' +
   'A match must be 80% or higher to be included in your Top Matches';
 
