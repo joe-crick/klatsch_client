@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const QuickFacts = props => {
   return (
     <div className="klatsch-quick-facts">

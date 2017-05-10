@@ -1,6 +1,6 @@
 import React from 'react';
-import UserMediumProfile from '../../../components/user-medium-profile/user-medium-profile';
-import ProfileActions from '../../../components/profile-actions/profile-actions';
+import UserMediumProfile from 'components/user-medium-profile/user-medium-profile';
+import ProfileActions from 'components/profile-actions/profile-actions';
 import {Link} from 'react-router';
 
 const MatchResults = props => {

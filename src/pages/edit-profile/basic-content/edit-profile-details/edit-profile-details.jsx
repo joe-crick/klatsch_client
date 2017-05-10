@@ -1,6 +1,6 @@
 import React from 'react';
-import BadgeInput from '../../../../components/badge-input/badge-input';
-import DeleteButton from '../../../../components/delete-button/delete-button';
+import BadgeInput from 'components/badge-input/badge-input';
+import DeleteButton from 'components/delete-button/delete-button';
 
 // TODO: Replace with real data
 const tags = ['test', 'this', 'out'];

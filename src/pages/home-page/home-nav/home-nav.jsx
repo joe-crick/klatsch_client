@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SignUpBar from '../sign-up-bar/sign-up-bar';
 import LoginButton from '../login-bar/login-bar';
-import HomeLogo from '../../../components/home-logo/home-logo';
+import HomeLogo from 'components/home-logo/home-logo';
 
 const HomeNav = props => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import QuestionTeaser from '../question-teaser/question-teaser';
 import ActionCenterMessage from './action-center-message/action-center-message';
-import Tooltip from '../../../components/tooltip/tooltip';
+import Tooltip from 'components/tooltip/tooltip';
 
 // TODO: Replace with actual data
 const loop = [

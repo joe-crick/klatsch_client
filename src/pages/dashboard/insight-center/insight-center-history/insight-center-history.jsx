@@ -1,5 +1,5 @@
 import React from 'react';
-import UserMiniProfile from '../../../../components/user-mini-profile/user-mini-profile';
+import UserMiniProfile from 'components/user-mini-profile/user-mini-profile';
 
 const InsightCenterNotification = props => {
   return (

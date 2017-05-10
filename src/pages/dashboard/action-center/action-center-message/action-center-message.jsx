@@ -1,6 +1,6 @@
 import React from 'react';
-import UserMiniProfile from '../../../../components/user-mini-profile/user-mini-profile';
-import EmailLinkIcon from '../../../../components/email-link-icon/email-link-icon';
+import UserMiniProfile from 'components/user-mini-profile/user-mini-profile';
+import EmailLinkIcon from 'components/email-link-icon/email-link-icon';
 
 const ActionCenterMessage = props => {
   return (

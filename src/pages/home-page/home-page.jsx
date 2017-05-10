@@ -2,7 +2,7 @@ import React from 'react';
 import HomeBottomNav from './home-bottom-nav/home-bottom-nav';
 import TagLine from './tag-line/tag-line';
 import HomeNav from './home-nav/home-nav';
-import PageFooter from '../../components/page-footer/page-footer';
+import PageFooter from 'components/page-footer/page-footer';
 import Registration from './registration/registration';
 import {toggleRegistrationView, logUserIn} from './home-page-actions';
 import {bindActionCreators} from 'redux';

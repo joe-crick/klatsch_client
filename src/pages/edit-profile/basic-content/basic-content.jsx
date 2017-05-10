@@ -1,7 +1,7 @@
 import React from 'react';
 import QuickFacts from './edit-profile-quick-facts/edit-profile-quick-facts';
 import ProfileDetails from './edit-profile-details/edit-profile-details';
-import UserMediumProfileIcon from '../../../components/user-medium-profile-icon/user-medium-profile-icon';
+import UserMediumProfileIcon from 'components/user-medium-profile-icon/user-medium-profile-icon';
 
 // TODO: Replace with real data
 const noOp = event => event.preventDefault();

@@ -1,6 +1,6 @@
 import React from 'react';
-import UserMiniProfile from '../../../../components/user-mini-profile/user-mini-profile';
-import DeleteButton from '../../../../components/delete-button/delete-button';
+import UserMiniProfile from 'components/user-mini-profile/user-mini-profile';
+import DeleteButton from 'components/delete-button/delete-button';
 
 const InsightCenterNotification = props => {
   return (

@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const ProfileBody = props => {
 
   const navClassName = nav => `flex-sm-fill text-sm-center nav-link ${nav ? 'active' : ''}`;

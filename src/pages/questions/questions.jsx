@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Question from './question/question.jsx';
-import InPageAlert from '../../components/in-page-alert/in-page-alert';
+import InPageAlert from 'components/in-page-alert/in-page-alert';
 import './question-page.sass';
 
 const {array} = PropTypes;

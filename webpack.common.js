@@ -39,6 +39,10 @@ module.exports = {
     new ExtractTextPlugin('[name].css')
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.sass']
+    extensions: ['.js', '.jsx', '.sass'],
+    modules: [
+      path.resolve('./src'),
+      path.resolve('./node_modules')
+    ]
   }
 };

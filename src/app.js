@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Router, Route, browserHistory} from 'react-router';
-import {syncHistoryWithStore, routerActions, routerMiddleware} from 'react-router-redux'
+import {syncHistoryWithStore, routerMiddleware} from 'react-router-redux'
 import HomePage from './pages/home-page/home-page';
 import {Provider} from 'react-redux';
 import {applyMiddleware, createStore} from 'redux';
@@ -13,7 +13,6 @@ import EditProfile from './pages/edit-profile/edit-profile';
 import Support from './pages/support/support';
 import SiteTemplate from './page-templates/master-template/master-template';
 import Director from './page-templates/director/director';
-import Auth from './auth/auth';
 import logger from 'redux-logger';
 import PropTypes from 'prop-types';
 import './app.sass';

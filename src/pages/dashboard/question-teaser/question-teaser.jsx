@@ -1,5 +1,5 @@
 import React from 'react';
-import Tooltip from '../../../components/tooltip/tooltip';
+import Tooltip from 'components/tooltip/tooltip';
 
 const QuestionTeaser = props => {
   return (

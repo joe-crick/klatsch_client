@@ -1,5 +1,5 @@
 import React from 'react';
-import UserMiniProfile from '../../../../components/user-mini-profile/user-mini-profile';
+import UserMiniProfile from 'components/user-mini-profile/user-mini-profile';
 
 // TODO: Replace with actual data
 const timeOnProfile = '3 min';

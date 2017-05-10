@@ -1,6 +1,6 @@
 import React from 'react';
-import UserMediumProfile from '../../../components/user-medium-profile/user-medium-profile';
-import ProfileActions from '../../../components/profile-actions/profile-actions';
+import UserMediumProfile from 'components/user-medium-profile/user-medium-profile';
+import ProfileActions from 'components/profile-actions/profile-actions';
 import ProfileHeaderSummary from './profile-header-summary/profile-header-summary';
 
 const ProfileHeader = props => {
